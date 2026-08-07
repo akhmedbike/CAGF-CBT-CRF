@@ -173,9 +173,9 @@ project's MIT license. Download them separately as described below.
 
 ### Large data artifacts & checkpoints
 
-The following are available on **Zenodo** *(link to be added)* — download and
-place them at the shown paths to reproduce the silver-corpus experiments and
-the trained-model demos:
+The following are available on **Zenodo** (https://doi.org/10.5281/zenodo.21835591),
+bundled in a single ZIP archive — extract it and place the files at the shown
+paths to reproduce the silver-corpus experiments and the trained-model demos:
 
 | Path | Size | Notes |
 |---|---|---|
@@ -223,3 +223,10 @@ This project's source code is licensed under the **MIT License** (see
   Charles University; vendored verbatim, file remains under MPL-2.0).
 - KazNLP — CC-BY-SA 4.0 (not included; clone separately).
 - UD Kazakh-KTB data — CC BY-SA 4.0 (Universal Dependencies data license).
+
+## Funding
+
+This research was funded by the Science Committee of the Ministry of Science
+and Higher Education of the Republic of Kazakhstan, grant
+“Innovative technologies for automated correction of Kazakh language texts:
+machine learning and morphological analysis” (Grant No. AP23487753).
