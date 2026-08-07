@@ -216,3 +216,37 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# =============================================================================
+# Project-specific ignores — CAGF-CBT+CRF
+# =============================================================================
+
+# --- Internal documents (not for publication) ---
+docs/
+
+# --- Large files: available on Zenodo (see README "Large files / External data") ---
+#     Excluded from git due to GitHub size limits. The full silver corpus, the
+#     connected book skeleton, and trained checkpoints are distributed via Zenodo.
+data/silver/silver.conllu
+data/silver/silver_filtered.conllu
+data/auxiliary/books_skeleton.conllu
+results_cv_kazroberta/checkpoints/
+models/*.pt
+
+# --- Third-party clone with incompatible license ---
+#     kaznlp (github.com/nlacslab/kaznlp) is CC-BY-SA 4.0, a viral copyleft that
+#     is incompatible with this repository's MIT license. It is NOT included;
+#     clone it separately as described in the README. It also carries ~15 MB of
+#     its own pretrained models and a nested .git directory.
+kaznlp/
+
+# --- Runtime artifacts ---
+logs/
+checkpoints/
+.DS_Store
+
+# --- Editor / agent tooling state (not part of the project) ---
+.zcode/
+.idea/
+.vscode/

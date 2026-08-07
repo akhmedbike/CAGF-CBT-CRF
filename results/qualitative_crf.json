@@ -1,0 +1,52 @@
+{
+  "crf_fewer_errors": 30,
+  "softmax_fewer_errors": 18,
+  "tie": 61,
+  "examples": [
+    {
+      "n_tokens": 9,
+      "crf_errors": 0,
+      "sm_errors": 1,
+      "fixed": [
+        [
+          "кіріптарлықта",
+          "NOUN",
+          "NOUN",
+          "VERB"
+        ]
+      ]
+    },
+    {
+      "n_tokens": 11,
+      "crf_errors": 0,
+      "sm_errors": 2,
+      "fixed": [
+        [
+          "ассоциацияларды",
+          "NOUN",
+          "NOUN",
+          "PROPN"
+        ],
+        [
+          "құру",
+          "VERB",
+          "VERB",
+          "NOUN"
+        ]
+      ]
+    },
+    {
+      "n_tokens": 9,
+      "crf_errors": 0,
+      "sm_errors": 1,
+      "fixed": [
+        [
+          "денсаулық",
+          "NOUN",
+          "NOUN",
+          "ADJ"
+        ]
+      ]
+    }
+  ]
+}

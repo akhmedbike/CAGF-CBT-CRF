@@ -1,0 +1,112 @@
+{
+  "silver_filtered": {
+    "sentences": 220090,
+    "tokens": 2884467,
+    "mean_sentence_length": 13.11,
+    "upos_distribution": {
+      "NOUN": 569301,
+      "PUNCT": 547848,
+      "X": 518896,
+      "VERB": 496248,
+      "PRON": 180428,
+      "ADJ": 138820,
+      "ADV": 94084,
+      "AUX": 86145,
+      "CCONJ": 84583,
+      "ADP": 50807,
+      "NUM": 42032,
+      "PROPN": 31113,
+      "PART": 27601,
+      "INTJ": 16561
+    },
+    "feat_categories": {
+      "Case": 1009161,
+      "Number": 1000088,
+      "VerbForm": 426717,
+      "Person[psor]": 259049,
+      "Tense": 171655,
+      "Mood": 95647,
+      "Person": 79645,
+      "Polarity": 41285,
+      "Number[psor]": 32394,
+      "Voice": 27703,
+      "Reflex": 6467,
+      "Polite": 4408,
+      "Degree": 1989
+    }
+  },
+  "gold_upos_categories": [
+    "ADJ",
+    "ADP",
+    "ADV",
+    "AUX",
+    "CCONJ",
+    "DET",
+    "INTJ",
+    "NOUN",
+    "NUM",
+    "PART",
+    "PRON",
+    "PROPN",
+    "PUNCT",
+    "SCONJ",
+    "SYM",
+    "VERB",
+    "X"
+  ],
+  "silver_upos_in_gold_space": 2884467,
+  "silver_upos_in_gold_share": 1.0,
+  "silver_X_foreign_share": 0.1799,
+  "silver_edit_rules_in_gold_space": 2627018,
+  "silver_edit_rules_in_gold_share": 0.9107,
+  "gold_edit_rule_vocab_size": 1290,
+  "build_report": {
+    "backend": "kaznlp",
+    "map_version": "1.0.0",
+    "input": "data/auxiliary/books_skeleton.conllu",
+    "output": "data/silver/silver.conllu",
+    "sentences": 220098,
+    "tokens": 2886405,
+    "upos_distribution": {
+      "NOUN": 569731,
+      "PUNCT": 548252,
+      "X": 519324,
+      "VERB": 496475,
+      "PRON": 180503,
+      "ADJ": 138944,
+      "ADV": 94132,
+      "AUX": 86180,
+      "CCONJ": 84629,
+      "ADP": 50844,
+      "NUM": 42067,
+      "PROPN": 31141,
+      "PART": 27619,
+      "INTJ": 16564
+    },
+    "coverage_events": {
+      "dropped_non_gold": 0,
+      "unmapped_morpheme": 8413,
+      "unknown_pos": 296
+    }
+  },
+  "filter_report": {
+    "input": "data/silver/silver.conllu",
+    "output": "data/silver/silver_filtered.conllu",
+    "rejected_output": null,
+    "thresholds": {
+      "max_unknown_pos_ratio": 0.3,
+      "max_noise_ratio": 0.5,
+      "min_tokens": 2,
+      "max_tokens": 200
+    },
+    "sentences_seen": 220098,
+    "sentences_kept": 220090,
+    "sentences_rejected": 8,
+    "tokens_seen": 2886405,
+    "tokens_kept": 2884467,
+    "rejection_reason_counts": {
+      "too_long": 7,
+      "incomplete_annotation": 1
+    }
+  }
+}

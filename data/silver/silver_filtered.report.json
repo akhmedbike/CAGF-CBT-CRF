@@ -1,0 +1,20 @@
+{
+  "input": "data/silver/silver.conllu",
+  "output": "data/silver/silver_filtered.conllu",
+  "rejected_output": null,
+  "thresholds": {
+    "max_unknown_pos_ratio": 0.3,
+    "max_noise_ratio": 0.5,
+    "min_tokens": 2,
+    "max_tokens": 200
+  },
+  "sentences_seen": 220098,
+  "sentences_kept": 220090,
+  "sentences_rejected": 8,
+  "tokens_seen": 2886405,
+  "tokens_kept": 2884467,
+  "rejection_reason_counts": {
+    "too_long": 7,
+    "incomplete_annotation": 1
+  }
+}

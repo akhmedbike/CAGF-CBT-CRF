@@ -1,0 +1,35 @@
+{
+  "pred_file": "results_cv/stratified/transformer_only/pred_all.conllu",
+  "n_train_sents": 862,
+  "n_constraint_pairs": 60,
+  "before": {
+    "total_predicted_feats": 7461,
+    "impossible_before": 82,
+    "impossible_rate_before": 0.010990483849349954
+  },
+  "after": {
+    "total_predicted_feats": 7379,
+    "impossible_before": 0,
+    "impossible_rate_before": 0.0
+  },
+  "features_removed": 82,
+  "official_before": {
+    "Lemmas": 0.6889711465451784,
+    "UPOS": 0.7206719817767654,
+    "UFeats": 0.47038724373576307,
+    "AllTags": 0.4153378891419894
+  },
+  "official_after": {
+    "Lemmas": 0.6889711465451784,
+    "UPOS": 0.7206719817767654,
+    "UFeats": 0.47228549734244496,
+    "AllTags": 0.4176157934700076
+  },
+  "official_delta": {
+    "Lemmas": 0.0,
+    "UPOS": 0.0,
+    "UFeats": 0.0018982536066818878,
+    "AllTags": 0.002277904328018221
+  },
+  "masked_pred_file": "results_cv/stratified/transformer_only/pred_all.masked.conllu"
+}

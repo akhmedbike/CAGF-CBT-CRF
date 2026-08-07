@@ -1,0 +1,412 @@
+[
+  {
+    "fold": 0,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.72,
+      "precision": 0.4672851132311901,
+      "recall": 0.49498083276649074,
+      "f1": 0.465935893097905
+    },
+    "upos": {
+      "accuracy": 0.8257142857142857,
+      "precision": 0.7654328058605179,
+      "recall": 0.6896210261342824,
+      "f1": 0.7104640798312996
+    },
+    "grammeme": {
+      "accuracy": 0.6123809523809524,
+      "precision": 0.5769016269906526,
+      "recall": 0.399247036468137,
+      "f1": 0.4415444100845636
+    },
+    "official": {
+      "Lemmas": 0.7714285714285715,
+      "UPOS": 0.8257142857142857,
+      "UFeats": 0.6228571428571429,
+      "AllTags": 0.5552380952380952
+    },
+    "best_epoch": 73,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 115,
+      "words": 3747,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1318
+    },
+    "elapsed_sec": 420.1
+  },
+  {
+    "fold": 1,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6772867420349434,
+      "precision": 0.45652702788374816,
+      "recall": 0.4686906658277274,
+      "f1": 0.4452280378272102
+    },
+    "upos": {
+      "accuracy": 0.8201438848920863,
+      "precision": 0.8099916772217868,
+      "recall": 0.7906198700850291,
+      "f1": 0.7836913771947578
+    },
+    "grammeme": {
+      "accuracy": 0.6361767728674204,
+      "precision": 0.6524924738584801,
+      "recall": 0.4814406030160946,
+      "f1": 0.5306144914414311
+    },
+    "official": {
+      "Lemmas": 0.7430626927029804,
+      "UPOS": 0.8201438848920863,
+      "UFeats": 0.645426515930113,
+      "AllTags": 0.578622816032888
+    },
+    "best_epoch": 120,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 113,
+      "words": 3740,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1330
+    },
+    "elapsed_sec": 611.1
+  },
+  {
+    "fold": 2,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6916342412451362,
+      "precision": 0.443063880963043,
+      "recall": 0.46162747494340134,
+      "f1": 0.4306483746724481
+    },
+    "upos": {
+      "accuracy": 0.830739299610895,
+      "precision": 0.8034268474226115,
+      "recall": 0.7621880946456205,
+      "f1": 0.7676243789366315
+    },
+    "grammeme": {
+      "accuracy": 0.5865758754863813,
+      "precision": 0.5396128487631628,
+      "recall": 0.3993207615903813,
+      "f1": 0.4310599503111436
+    },
+    "official": {
+      "Lemmas": 0.7519455252918288,
+      "UPOS": 0.830739299610895,
+      "UFeats": 0.5992217898832685,
+      "AllTags": 0.5457198443579766
+    },
+    "best_epoch": 107,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 111,
+      "words": 3702,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1303
+    },
+    "elapsed_sec": 543.1
+  },
+  {
+    "fold": 3,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.672316384180791,
+      "precision": 0.5081112151369017,
+      "recall": 0.46968372627714905,
+      "f1": 0.47431388605799873
+    },
+    "upos": {
+      "accuracy": 0.8229755178907722,
+      "precision": 0.7719127184459701,
+      "recall": 0.7049157811660268,
+      "f1": 0.7227356813902507
+    },
+    "grammeme": {
+      "accuracy": 0.5574387947269304,
+      "precision": 0.5731466864140135,
+      "recall": 0.3375318692379262,
+      "f1": 0.391879562823592
+    },
+    "official": {
+      "Lemmas": 0.7372881355932204,
+      "UPOS": 0.8229755178907722,
+      "UFeats": 0.583804143126177,
+      "AllTags": 0.5216572504708098
+    },
+    "best_epoch": 89,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 111,
+      "words": 3716,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1290
+    },
+    "elapsed_sec": 475.1
+  },
+  {
+    "fold": 4,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6859344894026975,
+      "precision": 0.4221756377784367,
+      "recall": 0.4154836707307722,
+      "f1": 0.40201375126743905
+    },
+    "upos": {
+      "accuracy": 0.8554913294797688,
+      "precision": 0.7873831310298707,
+      "recall": 0.7120136799929939,
+      "f1": 0.7371090091488687
+    },
+    "grammeme": {
+      "accuracy": 0.628131021194605,
+      "precision": 0.5983578491889429,
+      "recall": 0.46140898782004064,
+      "f1": 0.4944714437576659
+    },
+    "official": {
+      "Lemmas": 0.7456647398843931,
+      "UPOS": 0.8554913294797688,
+      "UFeats": 0.6377649325626205,
+      "AllTags": 0.5876685934489403
+    },
+    "best_epoch": 107,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 112,
+      "words": 3732,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1307
+    },
+    "elapsed_sec": 542.0
+  },
+  {
+    "fold": 5,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6961678832116789,
+      "precision": 0.4491068376783582,
+      "recall": 0.4582812770112989,
+      "f1": 0.4341427649746817
+    },
+    "upos": {
+      "accuracy": 0.7983576642335767,
+      "precision": 0.7359864236464982,
+      "recall": 0.6429750097064976,
+      "f1": 0.6603752560408838
+    },
+    "grammeme": {
+      "accuracy": 0.593978102189781,
+      "precision": 0.48902311711829055,
+      "recall": 0.4003324147672381,
+      "f1": 0.4054087072384927
+    },
+    "official": {
+      "Lemmas": 0.7582116788321168,
+      "UPOS": 0.7983576642335767,
+      "UFeats": 0.6104014598540146,
+      "AllTags": 0.5456204379562044
+    },
+    "best_epoch": 67,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 113,
+      "words": 3752,
+      "upos": 19,
+      "grammemes": 55,
+      "lemma_rules": 1314
+    },
+    "elapsed_sec": 362.7
+  },
+  {
+    "fold": 6,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.7076631977294229,
+      "precision": 0.4802920528331547,
+      "recall": 0.4960955264712474,
+      "f1": 0.46817925403564753
+    },
+    "upos": {
+      "accuracy": 0.8675496688741722,
+      "precision": 0.8014260429754188,
+      "recall": 0.8054830541507185,
+      "f1": 0.7882232617984452
+    },
+    "grammeme": {
+      "accuracy": 0.6385998107852412,
+      "precision": 0.5724701208107128,
+      "recall": 0.3959695669120932,
+      "f1": 0.44975967285135104
+    },
+    "official": {
+      "Lemmas": 0.760643330179754,
+      "UPOS": 0.8675496688741722,
+      "UFeats": 0.6471144749290445,
+      "AllTags": 0.6035950804162725
+    },
+    "best_epoch": 114,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3729,
+      "upos": 19,
+      "grammemes": 55,
+      "lemma_rules": 1289
+    },
+    "elapsed_sec": 572.6
+  },
+  {
+    "fold": 7,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.7008928571428571,
+      "precision": 0.4585017959818125,
+      "recall": 0.4808504464824084,
+      "f1": 0.4539729688500479
+    },
+    "upos": {
+      "accuracy": 0.8241071428571428,
+      "precision": 0.7376729008348647,
+      "recall": 0.7361176264343634,
+      "f1": 0.7250751130729538
+    },
+    "grammeme": {
+      "accuracy": 0.5901785714285714,
+      "precision": 0.5969152901928333,
+      "recall": 0.3406990229911466,
+      "f1": 0.39892604200081083
+    },
+    "official": {
+      "Lemmas": 0.7446428571428572,
+      "UPOS": 0.8241071428571428,
+      "UFeats": 0.6125,
+      "AllTags": 0.5553571428571429
+    },
+    "best_epoch": 78,
+    "n_train": 863,
+    "n_dev": 107,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3710,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1284
+    },
+    "elapsed_sec": 401.9
+  },
+  {
+    "fold": 8,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.687382297551789,
+      "precision": 0.4436869097539642,
+      "recall": 0.4278335648900093,
+      "f1": 0.41325559156101627
+    },
+    "upos": {
+      "accuracy": 0.8314500941619586,
+      "precision": 0.835620857468281,
+      "recall": 0.7572003362296056,
+      "f1": 0.7826744798625268
+    },
+    "grammeme": {
+      "accuracy": 0.6224105461393596,
+      "precision": 0.591918711528349,
+      "recall": 0.40294744887095935,
+      "f1": 0.4489483209976382
+    },
+    "official": {
+      "Lemmas": 0.7495291902071564,
+      "UPOS": 0.8314500941619586,
+      "UFeats": 0.6318267419962336,
+      "AllTags": 0.5903954802259888
+    },
+    "best_epoch": 100,
+    "n_train": 864,
+    "n_dev": 107,
+    "n_test": 107,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3686,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1303
+    },
+    "elapsed_sec": 509.3
+  },
+  {
+    "fold": 9,
+    "config": "wo_gated_fusion",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6657142857142857,
+      "precision": 0.4293252409405014,
+      "recall": 0.4256137695147838,
+      "f1": 0.4089236162609498
+    },
+    "upos": {
+      "accuracy": 0.8,
+      "precision": 0.6964715000531687,
+      "recall": 0.6115685502564405,
+      "f1": 0.6413936967385143
+    },
+    "grammeme": {
+      "accuracy": 0.6,
+      "precision": 0.5406596758606568,
+      "recall": 0.30652068305068886,
+      "f1": 0.3515024474156951
+    },
+    "official": {
+      "Lemmas": 0.7266666666666667,
+      "UPOS": 0.8,
+      "UFeats": 0.6266666666666667,
+      "AllTags": 0.5752380952380952
+    },
+    "best_epoch": 73,
+    "n_train": 863,
+    "n_dev": 108,
+    "n_test": 107,
+    "vocab_sizes": {
+      "chars": 115,
+      "words": 3700,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1309
+    },
+    "elapsed_sec": 409.6
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "status": "connected_as_unlabeled_auxiliary_corpus",
+  "source_archive": "Dataset(1).7z",
+  "source_files": 33,
+  "sentences": 220098,
+  "tokens": 2886405,
+  "skeleton_path": "data/auxiliary/books_skeleton.conllu",
+  "raw_text_path": "data/raw_books",
+  "annotation_status": "unannotated",
+  "allowed_uses": [
+    "external frequency analysis",
+    "vocabulary/OOV analysis",
+    "pre-annotation followed by human review",
+    "application stress testing"
+  ],
+  "prohibited_for_publication": [
+    "do not treat as gold lemma/UPOS/FEATS data",
+    "do not redistribute book texts without verified rights"
+  ],
+  "copyright_note": "The archive contains book-derived texts. Rights and redistribution permissions must be verified per source before public release or inclusion in a Data Availability Statement."
+}

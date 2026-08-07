@@ -1,0 +1,85 @@
+# Default hyperparameters for CAGF-CBT+CRF.
+#
+# These are engineering defaults for a Kazakh/Turkic-scale morphological
+# corpus (comparable order of magnitude to the corpus size reported in
+# Table 1 of the manuscript, ~1.2M tokens). They are NOT the values used to
+# produce any previously reported number in the manuscript -- there were
+# none on record. Before quoting these in a paper, they must be confirmed
+# (or tuned) against your actual training runs on your actual data, and the
+# reviewer's request in Comment 11 is satisfied by reporting the values you
+# actually used, not these defaults verbatim.
+
+data:
+  train_path: "data/gold_merged/gold_train.conllu"
+  dev_path: "data/gold_merged/gold_dev.conllu"
+  test_path: "data/gold_merged/gold_test.conllu"
+  min_word_freq: 1
+  max_word_vocab: 50000
+
+model:
+  char_emb_dim: 32
+  char_cnn_filters: 64
+  char_bilstm_hidden: 64
+  word_emb_dim: 128
+  hidden_dim: 256
+  bilstm_layers: 1
+  transformer_layers: 2
+  transformer_heads: 4
+  transformer_ff_dim: 512
+  dropout: 0.1
+
+training:
+  optimizer: "AdamW"
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  batch_size: 32
+  max_epochs: 200          # matches Figure 4's reported 200-epoch training run
+  early_stopping_patience: 15
+  early_stopping_metric: "dev_macro_f1_mean"
+  grad_clip_norm: 5.0
+  lr_scheduler: "reduce_on_plateau"
+  lr_scheduler_factor: 0.5
+  lr_scheduler_patience: 5
+  seed_list: [13, 42, 123, 777, 2026]   # 5 seeds, used for error bars (Comment 3)
+                                         # and for the paired significance test (Comment 4)
+
+loss_weights:
+  # Dynamic task-loss weighting (uncertainty weighting, Kendall et al., 2018,
+  # "Multi-Task Learning Using Uncertainty to Weigh Losses"). Initial values
+  # only -- lambda_lemma, lambda_upos, lambda_grammeme are learned log-variance
+  # parameters updated during training, matching the "dynamic loss balancing"
+  # language already used in the manuscript (Section 3.6 reference).
+  init_lambda_lemma: 1.0
+  init_lambda_upos: 1.0
+  init_lambda_grammeme: 1.0
+
+
+auxiliary_corpus:
+  enabled: true
+  raw_text_dir: "data/raw_books"
+  conllu_skeleton: "data/auxiliary/books_skeleton.conllu"
+  manifest: "data/auxiliary/corpus_manifest.json"
+  use_for_supervised_training: false
+  requires_human_gold_review: true
+
+# ---------------------------------------------------------------------------
+# Silver corpus + transfer learning (silver pretraining -> gold fine-tuning).
+# The silver corpus is built by scripts/build_silver_corpus.py from the
+# connected 2,886,405-token book skeleton (data/auxiliary/books_skeleton.conllu)
+# using KazNLP morphological tagging mapped into the gold UD label space
+# (cagf/kaznlp_ud_map.py). It is an AUXILIARY, machine-annotated resource:
+# it is used only for pretraining and is never evaluated as gold.
+silver:
+  skeleton_path: "data/auxiliary/books_skeleton.conllu"
+  silver_path: "data/silver/silver.conllu"
+  backend: "kaznlp"                 # "kaznlp" (intended) or "rule" (offline fallback)
+  kaznlp_model_dir: "kaznlp/morphology/mdl"   # from a local clone of nlacslab/kaznlp
+  map_version: "1.0.0"
+
+transfer:
+  pretrain_lr: 0.0003
+  pretrain_epochs: 30
+  pretrain_patience: 5
+  finetune_lr: 0.0001              # lower than pretraining: refine, don't overwrite
+  finetune_epochs: 200
+  finetune_patience: 15

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAGF-CBT+CRF — Kazakh Morphological Tagger</title>
+  <style>
+    body { font: 14px/1.5 -apple-system, "Segoe UI", system-ui, sans-serif; margin: 2rem auto; max-width: 980px; color: #1a1a1a; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .family-badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.8rem; background: #eef; color: #335; margin-left: 0.5rem; }
+    form { margin: 1rem 0; }
+    textarea { width: 100%; box-sizing: border-box; padding: 0.5rem; font: inherit; }
+    button { padding: 0.4rem 0.9rem; margin-right: 0.4rem; cursor: pointer; }
+    .error { color: #b00; background: #fee; padding: 0.5rem 0.75rem; border-radius: 4px; }
+    .muted { color: #666; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    th, td { border: 1px solid #ddd; padding: 0.3rem 0.45rem; text-align: left; vertical-align: top; }
+    th { background: #f6f6f6; }
+    .conf-high { color: #1a7d1a; font-weight: 600; }
+    .conf-mid  { color: #9a6a00; font-weight: 600; }
+    .conf-low  { color: #b00; font-weight: 600; }
+    .unparsed { color: #b00; font-style: italic; }
+    .chart-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    .chart-row > div { flex: 1 1 280px; border: 1px solid #ddd; padding: 0.5rem; border-radius: 4px; }
+    .bar { height: 14px; background: #4a6; border-radius: 2px; display: inline-block; }
+    .controls { margin: 0.75rem 0; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+    .disclaimer { font-size: 0.8rem; color: #555; margin-top: 1rem; border-left: 3px solid #cc9; padding-left: 0.5rem; }
+    .hidden { display: none; }
+    details summary { cursor: pointer; margin: 0.5rem 0; }
+  </style>
+</head>
+<body>
+  <h1>CAGF-CBT+CRF <span class="family-badge" id="familyBadge">{{ {'cagf': 'CAGF-CBT+CRF', 'hf': 'KazRoBERTa', 'none': 'no model'}.get(model_family, 'no model') }}</span></h1>
+  <p class="muted">Kazakh morphological tagger — lemma, UPOS, grammeme prediction. Paste Kazakh text or upload a <code>.txt</code> / <code>.conllu</code> file.</p>
+
+  {# ---- Live training status card (polled client-side) ---- #}
+  <div id="liveTrainingCard" class="chart-row" style="border-color:#eef; background:#fafaff;">
+    <div>
+      <strong>Live training status</strong>
+      <p class="muted" id="trainingStatusText">checking…</p>
+      <p class="muted" id="trainingStatusDetail"></p>
+    </div>
+  </div>
+
+  {# ---- Input form ---- #}
+  <form method="post" enctype="multipart/form-data">
+    <textarea name="raw_text" rows="4" placeholder="Мысалы: Бүгін студенттер мектепке барды."></textarea>
+    <div style="margin-top:0.4rem;">
+      <input type="file" name="file" accept=".txt,.conllu,text/plain">
+    </div>
+    <div style="margin-top:0.4rem;">
+      <button type="submit">Analyze</button>
+      <button type="button" id="clearForm" onclick="document.querySelector('textarea[name=raw_text]').value=''; this.form.reset();">Clear</button>
+    </div>
+  </form>
+
+  {% if error %}<p class="error">{{ error }}</p>{% endif %}
+
+  {% if result %}
+    {# ---- Token table with client-side UPOS filter + confidence sort ---- #}
+    {% if result.show_charts %}
+    <div class="controls">
+      <label>Filter by UPOS:
+        <select id="posFilter" onchange="applyPosFilter()">
+          <option value="">(all)</option>
+          {% for upos, _ in result.aggregate.upos_counts.items() %}
+            <option value="{{ upos }}">{{ upos }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label><input type="checkbox" id="sortByConfidence" onchange="applyConfSort()"> sort by confidence</label>
+      <button type="button" id="exportConllu" onclick="exportConllu()">Export CoNLL-U</button>
+    </div>
+    {% endif %}
+
+    <table id="tokenTable">
+      <thead><tr><th>#</th><th>Sent</th><th>Form</th><th>Lemma</th><th>UPOS</th><th>Grammemes</th><th>Confidence</th></tr></thead>
+      <tbody>
+      {% for r in result.rows %}
+        <tr data-upos="{{ r.upos }}" data-conf="{{ r.confidence }}">
+          <td>{{ r.token }}</td>
+          <td>{{ r.sentence }}</td>
+          <td>{{ r.form }}</td>
+          <td class="{% if not r.parsed %}unparsed{% endif %}">{{ r.lemma }}</td>
+          <td>{{ r.upos }}</td>
+          <td>{{ r.grammemes | join(', ') }}</td>
+          <td class="{{ r.confidence_class }}">{{ '%.3f' % r.confidence }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+    {% if result.show_charts %}
+      <p class="disclaimer">Note: the confidence value is the per-token UPOS emission (softmax over the CRF unary potentials), not a CRF marginal probability. Treat it as a local, model-internal signal, not a calibrated posterior over the globally-decoded tag sequence.</p>
+
+      <div class="chart-row">
+        <div><h3>UPOS distribution</h3>
+          <div id="uposDistChart">
+            {% for upos, count in result.aggregate.upos_counts.items() %}
+              <div title="{{ upos }}: {{ count }}">
+                <span style="display:inline-block;width:60px;">{{ upos }}</span>
+                <span class="bar" style="width: {{ '%.1f' % (count * 100.0 / result.aggregate.n_tokens) }}px;"></span>
+                <span class="muted">{{ count }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div><h3>Confidence histogram</h3>
+          <div id="confHistChart">
+            <div>high <span class="bar" style="width:{{ '%.1f' % (result.aggregate.conf_buckets['conf-high'] * 100.0 / result.aggregate.n_tokens) }}px;background:#1a7d1a;"></span> <span class="muted">{{ result.aggregate.conf_buckets['conf-high'] }}</span></div>
+            <div>mid&nbsp; <span class="bar" style="width:{{ '%.1f' % (result.aggregate.conf_buckets['conf-mid'] * 100.0 / result.aggregate.n_tokens) }}px;background:#9a6a00;"></span> <span class="muted">{{ result.aggregate.conf_buckets['conf-mid'] }}</span></div>
+            <div>low&nbsp; <span class="bar" style="width:{{ '%.1f' % (result.aggregate.conf_buckets['conf-low'] * 100.0 / result.aggregate.n_tokens) }}px;background:#b00;"></span> <span class="muted">{{ result.aggregate.conf_buckets['conf-low'] }}</span></div>
+          </div>
+        </div>
+        <div><h3>Grammeme distribution</h3>
+          <div id="grammemeDistChart">
+            {% for g, count in result.aggregate.grammeme_counts.items() %}
+              <div title="{{ g }}: {{ count }}">
+                <span style="display:inline-block;width:90px;">{{ g }}</span>
+                <span class="bar" style="width:{{ '%.1f' % (count * 100.0 / result.aggregate.n_tokens) }}px;"></span>
+                <span class="muted">{{ count }}</span>
+              </div>
+            {% else %}
+              <span class="muted">no grammemes predicted above threshold</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <details><summary>Raw CoNLL-U export (also available via the Export button)</summary>
+        <pre id="conlluExportText">{{ result.conllu_export }}</pre>
+      </details>
+    {% else %}
+      <p class="muted">Charts are hidden for short input — enter at least two sentences to see UPOS / confidence / grammeme distributions.</p>
+    {% endif %}
+  {% endif %}
+
+  <script>
+    // pollTrainingStatus: refresh the live-training card from /training_status.
+    function pollTrainingStatus() {
+      fetch('/training_status').then(function (r) { return r.json(); }).then(function (data) {
+        var txt = document.getElementById('trainingStatusText');
+        var det = document.getElementById('trainingStatusDetail');
+        if (!data.available) { txt.textContent = 'No training run in progress.'; det.textContent = ''; return; }
+        txt.textContent = data.completed + ' / ' + data.expected + ' runs complete';
+        det.textContent = data.runs.map(function (r) {
+          return r.config + ': ' + r.seeds_done + ' seed(s), UPOS-F1=' + r.upos_f1.toFixed(3);
+        }).join('  •  ');
+      }).catch(function () {
+        document.getElementById('trainingStatusText').textContent = 'training status unavailable';
+      });
+    }
+    pollTrainingStatus();
+    setInterval(pollTrainingStatus, 15000);
+
+    function applyPosFilter() {
+      var sel = document.getElementById('posFilter').value;
+      document.querySelectorAll('#tokenTable tbody tr').forEach(function (tr) {
+        tr.style.display = (!sel || tr.getAttribute('data-upos') === sel) ? '' : 'none';
+      });
+    }
+    function applyConfSort() {
+      var tbody = document.querySelector('#tokenTable tbody');
+      var rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort(function (a, b) {
+        return parseFloat(b.getAttribute('data-conf')) - parseFloat(a.getAttribute('data-conf'));
+      });
+      if (!document.getElementById('sortByConfidence').checked) {
+        rows.sort(function (a, b) {
+          return (parseInt(a.children[1].textContent) - parseInt(b.children[1].textContent)) ||
+                 (parseInt(a.children[0].textContent) - parseInt(b.children[0].textContent));
+        });
+      }
+      rows.forEach(function (r) { tbody.appendChild(r); });
+    }
+    function exportConllu() {
+      var text = document.getElementById('conlluExportText').textContent;
+      var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'cagf_predictions.conllu';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+CAGF-CBT+CRF
+============
+
+This product includes software and data developed by third parties.
+The following notices and license terms apply.
+
+
+1. Project code — MIT License
+-----------------------------
+All source code under `cagf/`, `scripts/`, `tests/`, `webapp/`, and `configs/`
+is licensed under the MIT License (see `LICENSE`).
+
+Copyright (c) 2026 jack_shepherd
+
+
+2. conll18_ud_eval.py — Mozilla Public License 2.0 (MPL-2.0)
+------------------------------------------------------------
+The file `third_party/conll18_ud_eval.py` is the official Universal
+Dependencies evaluation script, vendored verbatim (not modified). It is
+distributed under the Mozilla Public License 2.0, which applies to this file
+alone; the rest of the repository remains under the MIT License.
+
+Source:     https://universaldependencies.org/conll18/conll18_ud_eval.py
+Version:    1.1 (2 May 2018)
+Authors:    Milan Straka, Martin Popel
+Copyright:  (c) 2017, 2018 Institute of Formal and Applied Linguistics (UFAL),
+            Faculty of Mathematics and Physics, Charles University,
+            Czech Republic.
+License:    Mozilla Public License 2.0 — https://www.mozilla.org/MPL/2.0/
+
+A copy of the MPL-2.0 header is preserved at the top of the file itself.
+
+
+3. KazNLP — CC-BY-SA 4.0 (NOT included)
+---------------------------------------
+The KazNLP toolkit (https://github.com/nlacslab/kaznlp) is used at runtime to
+rebuild the silver corpus, but is **not** distributed as part of this
+repository. Its license (Creative Commons Attribution-ShareAlike 4.0
+International) is a viral copyleft that is incompatible with this project's
+MIT license, so the source must be cloned separately:
+
+    git clone https://github.com/nlacslab/kaznlp.git
+
+See the README for details.
+
+Copyright: (c) National Laboratory Astana, Nazarbayev University.
+License:   CC-BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+
+
+4. Universal Dependencies — Kazakh-KTB treebank
+----------------------------------------------
+The gold annotations in `data/gold/` and `data/gold_merged/` are derived from
+the Universal Dependencies Kazakh-KTB treebank.
+
+Source:     https://universaldependencies.org/treebanks/kk_ktb/
+License:    Universal Dependencies data license
+            (Creative Commons Attribution-ShareAlike 4.0 International).

@@ -1,0 +1,412 @@
+[
+  {
+    "fold": 0,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6238095238095238,
+      "precision": 0.48840824581627024,
+      "recall": 0.4541516060501876,
+      "f1": 0.45882527535810447
+    },
+    "upos": {
+      "accuracy": 0.7685714285714286,
+      "precision": 0.7427561521555999,
+      "recall": 0.5934433457108105,
+      "f1": 0.6479105900398381
+    },
+    "grammeme": {
+      "accuracy": 0.47523809523809524,
+      "precision": 0.4325404386420831,
+      "recall": 0.19339213562263222,
+      "f1": 0.24094804594519117
+    },
+    "official": {
+      "Lemmas": 0.7114285714285714,
+      "UPOS": 0.7685714285714286,
+      "UFeats": 0.5047619047619047,
+      "AllTags": 0.4514285714285714
+    },
+    "best_epoch": 77,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 115,
+      "words": 3747,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1318
+    },
+    "elapsed_sec": 449.1
+  },
+  {
+    "fold": 1,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6145940390544707,
+      "precision": 0.47309239411231824,
+      "recall": 0.44982869190813607,
+      "f1": 0.4497413224525331
+    },
+    "upos": {
+      "accuracy": 0.6721479958890031,
+      "precision": 0.7304898382833287,
+      "recall": 0.6799271465425519,
+      "f1": 0.6738321951179452
+    },
+    "grammeme": {
+      "accuracy": 0.447070914696814,
+      "precision": 0.5100849501378413,
+      "recall": 0.22048888675984663,
+      "f1": 0.277048724466296
+    },
+    "official": {
+      "Lemmas": 0.6813977389516958,
+      "UPOS": 0.6721479958890031,
+      "UFeats": 0.45837615621788286,
+      "AllTags": 0.40082219938335045
+    },
+    "best_epoch": 95,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 113,
+      "words": 3740,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1330
+    },
+    "elapsed_sec": 568.1
+  },
+  {
+    "fold": 2,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6254863813229572,
+      "precision": 0.4793348779457832,
+      "recall": 0.4399388552438437,
+      "f1": 0.4381709208135729
+    },
+    "upos": {
+      "accuracy": 0.7470817120622568,
+      "precision": 0.7829466603052161,
+      "recall": 0.5922330053669268,
+      "f1": 0.6564194848209574
+    },
+    "grammeme": {
+      "accuracy": 0.5097276264591439,
+      "precision": 0.5674298450107526,
+      "recall": 0.32400803999536115,
+      "f1": 0.3688333441736966
+    },
+    "official": {
+      "Lemmas": 0.7062256809338522,
+      "UPOS": 0.7470817120622568,
+      "UFeats": 0.5291828793774319,
+      "AllTags": 0.48346303501945526
+    },
+    "best_epoch": 116,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 111,
+      "words": 3702,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1303
+    },
+    "elapsed_sec": 550.2
+  },
+  {
+    "fold": 3,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.5894538606403014,
+      "precision": 0.4464506121808476,
+      "recall": 0.4167137899800506,
+      "f1": 0.421061435681562
+    },
+    "upos": {
+      "accuracy": 0.71939736346516,
+      "precision": 0.7137060153784343,
+      "recall": 0.6397029743283618,
+      "f1": 0.6626071964294484
+    },
+    "grammeme": {
+      "accuracy": 0.4736346516007533,
+      "precision": 0.46525099980287593,
+      "recall": 0.21809107378289164,
+      "f1": 0.26974989900603363
+    },
+    "official": {
+      "Lemmas": 0.664783427495292,
+      "UPOS": 0.71939736346516,
+      "UFeats": 0.5065913370998116,
+      "AllTags": 0.4585687382297552
+    },
+    "best_epoch": 99,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 111,
+      "words": 3716,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1290
+    },
+    "elapsed_sec": 462.7
+  },
+  {
+    "fold": 4,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.615606936416185,
+      "precision": 0.4585529304176317,
+      "recall": 0.416323500507242,
+      "f1": 0.42251568772918624
+    },
+    "upos": {
+      "accuracy": 0.7707129094412332,
+      "precision": 0.7299999995809883,
+      "recall": 0.6572788387902953,
+      "f1": 0.6789601493854212
+    },
+    "grammeme": {
+      "accuracy": 0.4701348747591522,
+      "precision": 0.47367408150016843,
+      "recall": 0.21219638116928602,
+      "f1": 0.2566655977808524
+    },
+    "official": {
+      "Lemmas": 0.6936416184971098,
+      "UPOS": 0.7707129094412332,
+      "UFeats": 0.4816955684007707,
+      "AllTags": 0.4325626204238921
+    },
+    "best_epoch": 85,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 112,
+      "words": 3732,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1307
+    },
+    "elapsed_sec": 393.6
+  },
+  {
+    "fold": 5,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6514598540145985,
+      "precision": 0.4858982826374886,
+      "recall": 0.4580543199073488,
+      "f1": 0.460048323787429
+    },
+    "upos": {
+      "accuracy": 0.760036496350365,
+      "precision": 0.7543263369033293,
+      "recall": 0.5839439185852037,
+      "f1": 0.6433755454279062
+    },
+    "grammeme": {
+      "accuracy": 0.5109489051094891,
+      "precision": 0.5008430084597528,
+      "recall": 0.26342815969388855,
+      "f1": 0.310578277218473
+    },
+    "official": {
+      "Lemmas": 0.7153284671532847,
+      "UPOS": 0.760036496350365,
+      "UFeats": 0.5282846715328468,
+      "AllTags": 0.4625912408759124
+    },
+    "best_epoch": 89,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 113,
+      "words": 3752,
+      "upos": 19,
+      "grammemes": 55,
+      "lemma_rules": 1314
+    },
+    "elapsed_sec": 408.1
+  },
+  {
+    "fold": 6,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6329233680227058,
+      "precision": 0.48262528546610217,
+      "recall": 0.4497615481123765,
+      "f1": 0.4526762527037095
+    },
+    "upos": {
+      "accuracy": 0.793755912961211,
+      "precision": 0.8304304615898632,
+      "recall": 0.724976889662049,
+      "f1": 0.7632529122970693
+    },
+    "grammeme": {
+      "accuracy": 0.4853358561967833,
+      "precision": 0.5230304567844056,
+      "recall": 0.1967857134979404,
+      "f1": 0.26243437642141654
+    },
+    "official": {
+      "Lemmas": 0.7019867549668874,
+      "UPOS": 0.793755912961211,
+      "UFeats": 0.4900662251655629,
+      "AllTags": 0.4370860927152318
+    },
+    "best_epoch": 66,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3729,
+      "upos": 19,
+      "grammemes": 55,
+      "lemma_rules": 1289
+    },
+    "elapsed_sec": 319.5
+  },
+  {
+    "fold": 7,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6321428571428571,
+      "precision": 0.49932121814549857,
+      "recall": 0.4685490913541572,
+      "f1": 0.4715019720949169
+    },
+    "upos": {
+      "accuracy": 0.75625,
+      "precision": 0.7111003741090951,
+      "recall": 0.64865105189904,
+      "f1": 0.671912649598168
+    },
+    "grammeme": {
+      "accuracy": 0.4455357142857143,
+      "precision": 0.5174490652169828,
+      "recall": 0.23916926418574475,
+      "f1": 0.289951047067371
+    },
+    "official": {
+      "Lemmas": 0.675,
+      "UPOS": 0.75625,
+      "UFeats": 0.45357142857142857,
+      "AllTags": 0.40982142857142856
+    },
+    "best_epoch": 74,
+    "n_train": 863,
+    "n_dev": 107,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3710,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1284
+    },
+    "elapsed_sec": 351.9
+  },
+  {
+    "fold": 8,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.5969868173258004,
+      "precision": 0.48888079674881924,
+      "recall": 0.4290716010018182,
+      "f1": 0.43850541456403247
+    },
+    "upos": {
+      "accuracy": 0.6741996233521658,
+      "precision": 0.6891060062899275,
+      "recall": 0.6269708589847096,
+      "f1": 0.6346923137305758
+    },
+    "grammeme": {
+      "accuracy": 0.4689265536723164,
+      "precision": 0.49330384182381704,
+      "recall": 0.2235657060645508,
+      "f1": 0.28341525023702624
+    },
+    "official": {
+      "Lemmas": 0.6779661016949152,
+      "UPOS": 0.6741996233521658,
+      "UFeats": 0.4849340866290019,
+      "AllTags": 0.4274952919020716
+    },
+    "best_epoch": 70,
+    "n_train": 864,
+    "n_dev": 107,
+    "n_test": 107,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3686,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1303
+    },
+    "elapsed_sec": 344.7
+  },
+  {
+    "fold": 9,
+    "config": "wo_character_encoder",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6028571428571429,
+      "precision": 0.4318474419206035,
+      "recall": 0.39494097544010254,
+      "f1": 0.395648948423623
+    },
+    "upos": {
+      "accuracy": 0.7352380952380952,
+      "precision": 0.7200686453884462,
+      "recall": 0.5471329154397503,
+      "f1": 0.6041267507541423
+    },
+    "grammeme": {
+      "accuracy": 0.4676190476190476,
+      "precision": 0.4614684778659238,
+      "recall": 0.19059903695445837,
+      "f1": 0.2359215298483881
+    },
+    "official": {
+      "Lemmas": 0.6866666666666666,
+      "UPOS": 0.7352380952380952,
+      "UFeats": 0.5009523809523809,
+      "AllTags": 0.46
+    },
+    "best_epoch": 116,
+    "n_train": 863,
+    "n_dev": 108,
+    "n_test": 107,
+    "vocab_sizes": {
+      "chars": 115,
+      "words": 3700,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1309
+    },
+    "elapsed_sec": 545.8
+  }
+]

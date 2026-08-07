@@ -1,0 +1,16 @@
+{
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "configs": [
+    "gold_only"
+  ],
+  "model_name": "kz-transformers/kaz-roberta-conversational",
+  "revision": "43077c2fd0a163487ed468b5ec3b8750686a5888",
+  "corpus_sentences": 1078,
+  "silver_sentences": 0,
+  "max_epochs": 40,
+  "batch_size": 16,
+  "lr": 5e-05,
+  "date": "2026-08-04 22:09:41"
+}

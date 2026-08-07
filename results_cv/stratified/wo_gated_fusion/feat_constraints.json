@@ -1,0 +1,35 @@
+{
+  "pred_file": "results_cv/stratified/wo_gated_fusion/pred_all.conllu",
+  "n_train_sents": 862,
+  "n_constraint_pairs": 60,
+  "before": {
+    "total_predicted_feats": 13859,
+    "impossible_before": 203,
+    "impossible_rate_before": 0.014647521466195253
+  },
+  "after": {
+    "total_predicted_feats": 13656,
+    "impossible_before": 0,
+    "impossible_rate_before": 0.0
+  },
+  "features_removed": 203,
+  "official_before": {
+    "Lemmas": 0.716116173120729,
+    "UPOS": 0.8275436598329536,
+    "UFeats": 0.6214882308276386,
+    "AllTags": 0.5656795747911921
+  },
+  "official_after": {
+    "Lemmas": 0.716116173120729,
+    "UPOS": 0.8275436598329536,
+    "UFeats": 0.623955960516325,
+    "AllTags": 0.569665907365224
+  },
+  "official_delta": {
+    "Lemmas": 0.0,
+    "UPOS": 0.0,
+    "UFeats": 0.0024677296886863598,
+    "AllTags": 0.003986332574031914
+  },
+  "masked_pred_file": "results_cv/stratified/wo_gated_fusion/pred_all.masked.conllu"
+}

@@ -1,0 +1,19 @@
+# CAGF-CBT+CRF — pinned dependencies for reproducibility.
+# Install into a fresh venv: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+# Python 3.14 (arm64 / Apple Silicon). On other platforms pick the torch wheel
+# matching your Python version and accelerator (MPS on macOS, CUDA on Linux/Windows GPU).
+torch==2.13.0
+numpy==2.5.1
+scipy==1.18.0
+scikit-learn==1.9.0
+PyYAML==6.0.3
+
+# --- KazRoBERTa (HFMorphModel) path: needed to train/run the HF encoder in
+#     cagf/hf_*.py and scripts/run_cv_kazroberta.py. Not required for the
+#     CAGF-CBT+CRF model (cagf/model.py). ---
+transformers==4.57.6
+
+# --- Standalone Flask demo (webapp/): serves whichever trained backend is on
+#     disk (CAGF-CBT+CRF via cagf.inference, or KazRoBERTa via cagf.hf_inference).
+#     Not required to train or evaluate models. ---
+Flask==3.1.3

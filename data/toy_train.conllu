@@ -1,0 +1,9 @@
+# sent_id = 1
+1	Бүгін	бүгін	ADV	_	_	0	_	_	_
+2	студенттер	студент	NOUN	_	Case=Nom|Number=Plur	0	_	_	_
+3	келді	кел	VERB	_	Tense=Past|Person=3	0	_	_	_
+
+# sent_id = 2
+1	Мектепте	мектеп	NOUN	_	Case=Loc|Number=Sing	0	_	_	_
+2	оқушылар	оқушы	NOUN	_	Case=Nom|Number=Plur	0	_	_	_
+3	оқиды	оқы	VERB	_	Tense=Pres|Person=3	0	_	_	_

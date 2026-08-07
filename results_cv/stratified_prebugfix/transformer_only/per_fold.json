@@ -1,0 +1,412 @@
+[
+  {
+    "fold": 0,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6419047619047619,
+      "precision": 0.5372946202530551,
+      "recall": 0.4949090594970778,
+      "f1": 0.502888418243114
+    },
+    "upos": {
+      "accuracy": 0.7561904761904762,
+      "precision": 0.729949972742024,
+      "recall": 0.599333382097119,
+      "f1": 0.6489615986941952
+    },
+    "grammeme": {
+      "accuracy": 0.4866666666666667,
+      "precision": 0.40285647316322654,
+      "recall": 0.14422760830473308,
+      "f1": 0.19535823630992555
+    },
+    "official": {
+      "Lemmas": 0.7142857142857143,
+      "UPOS": 0.7561904761904762,
+      "UFeats": 0.5152380952380953,
+      "AllTags": 0.46285714285714286
+    },
+    "best_epoch": 87,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 115,
+      "words": 3747,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1318
+    },
+    "elapsed_sec": 241.8
+  },
+  {
+    "fold": 1,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6125385405960946,
+      "precision": 0.4869879084305313,
+      "recall": 0.4566865947935551,
+      "f1": 0.46157680037516063
+    },
+    "upos": {
+      "accuracy": 0.6351490236382322,
+      "precision": 0.6989708811918881,
+      "recall": 0.6857554887689579,
+      "f1": 0.6507541635391223
+    },
+    "grammeme": {
+      "accuracy": 0.4182939362795478,
+      "precision": 0.37429688466658856,
+      "recall": 0.14563124819565387,
+      "f1": 0.19636558260657816
+    },
+    "official": {
+      "Lemmas": 0.6824254881808839,
+      "UPOS": 0.6351490236382322,
+      "UFeats": 0.43371017471736895,
+      "AllTags": 0.37307297019527236
+    },
+    "best_epoch": 108,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 113,
+      "words": 3740,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1330
+    },
+    "elapsed_sec": 290.8
+  },
+  {
+    "fold": 2,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6186770428015564,
+      "precision": 0.49723630239434874,
+      "recall": 0.4528118248565489,
+      "f1": 0.4550948657805325
+    },
+    "upos": {
+      "accuracy": 0.6527237354085603,
+      "precision": 0.6995662482403486,
+      "recall": 0.6071524801394824,
+      "f1": 0.6097449006331449
+    },
+    "grammeme": {
+      "accuracy": 0.48249027237354086,
+      "precision": 0.5587836614943661,
+      "recall": 0.2886217435446378,
+      "f1": 0.32897021313185465
+    },
+    "official": {
+      "Lemmas": 0.7052529182879378,
+      "UPOS": 0.6527237354085603,
+      "UFeats": 0.48735408560311283,
+      "AllTags": 0.42509727626459143
+    },
+    "best_epoch": 103,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 111,
+      "words": 3702,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1303
+    },
+    "elapsed_sec": 277.8
+  },
+  {
+    "fold": 3,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.5979284369114878,
+      "precision": 0.47448105553631376,
+      "recall": 0.42283858578382627,
+      "f1": 0.435329630874347
+    },
+    "upos": {
+      "accuracy": 0.7419962335216572,
+      "precision": 0.7504199006231483,
+      "recall": 0.6044302516993234,
+      "f1": 0.6514704673300753
+    },
+    "grammeme": {
+      "accuracy": 0.4604519774011299,
+      "precision": 0.48632375501119485,
+      "recall": 0.19529009157804664,
+      "f1": 0.25052582380159355
+    },
+    "official": {
+      "Lemmas": 0.667608286252354,
+      "UPOS": 0.7419962335216572,
+      "UFeats": 0.4924670433145009,
+      "AllTags": 0.455743879472693
+    },
+    "best_epoch": 133,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 111,
+      "words": 3716,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1290
+    },
+    "elapsed_sec": 349.0
+  },
+  {
+    "fold": 4,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.628131021194605,
+      "precision": 0.4692974098871774,
+      "recall": 0.42443233594227864,
+      "f1": 0.4316798900915469
+    },
+    "upos": {
+      "accuracy": 0.7658959537572254,
+      "precision": 0.7207193902763421,
+      "recall": 0.6459879137202702,
+      "f1": 0.6664489466983952
+    },
+    "grammeme": {
+      "accuracy": 0.430635838150289,
+      "precision": 0.44049630938030104,
+      "recall": 0.16982672244035513,
+      "f1": 0.22685288812117674
+    },
+    "official": {
+      "Lemmas": 0.6926782273603083,
+      "UPOS": 0.7658959537572254,
+      "UFeats": 0.43641618497109824,
+      "AllTags": 0.3834296724470135
+    },
+    "best_epoch": 64,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 112,
+      "words": 3732,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1307
+    },
+    "elapsed_sec": 184.9
+  },
+  {
+    "fold": 5,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6368613138686131,
+      "precision": 0.46641006460810047,
+      "recall": 0.4414051896812728,
+      "f1": 0.4378521147690504
+    },
+    "upos": {
+      "accuracy": 0.7107664233576643,
+      "precision": 0.7378135330016791,
+      "recall": 0.5679168769312373,
+      "f1": 0.6270370573047734
+    },
+    "grammeme": {
+      "accuracy": 0.4936131386861314,
+      "precision": 0.4569810307523724,
+      "recall": 0.20821669162033904,
+      "f1": 0.2565161574822141
+    },
+    "official": {
+      "Lemmas": 0.7098540145985401,
+      "UPOS": 0.7107664233576643,
+      "UFeats": 0.5054744525547445,
+      "AllTags": 0.4324817518248175
+    },
+    "best_epoch": 84,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 113,
+      "words": 3752,
+      "upos": 19,
+      "grammemes": 55,
+      "lemma_rules": 1314
+    },
+    "elapsed_sec": 230.4
+  },
+  {
+    "fold": 6,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6480605487228004,
+      "precision": 0.49004353263823364,
+      "recall": 0.4537301863079371,
+      "f1": 0.45993262712437133
+    },
+    "upos": {
+      "accuracy": 0.7795648060548723,
+      "precision": 0.8412602175976517,
+      "recall": 0.7343219555464888,
+      "f1": 0.7671396085155779
+    },
+    "grammeme": {
+      "accuracy": 0.47776726584673607,
+      "precision": 0.410668266382947,
+      "recall": 0.1630076345880707,
+      "f1": 0.22168578158601102
+    },
+    "official": {
+      "Lemmas": 0.7029328287606433,
+      "UPOS": 0.7795648060548723,
+      "UFeats": 0.48722800378429515,
+      "AllTags": 0.4314096499526963
+    },
+    "best_epoch": 80,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3729,
+      "upos": 19,
+      "grammemes": 55,
+      "lemma_rules": 1289
+    },
+    "elapsed_sec": 222.0
+  },
+  {
+    "fold": 7,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6017857142857143,
+      "precision": 0.43993899139583154,
+      "recall": 0.42165899093134207,
+      "f1": 0.41733539114562246
+    },
+    "upos": {
+      "accuracy": 0.7526785714285714,
+      "precision": 0.7352085717516158,
+      "recall": 0.6720356352299417,
+      "f1": 0.696732864170796
+    },
+    "grammeme": {
+      "accuracy": 0.4080357142857143,
+      "precision": 0.35232556107397617,
+      "recall": 0.12350235608245098,
+      "f1": 0.16229044123886308
+    },
+    "official": {
+      "Lemmas": 0.6651785714285714,
+      "UPOS": 0.7526785714285714,
+      "UFeats": 0.41964285714285715,
+      "AllTags": 0.37857142857142856
+    },
+    "best_epoch": 49,
+    "n_train": 863,
+    "n_dev": 107,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3710,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1284
+    },
+    "elapsed_sec": 149.7
+  },
+  {
+    "fold": 8,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.5969868173258004,
+      "precision": 0.46834647834402343,
+      "recall": 0.40868573111618284,
+      "f1": 0.41676390506951627
+    },
+    "upos": {
+      "accuracy": 0.6789077212806026,
+      "precision": 0.7342575384401675,
+      "recall": 0.6101251763177549,
+      "f1": 0.6489420928218234
+    },
+    "grammeme": {
+      "accuracy": 0.4369114877589454,
+      "precision": 0.3799907211816859,
+      "recall": 0.16859461641414716,
+      "f1": 0.21407427078378896
+    },
+    "official": {
+      "Lemmas": 0.6751412429378532,
+      "UPOS": 0.6789077212806026,
+      "UFeats": 0.4453860640301318,
+      "AllTags": 0.3851224105461394
+    },
+    "best_epoch": 53,
+    "n_train": 864,
+    "n_dev": 107,
+    "n_test": 107,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3686,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1303
+    },
+    "elapsed_sec": 161.8
+  },
+  {
+    "fold": 9,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.5752380952380952,
+      "precision": 0.39880545623744645,
+      "recall": 0.36117748811032074,
+      "f1": 0.36833480380054345
+    },
+    "upos": {
+      "accuracy": 0.7238095238095238,
+      "precision": 0.7100459285623806,
+      "recall": 0.4995861628092879,
+      "f1": 0.5606455060391442
+    },
+    "grammeme": {
+      "accuracy": 0.4561904761904762,
+      "precision": 0.41977610936396875,
+      "recall": 0.13902459317371868,
+      "f1": 0.19178239458790777
+    },
+    "official": {
+      "Lemmas": 0.6752380952380952,
+      "UPOS": 0.7238095238095238,
+      "UFeats": 0.48,
+      "AllTags": 0.4238095238095238
+    },
+    "best_epoch": 71,
+    "n_train": 863,
+    "n_dev": 108,
+    "n_test": 107,
+    "vocab_sizes": {
+      "chars": 115,
+      "words": 3700,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1309
+    },
+    "elapsed_sec": 204.7
+  }
+]

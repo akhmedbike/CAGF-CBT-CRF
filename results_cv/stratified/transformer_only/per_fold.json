@@ -1,0 +1,412 @@
+[
+  {
+    "fold": 0,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6438095238095238,
+      "precision": 0.5355667361074732,
+      "recall": 0.4997816272444365,
+      "f1": 0.5060519814586575
+    },
+    "upos": {
+      "accuracy": 0.7371428571428571,
+      "precision": 0.6889995677819969,
+      "recall": 0.5740551036832777,
+      "f1": 0.6158236487176819
+    },
+    "grammeme": {
+      "accuracy": 0.4523809523809524,
+      "precision": 0.34539299078416785,
+      "recall": 0.14280632063531423,
+      "f1": 0.17986923160183352
+    },
+    "official": {
+      "Lemmas": 0.7447619047619047,
+      "UPOS": 0.7371428571428571,
+      "UFeats": 0.47333333333333333,
+      "AllTags": 0.4228571428571429
+    },
+    "best_epoch": 72,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 115,
+      "words": 3747,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1318
+    },
+    "elapsed_sec": 214.8
+  },
+  {
+    "fold": 1,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6300102774922919,
+      "precision": 0.4802993511563413,
+      "recall": 0.45455245379811204,
+      "f1": 0.45511518292843306
+    },
+    "upos": {
+      "accuracy": 0.6269270298047277,
+      "precision": 0.6828148132472901,
+      "recall": 0.6277216719255708,
+      "f1": 0.6113525307141474
+    },
+    "grammeme": {
+      "accuracy": 0.43884892086330934,
+      "precision": 0.41229543180534506,
+      "recall": 0.17784708237453595,
+      "f1": 0.22390244061212275
+    },
+    "official": {
+      "Lemmas": 0.7194244604316546,
+      "UPOS": 0.6269270298047277,
+      "UFeats": 0.4522096608427544,
+      "AllTags": 0.39671120246659813
+    },
+    "best_epoch": 81,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 113,
+      "words": 3740,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1330
+    },
+    "elapsed_sec": 228.4
+  },
+  {
+    "fold": 2,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6352140077821011,
+      "precision": 0.5270823439941866,
+      "recall": 0.47012914843911646,
+      "f1": 0.4813321391332628
+    },
+    "upos": {
+      "accuracy": 0.7120622568093385,
+      "precision": 0.7281990482401531,
+      "recall": 0.619912068072709,
+      "f1": 0.6449187418981679
+    },
+    "grammeme": {
+      "accuracy": 0.4805447470817121,
+      "precision": 0.39982378143526587,
+      "recall": 0.17358771799059305,
+      "f1": 0.21188619721307597
+    },
+    "official": {
+      "Lemmas": 0.7247081712062257,
+      "UPOS": 0.7120622568093385,
+      "UFeats": 0.48735408560311283,
+      "AllTags": 0.42509727626459143
+    },
+    "best_epoch": 101,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 111,
+      "words": 3702,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1303
+    },
+    "elapsed_sec": 272.3
+  },
+  {
+    "fold": 3,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6148775894538606,
+      "precision": 0.49481423474506353,
+      "recall": 0.4367715823848198,
+      "f1": 0.44975756073612727
+    },
+    "upos": {
+      "accuracy": 0.7391713747645952,
+      "precision": 0.7410083560737688,
+      "recall": 0.6017813563136931,
+      "f1": 0.650227817317363
+    },
+    "grammeme": {
+      "accuracy": 0.4745762711864407,
+      "precision": 0.4840564109839093,
+      "recall": 0.1928074940984891,
+      "f1": 0.2513826814289372
+    },
+    "official": {
+      "Lemmas": 0.696798493408663,
+      "UPOS": 0.7391713747645952,
+      "UFeats": 0.5037664783427496,
+      "AllTags": 0.4670433145009416
+    },
+    "best_epoch": 127,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 111,
+      "words": 3716,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1290
+    },
+    "elapsed_sec": 334.0
+  },
+  {
+    "fold": 4,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6445086705202312,
+      "precision": 0.4707364355114024,
+      "recall": 0.4348277901647467,
+      "f1": 0.43794161767532563
+    },
+    "upos": {
+      "accuracy": 0.75626204238921,
+      "precision": 0.7297376666245476,
+      "recall": 0.6236223270130861,
+      "f1": 0.6564751934781583
+    },
+    "grammeme": {
+      "accuracy": 0.464354527938343,
+      "precision": 0.3947316152001417,
+      "recall": 0.1463390052560372,
+      "f1": 0.19619747884730912
+    },
+    "official": {
+      "Lemmas": 0.7254335260115607,
+      "UPOS": 0.75626204238921,
+      "UFeats": 0.48458574181117536,
+      "AllTags": 0.43159922928709055
+    },
+    "best_epoch": 64,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 112,
+      "words": 3732,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1307
+    },
+    "elapsed_sec": 186.0
+  },
+  {
+    "fold": 5,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.666970802919708,
+      "precision": 0.5077790970221271,
+      "recall": 0.4764249675791269,
+      "f1": 0.4774755610544639
+    },
+    "upos": {
+      "accuracy": 0.7135036496350365,
+      "precision": 0.727573122350226,
+      "recall": 0.5595343825499103,
+      "f1": 0.6138615787971439
+    },
+    "grammeme": {
+      "accuracy": 0.5145985401459854,
+      "precision": 0.47894045407766767,
+      "recall": 0.20791080852322863,
+      "f1": 0.263529799033758
+    },
+    "official": {
+      "Lemmas": 0.7390510948905109,
+      "UPOS": 0.7135036496350365,
+      "UFeats": 0.5228102189781022,
+      "AllTags": 0.44343065693430656
+    },
+    "best_epoch": 88,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 113,
+      "words": 3752,
+      "upos": 19,
+      "grammemes": 55,
+      "lemma_rules": 1314
+    },
+    "elapsed_sec": 240.1
+  },
+  {
+    "fold": 6,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6660359508041628,
+      "precision": 0.5351458678057475,
+      "recall": 0.49716305181251347,
+      "f1": 0.5053078685167813
+    },
+    "upos": {
+      "accuracy": 0.7578051087984863,
+      "precision": 0.7464394336845162,
+      "recall": 0.6638728512397215,
+      "f1": 0.6841877060504481
+    },
+    "grammeme": {
+      "accuracy": 0.521286660359508,
+      "precision": 0.522265499951568,
+      "recall": 0.19386448332194167,
+      "f1": 0.2614307754659763
+    },
+    "official": {
+      "Lemmas": 0.7426679280983917,
+      "UPOS": 0.7578051087984863,
+      "UFeats": 0.543046357615894,
+      "AllTags": 0.48722800378429515
+    },
+    "best_epoch": 92,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3729,
+      "upos": 19,
+      "grammemes": 55,
+      "lemma_rules": 1289
+    },
+    "elapsed_sec": 249.9
+  },
+  {
+    "fold": 7,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6410714285714286,
+      "precision": 0.49151677602463073,
+      "recall": 0.4765143978934072,
+      "f1": 0.47219796851472223
+    },
+    "upos": {
+      "accuracy": 0.7517857142857143,
+      "precision": 0.6628728175432858,
+      "recall": 0.5984946038342561,
+      "f1": 0.6221678235828072
+    },
+    "grammeme": {
+      "accuracy": 0.4357142857142857,
+      "precision": 0.38545808360598893,
+      "recall": 0.1490045852072673,
+      "f1": 0.19355242536727785
+    },
+    "official": {
+      "Lemmas": 0.7080357142857143,
+      "UPOS": 0.7517857142857143,
+      "UFeats": 0.44375,
+      "AllTags": 0.40625
+    },
+    "best_epoch": 83,
+    "n_train": 863,
+    "n_dev": 107,
+    "n_test": 108,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3710,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1284
+    },
+    "elapsed_sec": 228.5
+  },
+  {
+    "fold": 8,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6242937853107344,
+      "precision": 0.5247070183161705,
+      "recall": 0.45722699899555097,
+      "f1": 0.4681122541807582
+    },
+    "upos": {
+      "accuracy": 0.6977401129943502,
+      "precision": 0.7521149911255023,
+      "recall": 0.6197993034525512,
+      "f1": 0.6593288026594142
+    },
+    "grammeme": {
+      "accuracy": 0.4595103578154426,
+      "precision": 0.4394891241193844,
+      "recall": 0.1559550776041438,
+      "f1": 0.21424842851963094
+    },
+    "official": {
+      "Lemmas": 0.7203389830508474,
+      "UPOS": 0.6977401129943502,
+      "UFeats": 0.467984934086629,
+      "AllTags": 0.4105461393596987
+    },
+    "best_epoch": 103,
+    "n_train": 864,
+    "n_dev": 107,
+    "n_test": 107,
+    "vocab_sizes": {
+      "chars": 114,
+      "words": 3686,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1303
+    },
+    "elapsed_sec": 276.8
+  },
+  {
+    "fold": 9,
+    "config": "transformer_only",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.6133333333333333,
+      "precision": 0.44332102938717144,
+      "recall": 0.40095506547026655,
+      "f1": 0.4083786867548629
+    },
+    "upos": {
+      "accuracy": 0.7380952380952381,
+      "precision": 0.7208741924848683,
+      "recall": 0.5476344728425435,
+      "f1": 0.6039531445513914
+    },
+    "grammeme": {
+      "accuracy": 0.4857142857142857,
+      "precision": 0.4461569672959274,
+      "recall": 0.20430536492972248,
+      "f1": 0.2481744617311809
+    },
+    "official": {
+      "Lemmas": 0.7057142857142857,
+      "UPOS": 0.7380952380952381,
+      "UFeats": 0.5285714285714286,
+      "AllTags": 0.4866666666666667
+    },
+    "best_epoch": 112,
+    "n_train": 863,
+    "n_dev": 108,
+    "n_test": 107,
+    "vocab_sizes": {
+      "chars": 115,
+      "words": 3700,
+      "upos": 19,
+      "grammemes": 56,
+      "lemma_rules": 1309
+    },
+    "elapsed_sec": 298.4
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "fold": 0,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.8238095238095238,
+      "precision": 0.5696770677635116,
+      "recall": 0.5883184662986625,
+      "f1": 0.5680186058148426
+    },
+    "upos": {
+      "accuracy": 0.8742857142857143,
+      "precision": 0.7532325283781424,
+      "recall": 0.7470566379976041,
+      "f1": 0.74453878008231
+    },
+    "grammeme": {
+      "accuracy": 0.6838095238095238,
+      "precision": 0.5751966102946301,
+      "recall": 0.46064173590466495,
+      "f1": 0.498308448833821
+    },
+    "official": {
+      "Lemmas": 0.8323809523809523,
+      "UPOS": 0.8742857142857143,
+      "UFeats": 0.7057142857142857,
+      "AllTags": 0.6457142857142857
+    },
+    "best_epoch": 82,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "elapsed_sec": 2597.5
+  },
+  {
+    "fold": 1,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.8078108941418294,
+      "precision": 0.5505920659007817,
+      "recall": 0.5712618950101952,
+      "f1": 0.5488509024340875
+    },
+    "upos": {
+      "accuracy": 0.8643371017471737,
+      "precision": 0.8366212763830727,
+      "recall": 0.8183224284501748,
+      "f1": 0.8227515559124786
+    },
+    "grammeme": {
+      "accuracy": 0.656731757451182,
+      "precision": 0.6203020904665129,
+      "recall": 0.5212341182038821,
+      "f1": 0.551713674175689
+    },
+    "official": {
+      "Lemmas": 0.816032887975334,
+      "UPOS": 0.8643371017471737,
+      "UFeats": 0.6865364850976362,
+      "AllTags": 0.6392600205549845
+    },
+    "best_epoch": 103,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "elapsed_sec": 3235.0
+  },
+  {
+    "fold": 2,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.8229571984435797,
+      "precision": 0.5597173653560311,
+      "recall": 0.586388051128634,
+      "f1": 0.5600540125834927
+    },
+    "upos": {
+      "accuracy": 0.8832684824902723,
+      "precision": 0.799453855110363,
+      "recall": 0.7653576350175049,
+      "f1": 0.7767250140471276
+    },
+    "grammeme": {
+      "accuracy": 0.6926070038910506,
+      "precision": 0.7186676771355237,
+      "recall": 0.5762839401697374,
+      "f1": 0.6144188782729414
+    },
+    "official": {
+      "Lemmas": 0.8394941634241245,
+      "UPOS": 0.8832684824902723,
+      "UFeats": 0.7169260700389105,
+      "AllTags": 0.669260700389105
+    },
+    "best_epoch": 109,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "elapsed_sec": 3755.1
+  },
+  {
+    "fold": 3,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.807909604519774,
+      "precision": 0.5622228141007269,
+      "recall": 0.5933736073686887,
+      "f1": 0.567589946283882
+    },
+    "upos": {
+      "accuracy": 0.8813559322033898,
+      "precision": 0.846796377936796,
+      "recall": 0.7717335506254088,
+      "f1": 0.7896287059747682
+    },
+    "grammeme": {
+      "accuracy": 0.6581920903954802,
+      "precision": 0.6616241783999417,
+      "recall": 0.544522470617945,
+      "f1": 0.5761320339543127
+    },
+    "official": {
+      "Lemmas": 0.8239171374764596,
+      "UPOS": 0.8813559322033898,
+      "UFeats": 0.6789077212806026,
+      "AllTags": 0.6440677966101694
+    },
+    "best_epoch": 80,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "elapsed_sec": 3764.9
+  },
+  {
+    "fold": 4,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.815028901734104,
+      "precision": 0.5155403548294798,
+      "recall": 0.5453386126995082,
+      "f1": 0.5203416130337496
+    },
+    "upos": {
+      "accuracy": 0.8930635838150289,
+      "precision": 0.7709591800891542,
+      "recall": 0.7609328841831233,
+      "f1": 0.7634720759496516
+    },
+    "grammeme": {
+      "accuracy": 0.6926782273603083,
+      "precision": 0.636935578224027,
+      "recall": 0.5160142999494274,
+      "f1": 0.5493663201392643
+    },
+    "official": {
+      "Lemmas": 0.8217726396917149,
+      "UPOS": 0.8930635838150289,
+      "UFeats": 0.7148362235067437,
+      "AllTags": 0.6753371868978806
+    },
+    "best_epoch": 89,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "elapsed_sec": 4019.5
+  },
+  {
+    "fold": 5,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.8248175182481752,
+      "precision": 0.5502629370951063,
+      "recall": 0.5890865735949713,
+      "f1": 0.5565635707573794
+    },
+    "upos": {
+      "accuracy": 0.8503649635036497,
+      "precision": 0.738439809596716,
+      "recall": 0.6712303066812325,
+      "f1": 0.6940360219789178
+    },
+    "grammeme": {
+      "accuracy": 0.6697080291970803,
+      "precision": 0.6209543349769506,
+      "recall": 0.5057218753383459,
+      "f1": 0.5409252656749419
+    },
+    "official": {
+      "Lemmas": 0.833029197080292,
+      "UPOS": 0.8503649635036497,
+      "UFeats": 0.6888686131386861,
+      "AllTags": 0.6295620437956204
+    },
+    "best_epoch": 88,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "elapsed_sec": 3507.6
+  },
+  {
+    "fold": 6,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.8278145695364238,
+      "precision": 0.6097161347767346,
+      "recall": 0.6462161168598108,
+      "f1": 0.6160334417980118
+    },
+    "upos": {
+      "accuracy": 0.8902554399243141,
+      "precision": 0.8012635244755466,
+      "recall": 0.8253029777926597,
+      "f1": 0.8027017939693177
+    },
+    "grammeme": {
+      "accuracy": 0.6594134342478714,
+      "precision": 0.5101924100930305,
+      "recall": 0.4508807071051118,
+      "f1": 0.4715945237609515
+    },
+    "official": {
+      "Lemmas": 0.8353831598864712,
+      "UPOS": 0.8902554399243141,
+      "UFeats": 0.6840113528855251,
+      "AllTags": 0.6395458845789972
+    },
+    "best_epoch": 57,
+    "n_train": 862,
+    "n_dev": 108,
+    "n_test": 108,
+    "elapsed_sec": 3736.3
+  },
+  {
+    "fold": 7,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.8196428571428571,
+      "precision": 0.5849947831326132,
+      "recall": 0.6226641481270347,
+      "f1": 0.5913227726806249
+    },
+    "upos": {
+      "accuracy": 0.8973214285714286,
+      "precision": 0.7956014101493609,
+      "recall": 0.7977667839042711,
+      "f1": 0.7954255889799173
+    },
+    "grammeme": {
+      "accuracy": 0.6607142857142857,
+      "precision": 0.659994841296718,
+      "recall": 0.48823132233896877,
+      "f1": 0.5399895425425862
+    },
+    "official": {
+      "Lemmas": 0.8330357142857143,
+      "UPOS": 0.8973214285714286,
+      "UFeats": 0.6892857142857143,
+      "AllTags": 0.6482142857142857
+    },
+    "best_epoch": 138,
+    "n_train": 863,
+    "n_dev": 107,
+    "n_test": 108,
+    "elapsed_sec": 2861.0
+  },
+  {
+    "fold": 8,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.8145009416195856,
+      "precision": 0.5598724204164549,
+      "recall": 0.5896204209576302,
+      "f1": 0.5636975030316418
+    },
+    "upos": {
+      "accuracy": 0.876647834274953,
+      "precision": 0.8491411383685021,
+      "recall": 0.7519958365061015,
+      "f1": 0.7795853013328383
+    },
+    "grammeme": {
+      "accuracy": 0.608286252354049,
+      "precision": 0.5177680000939257,
+      "recall": 0.41353071030943334,
+      "f1": 0.4442347511322729
+    },
+    "official": {
+      "Lemmas": 0.8248587570621468,
+      "UPOS": 0.876647834274953,
+      "UFeats": 0.6412429378531074,
+      "AllTags": 0.6026365348399246
+    },
+    "best_epoch": 61,
+    "n_train": 864,
+    "n_dev": 107,
+    "n_test": 107,
+    "elapsed_sec": 3472.5
+  },
+  {
+    "fold": 9,
+    "config": "silver_unfiltered_pretrain_ktb_finetune",
+    "seed": 42,
+    "lemma": {
+      "accuracy": 0.8019047619047619,
+      "precision": 0.5118408889959878,
+      "recall": 0.5474588278345629,
+      "f1": 0.520157334943598
+    },
+    "upos": {
+      "accuracy": 0.8714285714285714,
+      "precision": 0.6870380958819234,
+      "recall": 0.6983006697157911,
+      "f1": 0.6898244560793594
+    },
+    "grammeme": {
+      "accuracy": 0.6628571428571428,
+      "precision": 0.5911993338099558,
+      "recall": 0.46790547194924337,
+      "f1": 0.4996220946047202
+    },
+    "official": {
+      "Lemmas": 0.82,
+      "UPOS": 0.8714285714285714,
+      "UFeats": 0.68,
+      "AllTags": 0.6361904761904762
+    },
+    "best_epoch": 76,
+    "n_train": 863,
+    "n_dev": 108,
+    "n_test": 107,
+    "elapsed_sec": 3885.9
+  }
+]

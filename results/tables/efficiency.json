@@ -1,0 +1,99 @@
+{
+  "protocol": {
+    "hardware": "arm64 / macOS-15.7.7-arm64-arm-64bit-Mach-O",
+    "device": "mps",
+    "framework": "torch 2.13.0",
+    "precision": "fp32",
+    "sequence_length": 32,
+    "warmup_iterations": 20,
+    "measured_iterations": 100,
+    "param_count_method": "torch.numel (trainable only)"
+  },
+  "configs": {
+    "full_model": {
+      "trainable_params": 2506405,
+      "batch_1": {
+        "n_tokens": 32,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.5506119687765931,
+        "latency_ms_per_token_iqr": 0.0728476562699143,
+        "latency_ms_per_batch_median": 17.61958300085098
+      },
+      "batch_32": {
+        "n_tokens": 1024,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.1774142861332706,
+        "latency_ms_per_token_iqr": 0.012625813475608538,
+        "latency_ms_per_batch_median": 181.6722290004691
+      }
+    },
+    "wo_character_encoder": {
+      "trainable_params": 2435045,
+      "batch_1": {
+        "n_tokens": 32,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.5295455781038072,
+        "latency_ms_per_token_iqr": 0.07143100003759173,
+        "latency_ms_per_batch_median": 16.94545849932183
+      },
+      "batch_32": {
+        "n_tokens": 1024,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.17416446923768092,
+        "latency_ms_per_token_iqr": 0.016823974608115577,
+        "latency_ms_per_batch_median": 178.34441649938526
+      }
+    },
+    "wo_gated_fusion": {
+      "trainable_params": 2375077,
+      "batch_1": {
+        "n_tokens": 32,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.5339277344091897,
+        "latency_ms_per_token_iqr": 0.04939843756801565,
+        "latency_ms_per_batch_median": 17.08568750109407
+      },
+      "batch_32": {
+        "n_tokens": 1024,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.1790600180680002,
+        "latency_ms_per_token_iqr": 0.01680948828308715,
+        "latency_ms_per_batch_median": 183.3574585016322
+      }
+    },
+    "wo_crf": {
+      "trainable_params": 2506006,
+      "batch_1": {
+        "n_tokens": 32,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.3587434843552728,
+        "latency_ms_per_token_iqr": 0.0883567813616537,
+        "latency_ms_per_batch_median": 11.47979149936873
+      },
+      "batch_32": {
+        "n_tokens": 1024,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.01639864062497054,
+        "latency_ms_per_token_iqr": 0.002079101559360197,
+        "latency_ms_per_batch_median": 16.792207999969833
+      }
+    },
+    "transformer_only": {
+      "trainable_params": 1908453,
+      "batch_1": {
+        "n_tokens": 32,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.26145701565383206,
+        "latency_ms_per_token_iqr": 0.03142837499581219,
+        "latency_ms_per_batch_median": 8.366624500922626
+      },
+      "batch_32": {
+        "n_tokens": 1024,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.1586065058614139,
+        "latency_ms_per_token_iqr": 0.013960327152062746,
+        "latency_ms_per_batch_median": 162.41306200208783
+      }
+    }
+  }
+}

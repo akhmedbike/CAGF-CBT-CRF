@@ -1,0 +1,16 @@
+{
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "configs": [
+    "full_model",
+    "wo_crf",
+    "wo_gated_fusion",
+    "wo_character_encoder",
+    "transformer_only"
+  ],
+  "corpus_sentences": 1078,
+  "config_file": "configs/default.yaml",
+  "max_epochs": 200,
+  "date": "2026-08-02 19:28:09"
+}

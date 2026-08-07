@@ -1,0 +1,16 @@
+[
+  {
+    "run": 0,
+    "dev_macro_f1": 0.4295,
+    "upos_accuracy": 0.9305,
+    "lemma_accuracy": 0.659,
+    "best_epoch": 13
+  },
+  {
+    "run": 1,
+    "dev_macro_f1": 0.4295,
+    "upos_accuracy": 0.9305,
+    "lemma_accuracy": 0.659,
+    "best_epoch": 13
+  }
+]

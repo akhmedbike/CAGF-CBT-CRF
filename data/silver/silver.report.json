@@ -1,0 +1,29 @@
+{
+  "backend": "kaznlp",
+  "map_version": "1.0.0",
+  "input": "data/auxiliary/books_skeleton.conllu",
+  "output": "data/silver/silver.conllu",
+  "sentences": 220098,
+  "tokens": 2886405,
+  "upos_distribution": {
+    "NOUN": 569731,
+    "PUNCT": 548252,
+    "X": 519324,
+    "VERB": 496475,
+    "PRON": 180503,
+    "ADJ": 138944,
+    "ADV": 94132,
+    "AUX": 86180,
+    "CCONJ": 84629,
+    "ADP": 50844,
+    "NUM": 42067,
+    "PROPN": 31141,
+    "PART": 27619,
+    "INTJ": 16564
+  },
+  "coverage_events": {
+    "dropped_non_gold": 0,
+    "unmapped_morpheme": 8413,
+    "unknown_pos": 296
+  }
+}
