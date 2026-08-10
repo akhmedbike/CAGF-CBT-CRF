@@ -123,28 +123,32 @@ parsing literature.
 
 | Configuration | Lemmas | UPOS | UFeats | AllTags |
 |---|---|---|---|---|
-| Transformer-only | 69.81 | 72.39 | 49.09 | 43.79 |
-| w/o char encoder | 69.58 | 73.61 | 48.65 | 42.82 |
-| w/o gated fusion | 71.61 | 82.75 | 62.15 | 56.57 |
-| w/o CRF | 71.40 | 83.16 | 64.15 | 58.59 |
-| **CAGF-CBT+CRF (full)** | **71.49** | 83.06 | **64.43** | **59.13** |
+| Transformer-only | 72.27 | 72.39 | 49.09 | 43.79 |
+| w/o char encoder | 72.08 | 73.61 | 48.65 | 42.82 |
+| w/o gated fusion | 74.90 | 82.75 | 62.15 | 56.57 |
+| w/o CRF | 74.83 | 83.16 | 64.15 | 58.59 |
+| **CAGF-CBT+CRF (full)** | **75.04** | 83.06 | **64.43** | **59.13** |
 
-Jack-knifed F1 over all 1078 sentences, 10 folds. Per-fold std (n=10):
-Lemmas 1.2pp, UPOS 2.0pp, UFeats 2.8pp. MPS noise floor ≈0.2pp (measured by
-repeating wo_crf with identical config).
+Jack-knifed F1 over all 1078 sentences, 10 folds. Per-fold std (n=10, full
+model): Lemmas 1.3pp, UPOS 1.9pp, UFeats 4.0pp, AllTags 4.1pp. MPS noise floor
+≈0.40pp (max–min spread over 3 identical-config runs of the full model on
+fold 0, `results_cv/noise_floor.json`); differences below this are not
+interpreted.
 
 **Holm-corrected significance (n=10 folds, 16 hypotheses, all on identical code):**
-- The **character encoder** and **word-level BiLSTM** are the load-bearing
-  components — removing either drops UPOS by 9-12pp (p_Holm < 0.001, d ≈ 3).
-  These are the standard Ma & Hovy (2016) components.
-- **Gated fusion is NOT significant** after Holm correction (p_Holm 0.42-1.0;
-  raw p 0.05-0.10 for UFeats/AllTags, point estimate +2.3pp UFeats, but does
-  not survive correction against the 0.2pp noise floor).
-- **CRF is neutral**: all p_Holm = 1.0, diffs within the noise floor. The
-  earlier "CRF hurts" was a gradient-starvation artifact, now fixed
-  (`docs/crf_diagnosis.md`).
-- **Implication:** only the standard char-CNN+BiLSTM stack is statistically
-  load-bearing at this corpus scale. The article's novelty must rest on
+- Only the **character encoder** is independently isolable: removing it
+  (`wo_character_encoder`) costs 9–16 pp across the four metrics (p_Holm < 0.001,
+  d_z = 2.94–3.77). Reducing the model to its **Transformer alone** is the
+  largest degradation (p_Holm < 0.001, d_z up to 3.93). These two ablations
+  correspond to the components of the standard Ma & Hovy (2016) tagger
+  (char-CNN + word-BiLSTM + CRF); no separate BiLSTM-only ablation was run.
+- **Gated fusion does NOT survive Holm correction** (p_Holm 0.42–1.0). It has a
+  consistent positive point estimate (+2.21 pp UFeats, +2.50 pp AllTags;
+  raw p 0.052 for AllTags), but the effect is not significant against the
+  noise floor.
+- **CRF is neutral**: all p_Holm = 1.0, differences within the noise floor.
+- **Implication:** only the standard char-CNN stack is statistically
+  load-bearing at this corpus scale. The article's novelty rests on
   silver-corpus transfer + parameter efficiency, not on gated fusion or CRF.
 
 **Feature-impossibility masking** (post-hoc, no retraining): 0.99% of the
