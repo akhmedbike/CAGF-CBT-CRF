@@ -241,6 +241,13 @@ models/*.pt
 #     its own pretrained models and a nested .git directory.
 kaznlp/
 
+#     UD treebanks are CC BY-SA 4.0 (same copyleft incompatibility as
+#     kaznlp): clone them from github.com/UniversalDependencies as described
+#     in the README; they are never committed here.
+third_party/UD_Kazakh-KTB/
+third_party/UD_Turkish-IMST/
+third_party/UD_Kyrgyz-KTMU/
+
 # --- Runtime artifacts ---
 logs/
 checkpoints/

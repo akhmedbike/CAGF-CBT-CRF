@@ -1,0 +1,75 @@
+# Full SAAL experiment matrix on the three UD treebanks (branch siccis-malta),
+# recomputed on the GitHub snapshots of UD_Kazakh-KTB / UD_Turkish-IMST /
+# UD_Kyrgyz-KTMU with the calibrated surrogate.
+#
+# Fingerprint check vs the paper's Table 1 (2026-08-30): all five token-level
+# statistics match for all three treebanks; Turkish additionally contains 15
+# punctuation-only sentences (5,635 raw sentences in Table 1, 5,620 after the
+# non-PUNCT filter used by the acquisition loop).
+#
+# The surrogate uses one-vs-rest liblinear heads ('liblinear_ovr'): the
+# diagnostics in docs/weight_sensitivity_kazakh.md show this reproduces the
+# published Random/Entropy/Novelty TSC levels within 0.2-0.5 pp and
+# Support-Aware within one published SD.
+#
+# Strategy order for acquisition_weights: [H_u, H_r, q*p_T, N_suf, N_lex];
+# sentence_weights: [mean, max].
+
+simulation:
+  seeds: [7, 13, 19, 31, 42, 55, 77, 101, 123, 202]
+  pool_fraction: 0.8
+  initial_fraction: 0.05
+  budgets: [0.1, 0.2, 0.3, 0.5]
+
+surrogate:
+  feature_dim: 2048
+  ngram_range: [2, 5]
+  c: 1.0
+  max_iter: 500
+  solver: liblinear_ovr
+
+strategies:
+  random: {}
+  entropy: {}
+  novelty: {}
+  baseline:
+    acquisition_weights: [0.25, 0.20, 0.30, 0.15, 0.10]
+    sentence_weights: [0.8, 0.2]
+  equal:
+    acquisition_weights: [0.20, 0.20, 0.20, 0.20, 0.20]
+    sentence_weights: [0.8, 0.2]
+  support-heavy:
+    acquisition_weights: [0.10, 0.10, 0.60, 0.10, 0.10]
+    sentence_weights: [0.8, 0.2]
+  novelty-heavy:
+    acquisition_weights: [0.10, 0.10, 0.10, 0.35, 0.35]
+    sentence_weights: [0.8, 0.2]
+  uncertainty-heavy:
+    acquisition_weights: [0.35, 0.35, 0.10, 0.10, 0.10]
+    sentence_weights: [0.8, 0.2]
+  mean-only:
+    acquisition_weights: [0.25, 0.20, 0.30, 0.15, 0.10]
+    sentence_weights: [1.0, 0.0]
+  balanced:
+    acquisition_weights: [0.25, 0.20, 0.30, 0.15, 0.10]
+    sentence_weights: [0.5, 0.5]
+
+languages:
+  kazakh:
+    corpus_paths:
+      - third_party/UD_Kazakh-KTB/kk_ktb-ud-train.conllu
+      - third_party/UD_Kazakh-KTB/kk_ktb-ud-test.conllu
+    strategies: [random, entropy, novelty, baseline,
+                 equal, support-heavy, novelty-heavy, uncertainty-heavy,
+                 mean-only, balanced, fullpool]
+  turkish:
+    corpus_paths:
+      - third_party/UD_Turkish-IMST/tr_imst-ud-train.conllu
+      - third_party/UD_Turkish-IMST/tr_imst-ud-dev.conllu
+      - third_party/UD_Turkish-IMST/tr_imst-ud-test.conllu
+    strategies: [random, entropy, novelty, baseline, fullpool]
+  kyrgyz:
+    corpus_paths:
+      - third_party/UD_Kyrgyz-KTMU/ky_ktmu-ud-train.conllu
+      - third_party/UD_Kyrgyz-KTMU/ky_ktmu-ud-test.conllu
+    strategies: [random, entropy, novelty, baseline, fullpool]

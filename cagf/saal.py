@@ -423,6 +423,23 @@ def evaluate(surrogate: Surrogate, eval_features: csr_matrix, eval_sentences: li
     }
 
 
+def run_fullpool(sentences: list[SaalSentence], split: SplitPlan, vectorizer: CharHashVectorizer,
+                 surrogate_kwargs: dict | None = None) -> dict[str, float]:
+    """Train the surrogate on the entire acquisition pool and evaluate on the
+    held-out set: the full-pool reference used for the b95 efficiency measure.
+
+    Depends only on (language, seed) — the pool is identical for every
+    strategy within a split — so it is run once per seed.
+    """
+    pool_sents = [sentences[i] for i in split.pool_idx]
+    stats = LabeledPoolStats(pool_sents)
+    surrogate = _fit_surrogate(pool_sents, vectorizer, surrogate_kwargs)
+    eval_sents = [sentences[i] for i in split.eval_idx]
+    eval_tokens = [t for s in eval_sents for t in s.tokens]
+    x_eval = vectorizer.transform([t.form for t in eval_tokens])
+    return evaluate(surrogate, x_eval, eval_sents, stats)
+
+
 def run_simulation(sentences: list[SaalSentence], split: SplitPlan, strategy: str,
                    budgets: list[float], weights: AcquisitionWeights,
                    vectorizer: CharHashVectorizer,
