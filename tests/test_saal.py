@@ -129,6 +129,26 @@ def test_strategy_names_are_validated():
                        CharHashVectorizer(dim=64))
 
 
+def test_surrogate_solver_variants_share_the_output_contract():
+    from cagf.saal import Surrogate
+    corpus = tiny_corpus()
+    toks = [t for s in corpus for t in s.tokens]
+    vec = CharHashVectorizer(dim=64, ngram_range=(2, 3))
+    x = vec.transform([t.form for t in toks])
+    stats = LabeledPoolStats(corpus)
+    for solver in ('multinomial', 'liblinear_ovr'):
+        surrogate = Surrogate(solver=solver).fit(
+            x, [t.upos for t in toks],
+            [compact_class(t.form, t.lemma) for t in toks],
+            [stats.z_label(t) for t in toks])
+        pred = surrogate.predict_all(x)
+        for key in ('H_u', 'H_r', 'p_T', 'q'):
+            assert pred[key].shape == (len(toks),)
+            assert ((pred[key] >= 0) & (pred[key] <= 1)).all()
+    with pytest.raises(ValueError):
+        Surrogate(solver='nope')._make_lr()
+
+
 def test_load_corpus_drops_punct_and_keeps_sentence_count():
     tmp = Path(__file__).parent / '_tmp_saal_load.conllu'
     tmp.write_text(

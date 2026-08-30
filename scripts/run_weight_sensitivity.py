@@ -64,9 +64,12 @@ def _run_task(task: tuple[str, int]) -> dict:
     weights = AcquisitionWeights(hu=aw[0], hr=aw[1], qpT=aw[2], nsuf=aw[3], nlex=aw[4],
                                  sentence_mean=sw[0], sentence_max=sw[1])
     kind = name if name in ('random', 'entropy', 'novelty') else 'support_aware'
+    surrogate_kwargs = {'solver': sur.get('solver', 'multinomial'),
+                        'c': sur.get('c', 1.0), 'max_iter': sur.get('max_iter', 500)}
     split = build_split(sentences, seed, sim['pool_fraction'], sim['initial_fraction'])
     t0 = time.time()
-    checkpoints = run_simulation(sentences, split, kind, list(sim['budgets']), weights, vectorizer)
+    checkpoints = run_simulation(sentences, split, kind, list(sim['budgets']), weights,
+                                 vectorizer, surrogate_kwargs)
     return {'strategy': name, 'seed': seed, 'checkpoints': checkpoints,
             'weights': weights.describe() if kind == 'support_aware' else kind,
             'seconds': round(time.time() - t0, 1)}

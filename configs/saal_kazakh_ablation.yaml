@@ -26,6 +26,12 @@ surrogate:
   ngram_range: [2, 5]
   c: 1.0
   max_iter: 500
+  # 'multinomial' (softmax lbfgs) or 'liblinear_ovr' (one-vs-rest liblinear).
+  # Diagnostics (docs/weight_sensitivity_kazakh.md) show liblinear_ovr
+  # reproduces the published Entropy/Random/Novelty TSC levels almost
+  # exactly; switching the default is pending the decision on whether the
+  # original Table 2-4 code can be recovered.
+  solver: multinomial
 
 strategies:
   # Reference strategies for comparison with the published Table 2.

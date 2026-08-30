@@ -169,21 +169,37 @@ class CharHashVectorizer:
 # ---------------------------------------------------------------------------
 
 class Surrogate:
-    """UPOS + compact-rewrite + weak-support-risk logistic heads trained on L_k."""
+    """UPOS + compact-rewrite + weak-support-risk logistic heads trained on L_k.
 
-    def __init__(self, c: float = 1.0, max_iter: int = 500):
+    ``solver`` selects the head family: ``'multinomial'`` (softmax lbfgs) or
+    ``'liblinear_ovr'`` (one-vs-rest liblinear — the older sklearn behaviour;
+    diagnostics in docs/weight_sensitivity_kazakh.md show it reproduces the
+    published Entropy baseline almost exactly, so it is the likely setting of
+    the original pipeline).
+    """
+
+    def __init__(self, c: float = 1.0, max_iter: int = 500, solver: str = 'multinomial'):
         self.c = c
         self.max_iter = max_iter
+        self.solver = solver
         self.upos_head: LogisticRegression | None = None
         self.rewrite_head: LogisticRegression | None = None
         self.risk_head: LogisticRegression | None = None
         self._degenerate_risk = 0.0
 
+    def _make_lr(self, **kwargs):
+        if self.solver == 'liblinear_ovr':
+            from sklearn.multiclass import OneVsRestClassifier
+            return OneVsRestClassifier(LogisticRegression(solver='liblinear', **kwargs))
+        if self.solver != 'multinomial':
+            raise ValueError(f'unknown solver: {self.solver}')
+        return LogisticRegression(**kwargs)
+
     def fit(self, features: csr_matrix, upos_y: list[str], rewrite_y: list[str],
             risk_z: list[int]) -> 'Surrogate':
-        self.upos_head = LogisticRegression(C=self.c, max_iter=self.max_iter)
+        self.upos_head = self._make_lr(C=self.c, max_iter=self.max_iter)
         self.upos_head.fit(features, upos_y)
-        self.rewrite_head = LogisticRegression(C=self.c, max_iter=self.max_iter)
+        self.rewrite_head = self._make_lr(C=self.c, max_iter=self.max_iter)
         self.rewrite_head.fit(features, rewrite_y)
         # Class-balanced risk model (paper: "class-balanced logistic regression").
         unique_z = set(risk_z)
@@ -193,7 +209,7 @@ class Surrogate:
             self.risk_head = None
             self._degenerate_risk = 1.0 if unique_z == {1} else 0.0
         else:
-            self.risk_head = LogisticRegression(C=self.c, max_iter=self.max_iter, class_weight='balanced')
+            self.risk_head = self._make_lr(C=self.c, max_iter=self.max_iter, class_weight='balanced')
             self.risk_head.fit(features, risk_z)
         return self
 
@@ -357,11 +373,12 @@ def build_split(sentences: list[SaalSentence], seed: int, pool_frac: float = 0.8
     return SplitPlan(seed, pool_idx, eval_idx, sorted(initial_idx))
 
 
-def _fit_surrogate(labeled_sents: list[SaalSentence], vectorizer: CharHashVectorizer) -> Surrogate:
+def _fit_surrogate(labeled_sents: list[SaalSentence], vectorizer: CharHashVectorizer,
+                   surrogate_kwargs: dict | None = None) -> Surrogate:
     lab_tokens = [t for s in labeled_sents for t in s.tokens]
     x_lab = vectorizer.transform([t.form for t in lab_tokens])
     stats = LabeledPoolStats(labeled_sents)
-    return Surrogate().fit(
+    return Surrogate(**(surrogate_kwargs or {})).fit(
         x_lab,
         [t.upos for t in lab_tokens],
         [compact_class(t.form, t.lemma) for t in lab_tokens],
@@ -408,7 +425,8 @@ def evaluate(surrogate: Surrogate, eval_features: csr_matrix, eval_sentences: li
 
 def run_simulation(sentences: list[SaalSentence], split: SplitPlan, strategy: str,
                    budgets: list[float], weights: AcquisitionWeights,
-                   vectorizer: CharHashVectorizer) -> dict[str, dict[str, float]]:
+                   vectorizer: CharHashVectorizer,
+                   surrogate_kwargs: dict | None = None) -> dict[str, dict[str, float]]:
     """One acquisition loop: seed set -> acquire to each budget -> evaluate.
 
     At every checkpoint the surrogate is retrained on the current L_k and the
@@ -428,7 +446,7 @@ def run_simulation(sentences: list[SaalSentence], split: SplitPlan, strategy: st
     def train_and_eval(checkpoint: str) -> tuple[Surrogate, LabeledPoolStats]:
         labeled_sents = [sentences[i] for i in labeled]
         stats = LabeledPoolStats(labeled_sents)
-        surrogate = _fit_surrogate(labeled_sents, vectorizer)
+        surrogate = _fit_surrogate(labeled_sents, vectorizer, surrogate_kwargs)
         eval_sents = [sentences[i] for i in split.eval_idx]
         eval_tokens = [t for s in eval_sents for t in s.tokens]
         x_eval = vectorizer.transform([t.form for t in eval_tokens])
