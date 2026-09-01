@@ -84,6 +84,24 @@ PYTHONPATH=. .venv/bin/python scripts/filter_silver_corpus.py
 PYTHONPATH=. .venv/bin/python scripts/analyze_silver.py
 ```
 
+## Calibration bootstrap (reliability-paper experiment)
+
+`scripts/bootstrap_calibration.py` reproduces the sentence-level cluster
+bootstrap experiment of the confidence-reliability study built on this
+checkpoint: it regenerates the per-token emission scores of
+`models/interface_model.pt` on the 862/107/109 split (plus the feature-based
+CRF marginals from a sibling `kz-kalib-paper` checkout, override with
+`--kzkalib-root`), verifies every point estimate against the published
+numbers before resampling, and writes 95% percentile/BCa intervals for ECE,
+Brier, coverage and selective risk, including paired calibration deltas,
+to `results_calibration/`.
+
+```bash
+PYTHONHASHSEED=42 .venv/bin/python scripts/bootstrap_calibration.py
+```
+
+Requires `torch`, `scipy`, `matplotlib` and `sklearn-crfsuite` in the venv.
+
 ## Tests
 
 ```bash
