@@ -17,7 +17,18 @@
     "ece_binning": "equal-width bins, (lo, hi] except first bin [0, 0.1]",
     "crf_confidence": "marginal probability of the decoded tag",
     "cagf_confidence": "emission softmax at the fixed CRF-decoded tag",
-    "brier_note": "the paper's reported Brier values are the binary top-1 Brier; the full-vector multiclass Brier (Eq. 3) is stored alongside as brier_full"
+    "brier_note": "the paper's reported Brier values are the binary top-1 Brier; the full-vector multiclass Brier (Eq. 3) is stored alongside as brier_full",
+    "env": {
+      "python": "3.14.4",
+      "platform": "macOS-15.7.9-arm64-arm-64bit-Mach-O",
+      "machine": "arm64",
+      "numpy": "2.5.1",
+      "PYTHONHASHSEED": "42",
+      "torch": "2.13.0",
+      "scipy": "1.18.1",
+      "sklearn_crfsuite": "0.5.0",
+      "joblib": "1.5.3"
+    }
   },
   "sanity": {
     "crf": {

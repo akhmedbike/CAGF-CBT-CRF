@@ -38,6 +38,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import platform
 import sys
 from pathlib import Path
 
@@ -567,6 +569,29 @@ def make_histograms(crf_boot: dict, cagf_boot: dict) -> list[Path]:
 # main
 # ---------------------------------------------------------------------------
 
+def environment_info() -> dict:
+    """Provenance of the machine that produced the artifacts (no timestamps,
+    so repeat runs stay bit-identical apart from this static description)."""
+    env = {
+        "python": platform.python_version(),
+        "platform": platform.platform(),
+        "machine": platform.machine(),
+        "numpy": np.__version__,
+        "PYTHONHASHSEED": os.environ.get("PYTHONHASHSEED"),
+    }
+    for name in ("torch", "scipy", "sklearn_crfsuite", "joblib"):
+        try:
+            if name == "torch":
+                import torch
+                env[name] = torch.__version__
+            else:
+                from importlib import metadata
+                env[name] = metadata.version(name)
+        except Exception:
+            env[name] = None
+    return env
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--kzkalib-root", type=Path,
@@ -623,6 +648,7 @@ def main() -> None:
             "brier_note": ("the paper's reported Brier values are the binary "
                            "top-1 Brier; the full-vector multiclass Brier "
                            "(Eq. 3) is stored alongside as brier_full"),
+            "env": environment_info(),
         },
         "sanity": sanity,
         "crf_point": crf_point,
