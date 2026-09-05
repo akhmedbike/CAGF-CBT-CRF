@@ -102,6 +102,16 @@ PYTHONHASHSEED=42 .venv/bin/python scripts/bootstrap_calibration.py
 
 Requires `torch`, `scipy`, `matplotlib` and `sklearn-crfsuite` in the venv.
 
+`scripts/make_calibration_figures.py` regenerates the three paper figures
+(decision-process and calibration-flow schematics, plus the CAGF reliability
+diagram computed from the committed test dump, with the published ECE values
+12.79% / 2.79% asserted before drawing) as 300-dpi PNG + SVG into
+`results_calibration/figs/paper/`.
+
+```bash
+.venv/bin/python scripts/make_calibration_figures.py
+```
+
 ## Tests
 
 ```bash
