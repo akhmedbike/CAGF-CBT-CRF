@@ -52,6 +52,7 @@ from cagf.folds import make_folds
 from cagf.model import AblationConfig, ModelHParams
 from cagf.official_eval import REPORTED_METRICS, evaluate_conllu
 from cagf.predict_writer import write_conllu
+from cagf.run_meta import write_run_meta
 from cagf.train_loop import predict, train_one_run
 from scripts.pretrain_finetune import build_shared_vocabs
 from scripts.run_cv import _concat_conllu, _gold_for_fold
@@ -65,7 +66,8 @@ def _split_by_index(sentences: List[Sentence], idx: List[int]) -> List[Sentence]
     return [sentences[i] for i in idx]
 
 
-def run_ktb_only_fold(train_s, dev_s, test_s, hp, ablation, seed, train_cfg, device):
+def run_ktb_only_fold(train_s, dev_s, test_s, hp, ablation, seed, train_cfg, device,
+                      probs_dump_path=None):
     """Train from scratch on fold.train only. Vocab from fold.train only."""
     from cagf.data import build_vocabs
     vocabs = build_vocabs(train_s, min_word_freq=1, max_word_vocab=50000)
@@ -76,12 +78,14 @@ def run_ktb_only_fold(train_s, dev_s, test_s, hp, ablation, seed, train_cfg, dev
         learning_rate=train_cfg['learning_rate'], weight_decay=train_cfg['weight_decay'],
         grad_clip_norm=train_cfg['grad_clip_norm'],
         early_stopping_patience=train_cfg['early_stopping_patience'],
-        device=device, verbose=True, return_model=True)
+        device=device, verbose=True, return_model=True,
+        probs_dump_path=probs_dump_path)
     return result, model, vocabs
 
 
 def run_silver_pretrain_finetune_fold(config_name, silver, train_s, dev_s, test_s,
-                                      hp, ablation, seed, args, device):
+                                      hp, ablation, seed, args, device,
+                                      probs_dump_path=None):
     """Pretrain on silver (early-stop on gold dev), finetune on fold.train.
 
     CRITICAL: vocab from union(silver, fold.train) -- fold.test never enters.
@@ -110,7 +114,8 @@ def run_silver_pretrain_finetune_fold(config_name, silver, train_s, dev_s, test_
         max_epochs=args.finetune_epochs, batch_size=args.batch_size,
         learning_rate=args.finetune_lr, weight_decay=args.weight_decay,
         grad_clip_norm=args.grad_clip_norm, early_stopping_patience=args.finetune_patience,
-        device=device, verbose=True, init_state=pretrained_state, return_model=True)
+        device=device, verbose=True, init_state=pretrained_state, return_model=True,
+        probs_dump_path=probs_dump_path)
     return replace(result, config_name=config_name), model, vocabs
 
 
@@ -129,7 +134,17 @@ def run_config_cv(config_name, run_fn, silver, sentences, folds, hp, train_cfg, 
     log_path = out_dir / 'run.log'
     with open(log_path, 'a', encoding='utf-8') as logf:
         logf.write(f'\n=== CV-silver config={config_name} k={args.k} strategy={args.strategy} '
-                   f'seed={args.seed} started={time.strftime("%Y-%m-%d %H:%M:%S")} ===\n')
+                   f'seed={args.seed} train_seed={args.train_seed or args.seed} '
+                   f'started={time.strftime("%Y-%m-%d %H:%M:%S")} ===\n')
+
+    # training seed decoupled from fold seed (revision task B: seed replication
+    # must retrain the SAME folds from a different initialization)
+    train_seed = args.train_seed if args.train_seed is not None else args.seed
+    write_run_meta(out_dir, device=device, driver='run_cv_silver.py',
+                   k=args.k, strategy=args.strategy, seed=args.seed,
+                   train_seed=train_seed, config=config_name,
+                   pretrain_epochs=args.pretrain_epochs,
+                   corpus_sentences=len(sentences))
 
     for fold in folds:
         fold_pred_path = out_dir / f'fold_{fold.index}.conllu'
@@ -145,12 +160,15 @@ def run_config_cv(config_name, run_fn, silver, sentences, folds, hp, train_cfg, 
         print(f'  [{config_name}] fold {fold.index}: train={len(train_s)} dev={len(dev_s)} test={len(test_s)}')
 
         ablation = AblationConfig()  # full model; data is what changes
+        probs_dump = str(out_dir / f'fold_{fold.index}_gramprobs.npz')
         if config_name == KTB_ONLY:
             result, model, vocabs = run_ktb_only_fold(train_s, dev_s, test_s, hp, ablation,
-                                                      args.seed, train_cfg, device)
+                                                      train_seed, train_cfg, device,
+                                                      probs_dump_path=probs_dump)
         else:
             result, model, vocabs = run_fn(config_name, silver, train_s, dev_s, test_s,
-                                           hp, ablation, args.seed, args, device)
+                                           hp, ablation, train_seed, args, device,
+                                           probs_dump_path=probs_dump)
 
         preds = predict(model, test_s, vocabs, batch_size=train_cfg['batch_size'], device=device)
         write_conllu(test_s, preds, fold_pred_path)
@@ -162,6 +180,7 @@ def run_config_cv(config_name, run_fn, silver, sentences, folds, hp, train_cfg, 
         elapsed = time.time() - t0
         entry = {
             'fold': fold.index, 'config': config_name, 'seed': args.seed,
+            'train_seed': train_seed,
             'lemma': result.lemma, 'upos': result.upos, 'grammeme': result.grammeme,
             'official': official, 'best_epoch': result.best_epoch,
             'n_train': len(train_s), 'n_dev': len(dev_s), 'n_test': len(test_s),
@@ -215,6 +234,9 @@ def main() -> None:
     ap.add_argument('--k', type=int, default=10)
     ap.add_argument('--strategy', choices=['stratified', 'grouped'], default='stratified')
     ap.add_argument('--seed', type=int, default=42)
+    ap.add_argument('--train-seed', type=int, default=None,
+                    help='override the TRAINING seed only; folds stay at --seed '
+                         '(seed replication retrains identical folds)')
     ap.add_argument('--out-dir', default='results_cv_silver/stratified')
     ap.add_argument('--max-epochs', type=int, default=None)
     ap.add_argument('--min-word-freq', type=int, default=1)
@@ -260,6 +282,7 @@ def main() -> None:
     silver_unfiltered = read_conllu(args.silver_unfiltered) if args.silver_unfiltered else None
 
     manifest = {'k': args.k, 'strategy': args.strategy, 'seed': args.seed,
+                'train_seed': args.train_seed if args.train_seed is not None else args.seed,
                 'configs': requested, 'corpus_sentences': len(sentences),
                 'silver_filtered_sentences': len(silver_filtered) if silver_filtered else 0,
                 'silver_unfiltered_sentences': len(silver_unfiltered) if silver_unfiltered else 0,

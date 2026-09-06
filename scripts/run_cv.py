@@ -60,6 +60,7 @@ from cagf.folds import make_folds
 from cagf.model import AblationConfig, ModelHParams
 from cagf.official_eval import REPORTED_METRICS, evaluate_conllu
 from cagf.predict_writer import write_conllu
+from cagf.run_meta import write_run_meta
 from cagf.train_loop import predict, train_one_run
 
 # These names and ablation settings mirror scripts/run_ablation.py exactly,
@@ -129,7 +130,17 @@ def run_config_cv(
     log_path = out_dir / 'run.log'
     with open(log_path, 'a', encoding='utf-8') as logf:
         logf.write(f'\n=== CV run config={config_name} k={args.k} strategy={args.strategy} '
-                   f'seed={args.seed} started={time.strftime("%Y-%m-%d %H:%M:%S")} ===\n')
+                   f'seed={args.seed} train_seed={args.train_seed or args.seed} '
+                   f'started={time.strftime("%Y-%m-%d %H:%M:%S")} ===\n')
+
+    # training seed is decoupled from the fold seed so seed-replication runs
+    # (revision task B) can vary initialization without moving the folds
+    train_seed = args.train_seed if args.train_seed is not None else args.seed
+    from cagf.device import pick_device
+    write_run_meta(out_dir, device=args.device or pick_device(),
+                   driver='run_cv.py', k=args.k, strategy=args.strategy,
+                   seed=args.seed, train_seed=train_seed, config=config_name,
+                   max_epochs=args.max_epochs, corpus_sentences=len(sentences))
 
     for fold in folds:
         fold_pred_path = out_dir / f'fold_{fold.index}.conllu'
@@ -159,12 +170,13 @@ def run_config_cv(
         # train + keep model for prediction (return_model=True)
         result, model = train_one_run(
             train_sentences=train_s, dev_sentences=dev_s, test_sentences=test_s,
-            vocabs=vocabs, ablation=ablation, hparams=hp, seed=args.seed,
+            vocabs=vocabs, ablation=ablation, hparams=hp, seed=train_seed,
             max_epochs=args.max_epochs, batch_size=train_cfg['batch_size'],
             learning_rate=train_cfg['learning_rate'], weight_decay=train_cfg['weight_decay'],
             grad_clip_norm=train_cfg['grad_clip_norm'],
             early_stopping_patience=train_cfg['early_stopping_patience'],
-            device=device, verbose=True, return_model=True)
+            device=device, verbose=True, return_model=True,
+            probs_dump_path=str(out_dir / f'fold_{fold.index}_gramprobs.npz'))
 
         # predict on test fold and write CoNLL-U (model already on `device`)
         preds = predict(model, test_s, vocabs, batch_size=train_cfg['batch_size'],
@@ -183,6 +195,7 @@ def run_config_cv(
             'fold': fold.index,
             'config': config_name,
             'seed': args.seed,
+            'train_seed': train_seed,
             'lemma': result.lemma,
             'upos': result.upos,
             'grammeme': result.grammeme,
@@ -267,6 +280,10 @@ def main() -> None:
     ap.add_argument('--strategy', choices=['stratified', 'grouped'], default='stratified')
     ap.add_argument('--seed', type=int, default=42,
                     help='fixes both fold split and model init; variance comes from folds')
+    ap.add_argument('--train-seed', type=int, default=None,
+                    help='override the TRAINING seed only; folds stay at --seed. '
+                         'Seed replication retrains identical folds from '
+                         'different initializations.')
     ap.add_argument('--out-dir', default='results_cv/stratified')
     ap.add_argument('--corpus', nargs='+', default=None,
                     help='CoNLL-U files to use as the full corpus (default: '
@@ -314,6 +331,7 @@ def main() -> None:
     # write manifest
     manifest = {
         'k': args.k, 'strategy': args.strategy, 'seed': args.seed,
+        'train_seed': args.train_seed if args.train_seed is not None else args.seed,
         'configs': configs, 'corpus_sentences': len(sentences),
         'config_file': args.config, 'max_epochs': args.max_epochs,
         'date': time.strftime('%Y-%m-%d %H:%M:%S'),

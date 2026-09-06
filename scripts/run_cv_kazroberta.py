@@ -42,6 +42,7 @@ from cagf.folds import make_folds
 from cagf.hf_train_loop import predict_hf, train_hf_one_run
 from cagf.official_eval import REPORTED_METRICS, evaluate_conllu
 from cagf.predict_writer import write_conllu
+from cagf.run_meta import write_run_meta
 from scripts.run_cv import _concat_conllu, _gold_for_fold
 
 GOLD_ONLY = "gold_only"
@@ -98,7 +99,8 @@ def _save_interface_checkpoint(model, vocabs, result, args, config_name, fold):
 
 
 def _train_silver_encoder_once(silver: List[Sentence], dev_sentences: List[Sentence],
-                               test_sentences: List[Sentence], args, device: str) -> Path:
+                               test_sentences: List[Sentence], args, device: str,
+                               train_seed: int) -> Path:
     """Pretrain the KazRoBERTa encoder on the silver corpus exactly once.
 
     The silver corpus is external to the gold folds, so its vocab is built from
@@ -123,7 +125,7 @@ def _train_silver_encoder_once(silver: List[Sentence], dev_sentences: List[Sente
     train_hf_one_run(
         train_sentences=silver, dev_sentences=dev_sentences,
         test_sentences=test_sentences, vocabs=vocabs,
-        model_name=args.model_name, revision=args.revision, seed=args.seed,
+        model_name=args.model_name, revision=args.revision, seed=train_seed,
         max_epochs=args.silver_epochs, batch_size=args.batch_size,
         learning_rate=args.silver_lr, weight_decay=args.weight_decay,
         grad_clip_norm=args.grad_clip_norm,
@@ -146,7 +148,7 @@ def _train_silver_encoder_once(silver: List[Sentence], dev_sentences: List[Sente
 
 
 def run_gold_only_fold(config_name, train_s, dev_s, test_s, seed, args, device,
-                       freeze_encoder):
+                       freeze_encoder, probs_dump_path=None):
     """Train KazRoBERTa + heads from scratch on fold.train.
 
     CRITICAL: vocab from fold.train ONLY. Test fold never enters the vocab.
@@ -161,12 +163,13 @@ def run_gold_only_fold(config_name, train_s, dev_s, test_s, seed, args, device,
         early_stopping_patience=args.early_stopping_patience,
         use_crf=True, freeze_encoder=freeze_encoder,
         device=device, verbose=True, return_model=True,
-        encoder_cache_dir=args.encoder_cache_dir, config_name=config_name)
+        encoder_cache_dir=args.encoder_cache_dir, config_name=config_name,
+        probs_dump_path=probs_dump_path)
     return result, model, vocabs
 
 
 def run_silver_finetune_fold(config_name, encoder_ckpt, train_s, dev_s, test_s,
-                             seed, args, device):
+                             seed, args, device, probs_dump_path=None):
     """Load silver-pretrained encoder, init heads fresh from fold.train, finetune.
 
     CRITICAL: head vocabularies from fold.train ONLY (silver never enters the
@@ -188,7 +191,8 @@ def run_silver_finetune_fold(config_name, encoder_ckpt, train_s, dev_s, test_s,
         use_crf=True, freeze_encoder=False,
         init_encoder_state=encoder_state,
         device=device, verbose=True, return_model=True,
-        encoder_cache_dir=args.encoder_cache_dir, config_name=config_name)
+        encoder_cache_dir=args.encoder_cache_dir, config_name=config_name,
+        probs_dump_path=probs_dump_path)
     return result, model, vocabs
 
 
@@ -205,10 +209,21 @@ def run_config_cv(config_name, sentences, folds, args, gold_dir, silver,
 
     device = args.device or _pick_device()
 
+    # training seed decoupled from fold seed (revision task B: seed replication
+    # retrains the SAME folds from a different initialization)
+    train_seed = args.train_seed if args.train_seed is not None else args.seed
+    write_run_meta(out_dir, device=device, driver='run_cv_kazroberta.py',
+                   k=args.k, strategy=args.strategy, seed=args.seed,
+                   train_seed=train_seed, config=config_name,
+                   model_name=args.model_name, revision=args.revision,
+                   max_epochs=args.max_epochs, batch_size=args.batch_size,
+                   lr=args.lr, corpus_sentences=len(sentences))
+
     log_path = out_dir / 'run.log'
     with open(log_path, 'a', encoding='utf-8') as logf:
         logf.write(f'\n=== CV-kazroberta config={config_name} k={args.k} '
                    f'strategy={args.strategy} seed={args.seed} '
+                   f'train_seed={train_seed} '
                    f'started={time.strftime("%Y-%m-%d %H:%M:%S")} ===\n')
 
     # Whether this config is the one that should donate the interface checkpoint.
@@ -233,11 +248,13 @@ def run_config_cv(config_name, sentences, folds, args, gold_dir, silver,
         if config_name == SILVER_FINETUNE:
             result, model, vocabs = run_silver_finetune_fold(
                 config_name, encoder_ckpt, train_s, dev_s, test_s,
-                args.seed, args, device)
+                train_seed, args, device,
+                probs_dump_path=str(out_dir / f'fold_{fold.index}_gramprobs.npz'))
         else:
             result, model, vocabs = run_gold_only_fold(
-                config_name, train_s, dev_s, test_s, args.seed, args, device,
-                freeze_encoder=freeze_encoder)
+                config_name, train_s, dev_s, test_s, train_seed, args, device,
+                freeze_encoder=freeze_encoder,
+                probs_dump_path=str(out_dir / f'fold_{fold.index}_gramprobs.npz'))
 
         # Optionally export this fold's trained model + vocab as the web demo's
         # KazRoBERTa checkpoint. Done while the model object is still in scope
@@ -258,6 +275,7 @@ def run_config_cv(config_name, sentences, folds, args, gold_dir, silver,
         elapsed = time.time() - t0
         entry = {
             'fold': fold.index, 'config': config_name, 'seed': args.seed,
+            'train_seed': train_seed,
             'lemma': result.lemma, 'upos': result.upos, 'grammeme': result.grammeme,
             'official': official, 'best_epoch': result.best_epoch,
             'n_train': len(train_s), 'n_dev': len(dev_s), 'n_test': len(test_s),
@@ -280,6 +298,11 @@ def run_config_cv(config_name, sentences, folds, args, gold_dir, silver,
 
 def _jackknife(config_name, folds, sentences, out_dir, gold_dir):
     """Concatenate per-fold predictions and score the whole corpus at once."""
+    n_expected = sum(len(f.test_idx) for f in folds)
+    if n_expected != len(sentences):
+        print(f'  [{config_name}] jack-knife SKIPPED: fold subset covers '
+              f'{n_expected}/{len(sentences)} sentences')
+        return
     pred_parts = [out_dir / f'fold_{f.index}.conllu' for f in folds]
     gold_parts = [gold_dir / f'fold_{f.index}.conllu' for f in folds]
     missing = [p for p in pred_parts if not p.exists()]
@@ -322,6 +345,15 @@ def main() -> None:
     ap.add_argument('--k', type=int, default=10)
     ap.add_argument('--strategy', choices=['stratified', 'grouped'], default='stratified')
     ap.add_argument('--seed', type=int, default=42)
+    ap.add_argument('--train-seed', type=int, default=None,
+                    help='override the TRAINING seed only; folds stay at --seed '
+                         '(seed replication retrains identical folds; also seeds '
+                         'the one-time silver-encoder pretraining)')
+    ap.add_argument('--folds', default=None,
+                    help='comma-separated fold indices to run (default: all). Used '
+                         'for the seed-replication run-to-run floor on a fixed, '
+                         'pre-registered fold subset; the pooled jack-knife is '
+                         'skipped automatically when folds are missing.')
     ap.add_argument('--out-dir', default='results_cv_kazroberta/stratified')
     ap.add_argument('--configs', default='gold_only',
                     help='comma-separated subset of: gold_only, silver_finetune, frozen')
@@ -392,6 +424,10 @@ def main() -> None:
     print(f'Corpus: {len(sentences)} sentences')
 
     folds = make_folds(sentences, k=args.k, seed=args.seed, strategy=args.strategy)
+    if args.folds:
+        wanted = sorted({int(x) for x in args.folds.split(',') if x.strip()})
+        folds = [f for f in folds if f.index in wanted]
+        print(f'Fold subset: {wanted} (pooled jack-knife will be skipped)')
     print(f'Folds: k={args.k} strategy={args.strategy} seed={args.seed}, '
           f'sizes={[len(f.test_idx) for f in folds]}')
 
@@ -414,9 +450,13 @@ def main() -> None:
         first = folds[0]
         dev_s = _split_by_index(sentences, first.dev_idx)
         test_s = _split_by_index(sentences, first.test_idx)
-        encoder_ckpt = _train_silver_encoder_once(silver, dev_s, test_s, args, device)
+        train_seed = args.train_seed if args.train_seed is not None else args.seed
+        encoder_ckpt = _train_silver_encoder_once(silver, dev_s, test_s, args, device,
+                                                  train_seed)
 
     manifest = {'k': args.k, 'strategy': args.strategy, 'seed': args.seed,
+                'train_seed': args.train_seed if args.train_seed is not None else args.seed,
+                'folds': args.folds,
                 'configs': requested, 'model_name': args.model_name,
                 'revision': args.revision, 'corpus_sentences': len(sentences),
                 'silver_sentences': len(silver) if silver else 0,

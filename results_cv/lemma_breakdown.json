@@ -1,0 +1,236 @@
+{
+  "rule_seen": {
+    "cagf_gold": {
+      "n": 9596,
+      "acc": 0.8226
+    },
+    "cagf_silver": {
+      "n": 9596,
+      "acc": 0.9091
+    },
+    "kazroberta_gold": {
+      "n": 9596,
+      "acc": 0.8171
+    },
+    "kazroberta_silver": {
+      "n": 9596,
+      "acc": 0.856
+    }
+  },
+  "rule_unseen": {
+    "cagf_gold": {
+      "n": 940,
+      "acc": 0.0011
+    },
+    "cagf_silver": {
+      "n": 940,
+      "acc": 0.0011
+    },
+    "kazroberta_gold": {
+      "n": 940,
+      "acc": 0.0
+    },
+    "kazroberta_silver": {
+      "n": 940,
+      "acc": 0.0
+    }
+  },
+  "iv": {
+    "cagf_gold": {
+      "n": 6783,
+      "acc": 0.9777
+    },
+    "cagf_silver": {
+      "n": 6783,
+      "acc": 0.9776
+    },
+    "kazroberta_gold": {
+      "n": 6783,
+      "acc": 0.977
+    },
+    "kazroberta_silver": {
+      "n": 6783,
+      "acc": 0.9828
+    }
+  },
+  "oov": {
+    "cagf_gold": {
+      "n": 3753,
+      "acc": 0.3365
+    },
+    "cagf_silver": {
+      "n": 3753,
+      "acc": 0.558
+    },
+    "kazroberta_gold": {
+      "n": 3753,
+      "acc": 0.3235
+    },
+    "kazroberta_silver": {
+      "n": 3753,
+      "acc": 0.4125
+    }
+  },
+  "freq_1": {
+    "cagf_gold": {
+      "n": 1192,
+      "acc": 0.9421
+    },
+    "cagf_silver": {
+      "n": 1192,
+      "acc": 0.9346
+    },
+    "kazroberta_gold": {
+      "n": 1192,
+      "acc": 0.9279
+    },
+    "kazroberta_silver": {
+      "n": 1192,
+      "acc": 0.9555
+    }
+  },
+  "freq_2_5": {
+    "cagf_gold": {
+      "n": 1711,
+      "acc": 0.9614
+    },
+    "cagf_silver": {
+      "n": 1711,
+      "acc": 0.9661
+    },
+    "kazroberta_gold": {
+      "n": 1711,
+      "acc": 0.9673
+    },
+    "kazroberta_silver": {
+      "n": 1711,
+      "acc": 0.9708
+    }
+  },
+  "freq_6plus": {
+    "cagf_gold": {
+      "n": 3880,
+      "acc": 0.9959
+    },
+    "cagf_silver": {
+      "n": 3880,
+      "acc": 0.9959
+    },
+    "kazroberta_gold": {
+      "n": 3880,
+      "acc": 0.9964
+    },
+    "kazroberta_silver": {
+      "n": 3880,
+      "acc": 0.9964
+    }
+  },
+  "freq_unseen": {
+    "cagf_gold": {
+      "n": 3753,
+      "acc": 0.3365
+    },
+    "cagf_silver": {
+      "n": 3753,
+      "acc": 0.558
+    },
+    "kazroberta_gold": {
+      "n": 3753,
+      "acc": 0.3235
+    },
+    "kazroberta_silver": {
+      "n": 3753,
+      "acc": 0.4125
+    }
+  },
+  "len_1_5": {
+    "cagf_gold": {
+      "n": 5983,
+      "acc": 0.9268
+    },
+    "cagf_silver": {
+      "n": 5983,
+      "acc": 0.9542
+    },
+    "kazroberta_gold": {
+      "n": 5983,
+      "acc": 0.9191
+    },
+    "kazroberta_silver": {
+      "n": 5983,
+      "acc": 0.9425
+    }
+  },
+  "len_6_8": {
+    "cagf_gold": {
+      "n": 3034,
+      "acc": 0.5959
+    },
+    "cagf_silver": {
+      "n": 3034,
+      "acc": 0.763
+    },
+    "kazroberta_gold": {
+      "n": 3034,
+      "acc": 0.5959
+    },
+    "kazroberta_silver": {
+      "n": 3034,
+      "acc": 0.6635
+    }
+  },
+  "len_9_11": {
+    "cagf_gold": {
+      "n": 1204,
+      "acc": 0.3846
+    },
+    "cagf_silver": {
+      "n": 1204,
+      "acc": 0.5091
+    },
+    "kazroberta_gold": {
+      "n": 1204,
+      "acc": 0.3812
+    },
+    "kazroberta_silver": {
+      "n": 1204,
+      "acc": 0.402
+    }
+  },
+  "len_12plus": {
+    "cagf_gold": {
+      "n": 315,
+      "acc": 0.2508
+    },
+    "cagf_silver": {
+      "n": 315,
+      "acc": 0.2794
+    },
+    "kazroberta_gold": {
+      "n": 315,
+      "acc": 0.2381
+    },
+    "kazroberta_silver": {
+      "n": 315,
+      "acc": 0.2476
+    }
+  },
+  "all": {
+    "cagf_gold": {
+      "n": 10536,
+      "acc": 0.7493
+    },
+    "cagf_silver": {
+      "n": 10536,
+      "acc": 0.8281
+    },
+    "kazroberta_gold": {
+      "n": 10536,
+      "acc": 0.7442
+    },
+    "kazroberta_silver": {
+      "n": 10536,
+      "acc": 0.7796
+    }
+  }
+}

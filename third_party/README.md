@@ -25,3 +25,24 @@ extracts the four F1 metrics.
 **How to update:** re-download from the URL above, replace this file, and
 re-run `tests/test_official_eval.py` — the gold-vs-gold test must still return
 exactly 100.0 on every metric.
+
+## UD treebank snapshots (`UD_Kazakh-KTB/`, `UD_Kyrgyz-KTMU/`, `UD_Turkish-IMST/`)
+
+**Source:** official Universal Dependencies GitHub repositories
+(`github.com/UniversalDependencies/<name>`), snapshotted with their nested
+`.git/` directories removed. Each directory retains the upstream `LICENSE.txt`,
+`README.md`, and `stats.xml`.
+
+**License:** Creative Commons Attribution-ShareAlike 4.0 International — the
+standard Universal Dependencies data license. It applies to the data files
+only, not to this repository's code.
+
+**Why they are here:** frozen inputs of the cross-lingual transfer
+experiments (`results_transfer/`). Kazakh-KTB is the gold treebank whose
+train/test splits feed `data/gold_merged/` via `scripts/merge_gold_corpus.py`;
+the Kyrgyz-KTMU and Turkish-IMST treebanks are the related-language sources for
+the transfer ablations. The committed snapshots are the exact versions used
+for the published numbers.
+
+**How to update:** re-clone the treebank from UD GitHub, remove its nested
+`.git/` directory, and re-run the affected drivers.

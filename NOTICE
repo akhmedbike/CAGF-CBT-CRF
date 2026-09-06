@@ -47,11 +47,17 @@ Copyright: (c) National Laboratory Astana, Nazarbayev University.
 License:   CC-BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
 
 
-4. Universal Dependencies — Kazakh-KTB treebank
-----------------------------------------------
+4. Universal Dependencies treebanks — CC BY-SA 4.0
+--------------------------------------------------
 The gold annotations in `data/gold/` and `data/gold_merged/` are derived from
-the Universal Dependencies Kazakh-KTB treebank.
+the Universal Dependencies Kazakh-KTB treebank. In addition, frozen snapshots
+of three UD treebanks are vendored under `third_party/` as experiment inputs:
+UD_Kazakh-KTB, UD_Kyrgyz-KTMU, and UD_Turkish-IMST. Each snapshot retains its
+upstream LICENSE.txt and README.
 
 Source:     https://universaldependencies.org/treebanks/kk_ktb/
+            https://universaldependencies.org/treebanks/ky_ktmu/
+            https://universaldependencies.org/treebanks/tr_imst/
 License:    Universal Dependencies data license
-            (Creative Commons Attribution-ShareAlike 4.0 International).
+            (Creative Commons Attribution-ShareAlike 4.0 International),
+            applying to the data files, not to this repository's code.

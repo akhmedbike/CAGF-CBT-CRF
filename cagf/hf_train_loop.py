@@ -162,6 +162,26 @@ def predict_hf(model: HFMorphModel, sentences: list[Sentence], vocabs: CorpusVoc
     return per_sentence
 
 
+@torch.no_grad()
+def _collect_gram_probs_hf(model: HFMorphModel, loader, device: str):
+    """Sigmoid grammeme-head probabilities + gold multi-hot targets for every
+    unmasked token, in loader order (shuffle=False keeps corpus order). HF
+    counterpart of cagf.train_loop._collect_gram_probs."""
+    import numpy as np
+    model.eval()
+    probs, gold = [], []
+    for batch in loader:
+        mask = batch['mask'].to(device)
+        gram_targets = batch['grammeme_targets'].to(device)
+        out = model(batch['word_strings'], mask, upos_ids=None)
+        p = torch.sigmoid(out['grammeme_logits'])
+        m = mask.bool()
+        probs.append(p[m].cpu().numpy().astype('float16'))
+        gold.append(gram_targets[m].cpu().numpy().astype('uint8'))
+    return (np.concatenate(probs, axis=0) if probs else np.zeros((0, 0), dtype='float16'),
+            np.concatenate(gold, axis=0) if gold else np.zeros((0, 0), dtype='uint8'))
+
+
 def train_hf_one_run(train_sentences: list[Sentence], dev_sentences: list[Sentence],
                      test_sentences: list[Sentence], vocabs: CorpusVocabs,
                      model_name: str, revision: str, seed: int = 42,
@@ -173,7 +193,8 @@ def train_hf_one_run(train_sentences: list[Sentence], dev_sentences: list[Senten
                      verbose: bool = True, return_model: bool = False,
                      save_checkpoint_path: Optional[str] = None,
                      encoder_cache_dir: Optional[str] = None,
-                     config_name: Optional[str] = None) -> RunResult | tuple:
+                     config_name: Optional[str] = None,
+                     probs_dump_path: Optional[str] = None) -> RunResult | tuple:
     """Train :class:`HFMorphModel` and evaluate on the test split.
 
     Mirrors :func:`cagf.train_loop.train_one_run`'s contract: same optimizer
@@ -306,6 +327,20 @@ def train_hf_one_run(train_sentences: list[Sentence], dev_sentences: list[Senten
     if best_state is not None:
         model.load_state_dict(best_state)
     test_metrics = evaluate_hf(model, test_loader, device)
+    if probs_dump_path is not None:
+        import numpy as np
+        probs_dev, gold_dev = _collect_gram_probs_hf(model, dev_loader, device)
+        probs_test, gold_test = _collect_gram_probs_hf(model, test_loader, device)
+        Path(probs_dump_path).parent.mkdir(parents=True, exist_ok=True)
+        np.savez_compressed(
+            probs_dump_path,
+            probs_dev=probs_dev, gold_dev=gold_dev,
+            probs_test=probs_test, gold_test=gold_test,
+            grammemes=np.array(vocabs.grammeme_vocab.itos, dtype=object),
+            seed=seed, best_epoch=best_epoch,
+            config=config_name or model_name)
+        if verbose:
+            print(f'  Dumped grammeme probabilities to {probs_dump_path}')
     if save_checkpoint_path is not None:
         Path(save_checkpoint_path).parent.mkdir(parents=True, exist_ok=True)
         torch.save({

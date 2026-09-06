@@ -112,6 +112,32 @@ def test_grouped_no_source_split_across_folds():
                 f'source appears in folds {a} and {b}: leakage-by-duplication risk'
 
 
+def test_grouped_dominant_source_stays_atomic():
+    """Regression: a source larger than the target fold size must NOT be split.
+
+    Mirrors UD_Kazakh-KTB shape at k=5: one dominant source (~30% of the
+    corpus, larger than the 1078/5 target) plus smaller ones. The old block-
+    splitting branch fired here and divided the dominant source across two
+    folds, tripping the grouped invariant in make_folds.
+    """
+    sources = (['dominant'] * 318) + (['second'] * 288) + (['c'] * 141) + \
+              (['d'] * 74) + (['e'] * 49) + (['f'] * 38) + (['g'] * 33) + \
+              (['h'] * 26) + (['i'] * 11)
+    sents = _make_sentences(len(sources), sources)
+    # 318 > 1078/5 = 215.6: grouped packing must keep 'dominant' in one fold.
+    folds = make_folds(sents, k=5, seed=42, strategy='grouped')
+    fold_sources = [set(source_of(sent_id_of(sents[i])) for i in f.test_idx) for f in folds]
+    for a in range(len(fold_sources)):
+        for b in range(a + 1, len(fold_sources)):
+            assert not (fold_sources[a] & fold_sources[b]), \
+                f'source {fold_sources[a] & fold_sources[b]} split across folds {a} and {b}'
+    # the dominant source lands whole in exactly one fold's test set
+    hosting = [i for i, srcs in enumerate(fold_sources) if 'dominant.tagged.txt' in srcs]
+    assert len(hosting) == 1, f'dominant source spread over folds {hosting}'
+    dom_fold = folds[hosting[0]]
+    assert len(dom_fold.test_idx) == 318
+
+
 # ---------------------------------------------------------------------------
 # stratified-specific: source distribution tracks the corpus
 # ---------------------------------------------------------------------------

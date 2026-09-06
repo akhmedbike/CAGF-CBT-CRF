@@ -1,0 +1,133 @@
+{
+  "universal_feature_attributes": [
+    "Abbr",
+    "Animacy",
+    "Aspect",
+    "Case",
+    "Definite",
+    "Degree",
+    "Evident",
+    "Foreign",
+    "Gender",
+    "Mood",
+    "NumType",
+    "Number",
+    "Person",
+    "Polarity",
+    "Polite",
+    "Poss",
+    "PronType",
+    "Reflex",
+    "Tense",
+    "VerbForm",
+    "Voice"
+  ],
+  "cagf_gold": {
+    "universal": {
+      "UFeats": 0.6368640850417616,
+      "AllTags": 0.5818147304479878
+    },
+    "full_inventory": {
+      "UFeats": 0.6227220956719818,
+      "AllTags": 0.5694760820045558
+    },
+    "language_specific_only": {
+      "UFeats": 0.8199506454062263,
+      "AllTags": 0.7252277904328018
+    },
+    "langspec_tokens_with_gold_psor": {
+      "n_tokens": 1329,
+      "bundle_exact_acc": 0.7239,
+      "pair_precision": 0.9814,
+      "pair_recall": 0.7359,
+      "pair_f1": 0.8411
+    }
+  },
+  "cagf_silver": {
+    "universal": {
+      "UFeats": 0.6884965831435079,
+      "AllTags": 0.6428435839028094
+    },
+    "full_inventory": {
+      "UFeats": 0.6643887623386484,
+      "AllTags": 0.6212984054669703
+    },
+    "language_specific_only": {
+      "UFeats": 0.8562072892938497,
+      "AllTags": 0.7818906605922551
+    },
+    "langspec_tokens_with_gold_psor": {
+      "n_tokens": 1329,
+      "bundle_exact_acc": 0.7163,
+      "pair_precision": 0.9846,
+      "pair_recall": 0.7919,
+      "pair_f1": 0.8778
+    }
+  },
+  "kazroberta_gold": {
+    "universal": {
+      "UFeats": 0.7770501138952164,
+      "AllTags": 0.7462034927866363
+    },
+    "full_inventory": {
+      "UFeats": 0.7709757023538345,
+      "AllTags": 0.7405087319665907
+    },
+    "language_specific_only": {
+      "UFeats": 0.9093583902809416,
+      "AllTags": 0.8648443432042521
+    },
+    "langspec_tokens_with_gold_psor": {
+      "n_tokens": 1329,
+      "bundle_exact_acc": 0.8533,
+      "pair_precision": 0.9848,
+      "pair_recall": 0.877,
+      "pair_f1": 0.9278
+    }
+  },
+  "kazroberta_silver": {
+    "universal": {
+      "UFeats": 0.820615034168565,
+      "AllTags": 0.7866362946089598
+    },
+    "full_inventory": {
+      "UFeats": 0.814445709946849,
+      "AllTags": 0.7810364464692483
+    },
+    "language_specific_only": {
+      "UFeats": 0.933371298405467,
+      "AllTags": 0.883162490508732
+    },
+    "langspec_tokens_with_gold_psor": {
+      "n_tokens": 1329,
+      "bundle_exact_acc": 0.9014,
+      "pair_precision": 0.9911,
+      "pair_recall": 0.9172,
+      "pair_f1": 0.9527
+    }
+  },
+  "gold_inventory": {
+    "universal_attrs": {
+      "Case": 4467,
+      "Number": 1719,
+      "Person": 1295,
+      "Polite": 67,
+      "PronType": 746,
+      "Aspect": 840,
+      "VerbForm": 2003,
+      "Reflex": 44,
+      "Tense": 1184,
+      "Mood": 1069,
+      "NumType": 374,
+      "Voice": 266,
+      "Gender": 193,
+      "Polarity": 131,
+      "Evident": 35,
+      "Degree": 6
+    },
+    "language_specific_attrs": {
+      "Number[psor]": 1329,
+      "Person[psor]": 1329
+    }
+  }
+}

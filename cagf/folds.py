@@ -118,7 +118,7 @@ def make_folds(
     assert sorted(idx for b in blocks for idx in b) == list(range(n)), \
         'blocks do not partition the sentence index range'
 
-    fold_blocks = _assign_blocks_to_folds(blocks, k)
+    fold_blocks = _assign_blocks_to_folds(blocks, k, allow_split=(strategy != 'grouped'))
 
     folds: List[Fold] = []
     for i in range(k):
@@ -135,7 +135,8 @@ def make_folds(
     return folds
 
 
-def _assign_blocks_to_folds(blocks: List[List[int]], k: int) -> List[List[int]]:
+def _assign_blocks_to_folds(blocks: List[List[int]], k: int,
+                            allow_split: bool = True) -> List[List[int]]:
     """Distribute blocks across k fold-buckets as evenly as possible.
 
     Strategy: sort blocks largest-first, then assign each block to the
@@ -143,11 +144,12 @@ def _assign_blocks_to_folds(blocks: List[List[int]], k: int) -> List[List[int]]:
     This minimises the maximum fold size, which in turn keeps dev/test
     balanced so early-stopping signals are comparable across folds.
 
-    Each individual block is split if it is larger than the target average
-    fold size AND there is no other way to fill an empty bucket -- this only
-    triggers for stratified mode where blocks are already small, and never
-    for grouped mode where blocks are atomic (a source document is never
-    split across folds).
+    Each individual block is split only when ``allow_split`` is true AND it is
+    larger than the target average fold size AND there is no other way to fill
+    an empty bucket. In grouped mode ``allow_split`` is false: blocks are whole
+    source documents and must stay atomic even when a dominant source exceeds
+    the target fold size (e.g. akorda-random at k=5), otherwise the grouped
+    invariant -- no source split across folds -- is silently violated.
     """
     buckets: List[List[int]] = [[] for _ in range(k)]
     total = sum(len(b) for b in blocks)
@@ -157,9 +159,9 @@ def _assign_blocks_to_folds(blocks: List[List[int]], k: int) -> List[List[int]]:
         target_idx = min(range(k), key=lambda i: len(buckets[i]))
         # If placing this block whole would overshoot target by more than the
         # block size itself, and the target bucket is empty, split the block
-        # to fill the empty bucket. (For grouped mode the caller has already
-        # guaranteed blocks are small enough that this branch never fires.)
-        if (not buckets[target_idx]) and len(block) > target and len(block) >= 2:
+        # to fill the empty bucket. Grouped mode never takes this branch.
+        if (allow_split and not buckets[target_idx]
+                and len(block) > target and len(block) >= 2):
             # split: keep enough in the empty bucket to roughly hit target,
             # the remainder goes to the next-smallest bucket.
             keep = max(1, int(round(target)) - len(buckets[target_idx]))

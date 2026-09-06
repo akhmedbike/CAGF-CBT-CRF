@@ -19,6 +19,10 @@ def set_seed(seed: int) -> None:
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
+    # warn_only: MPS/CUDA lack deterministic kernels for some ops, so we ask
+    # for determinism where available instead of crashing; the empirical
+    # run-to-run floor (results_cv/noise_floor.json) quantifies the residual.
+    torch.use_deterministic_algorithms(True, warn_only=True)
 
 @dataclass
 class RunResult:
@@ -34,6 +38,27 @@ def make_loader(sentences: list[Sentence], vocabs: CorpusVocabs, batch_size: int
     ds = MorphDataset(sentences, vocabs)
     collate = partial(collate_batch, pad_word_id=vocabs.word_vocab.stoi[PAD], pad_char_id=vocabs.char_vocab.stoi[PAD])
     return DataLoader(ds, batch_size=batch_size, shuffle=shuffle, collate_fn=collate)
+
+@torch.no_grad()
+def _collect_gram_probs(model: CAGFCBTCRF, loader: DataLoader, device: str):
+    """Sigmoid probabilities of the grammeme head plus gold multi-hot targets
+    for every unmasked token, flattened in loader order (callers pass
+    shuffle=False loaders, so this is corpus order). Feeds the sigmoid-threshold
+    sensitivity analysis (reviewer 2, comment 1)."""
+    model.eval()
+    probs, gold = [], []
+    for batch in loader:
+        mask = batch['mask'].to(device)
+        gram_targets = batch['grammeme_targets'].to(device)
+        out = model(batch['word_ids'].to(device), batch['char_ids'].to(device),
+                    batch['lengths'].to(device), mask, upos_ids=None)
+        p = torch.sigmoid(out['grammeme_logits'])
+        m = mask.bool()
+        probs.append(p[m].cpu().numpy().astype('float16'))
+        gold.append(gram_targets[m].cpu().numpy().astype('uint8'))
+    return (np.concatenate(probs, axis=0) if probs else np.zeros((0, 0), dtype='float16'),
+            np.concatenate(gold, axis=0) if gold else np.zeros((0, 0), dtype='uint8'))
+
 
 @torch.no_grad()
 def evaluate(model: CAGFCBTCRF, loader: DataLoader, device: str) -> dict:
@@ -149,14 +174,20 @@ def predict(model: CAGFCBTCRF, sentences: list[Sentence], vocabs: CorpusVocabs,
             per_sentence.append({'lemma': lemmas, 'upos': uposes, 'feats': feats_list})
     return per_sentence
 
-def train_one_run(train_sentences: list[Sentence], dev_sentences: list[Sentence], test_sentences: list[Sentence], vocabs: CorpusVocabs, ablation: AblationConfig, hparams: ModelHParams, seed: int, max_epochs: int, batch_size: int, learning_rate: float, weight_decay: float, grad_clip_norm: float, early_stopping_patience: int, device: Optional[str]=None, verbose: bool=True, save_checkpoint_path: Optional[str]=None, init_state: Optional[dict]=None, return_model: bool=False):
+def train_one_run(train_sentences: list[Sentence], dev_sentences: list[Sentence], test_sentences: list[Sentence], vocabs: CorpusVocabs, ablation: AblationConfig, hparams: ModelHParams, seed: int, max_epochs: int, batch_size: int, learning_rate: float, weight_decay: float, grad_clip_norm: float, early_stopping_patience: int, device: Optional[str]=None, verbose: bool=True, save_checkpoint_path: Optional[str]=None, init_state: Optional[dict]=None, return_model: bool=False, probs_dump_path: Optional[str]=None):
     """Train one model and evaluate on test.
 
-    When ``return_model=True`` the trained model (with best-state loaded) is
-    returned alongside the RunResult, so callers that need further inference
-    -- e.g. cross-validation fold prediction via :func:`predict` -- can do so
-    without re-loading from a checkpoint. Default ``False`` keeps every
-    existing call site unchanged.
+        When ``return_model=True`` the trained model (with best-state loaded) is
+        returned alongside the RunResult, so callers that need further inference
+        -- e.g. cross-validation fold prediction via :func:`predict` -- can do so
+        without re-loading from a checkpoint. Default ``False`` keeps every
+        existing call site unchanged.
+
+        When ``probs_dump_path`` is set, sigmoid probabilities of the grammeme
+        head and the gold multi-hot targets are dumped for dev and test to a
+        compressed .npz (keys: probs_dev/gold_dev/probs_test/gold_test,
+        grammemes, seed, best_epoch, config). Dev rows feed threshold tuning,
+        test rows the frozen-threshold evaluation (reviewer 2, comment 1).
     """
     device = device or pick_device()
     set_seed(seed)
@@ -227,6 +258,18 @@ def train_one_run(train_sentences: list[Sentence], dev_sentences: list[Sentence]
     if best_state is not None:
         model.load_state_dict(best_state)
     test_metrics = evaluate(model, test_loader, device)
+    if probs_dump_path is not None:
+        probs_dev, gold_dev = _collect_gram_probs(model, dev_loader, device)
+        probs_test, gold_test = _collect_gram_probs(model, test_loader, device)
+        Path(probs_dump_path).parent.mkdir(parents=True, exist_ok=True)
+        np.savez_compressed(
+            probs_dump_path,
+            probs_dev=probs_dev, gold_dev=gold_dev,
+            probs_test=probs_test, gold_test=gold_test,
+            grammemes=np.array(vocabs.grammeme_vocab.itos, dtype=object),
+            seed=seed, best_epoch=best_epoch, config=ablation.name())
+        if verbose:
+            print(f'  Dumped grammeme probabilities to {probs_dump_path}')
     if save_checkpoint_path is not None:
         import dataclasses
         Path(save_checkpoint_path).parent.mkdir(parents=True, exist_ok=True)

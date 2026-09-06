@@ -1,0 +1,130 @@
+{
+  "cagf_gold": {
+    "folds_used": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "n_sentences": 970,
+    "official_excl_fold1": {
+      "Lemmas": 0.7501829969674788,
+      "UPOS": 0.8326884868765032,
+      "UFeats": 0.6397573983059709,
+      "AllTags": 0.5848583080623235
+    },
+    "official_full_pooled": {
+      "Lemmas": 0.7493356112376613,
+      "UPOS": 0.829916476841306,
+      "UFeats": 0.6368640850417616,
+      "AllTags": 0.5818147304479878
+    },
+    "delta_pp_full_minus_excl": {
+      "Lemmas": -0.085,
+      "UPOS": -0.277,
+      "UFeats": -0.289,
+      "AllTags": -0.304
+    }
+  },
+  "cagf_silver": {
+    "folds_used": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "n_sentences": 970,
+    "official_excl_fold1": {
+      "Lemmas": 0.8293422566140333,
+      "UPOS": 0.8797448499424867,
+      "UFeats": 0.6886960158945937,
+      "AllTags": 0.6432081982641431
+    },
+    "official_full_pooled": {
+      "Lemmas": 0.8281131359149583,
+      "UPOS": 0.8783219438116933,
+      "UFeats": 0.6884965831435079,
+      "AllTags": 0.6428435839028094
+    },
+    "delta_pp_full_minus_excl": {
+      "Lemmas": -0.123,
+      "UPOS": -0.142,
+      "UFeats": -0.02,
+      "AllTags": -0.036
+    }
+  },
+  "kazroberta_gold": {
+    "folds_used": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "n_sentences": 970,
+    "official_excl_fold1": {
+      "Lemmas": 0.7450590818780717,
+      "UPOS": 0.9305657220537489,
+      "UFeats": 0.7783122451113668,
+      "AllTags": 0.7480916030534351
+    },
+    "official_full_pooled": {
+      "Lemmas": 0.7442103264996204,
+      "UPOS": 0.9298595292331056,
+      "UFeats": 0.7770501138952164,
+      "AllTags": 0.7462034927866363
+    },
+    "delta_pp_full_minus_excl": {
+      "Lemmas": -0.085,
+      "UPOS": -0.071,
+      "UFeats": -0.126,
+      "AllTags": -0.189
+    }
+  },
+  "kazroberta_silver": {
+    "folds_used": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "n_sentences": 970,
+    "official_excl_fold1": {
+      "Lemmas": 0.7824950329394541,
+      "UPOS": 0.9230367039631915,
+      "UFeats": 0.8226497960890934,
+      "AllTags": 0.7890829237686918
+    },
+    "official_full_pooled": {
+      "Lemmas": 0.7796127562642369,
+      "UPOS": 0.9230258162490509,
+      "UFeats": 0.820615034168565,
+      "AllTags": 0.7866362946089598
+    },
+    "delta_pp_full_minus_excl": {
+      "Lemmas": -0.288,
+      "UPOS": -0.001,
+      "UFeats": -0.203,
+      "AllTags": -0.245
+    }
+  }
+}
