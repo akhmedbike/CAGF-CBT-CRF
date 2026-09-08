@@ -1,0 +1,16 @@
+{
+  "started": "2026-09-07 08:15:39",
+  "python": "3.14.4",
+  "torch": "2.13.0",
+  "git_commit": "d815b1bb775dedb0e0b40d9a5ce25eeaa8e4b4b7",
+  "git_dirty": true,
+  "device": "mps",
+  "driver": "run_cv_silver.py",
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "train_seed": 13,
+  "config": "ktb_only",
+  "pretrain_epochs": 30,
+  "corpus_sentences": 1078
+}

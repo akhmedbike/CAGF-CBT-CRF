@@ -1,0 +1,20 @@
+{
+  "started": "2026-09-08 12:15:02",
+  "python": "3.14.4",
+  "torch": "2.13.0",
+  "git_commit": "d815b1bb775dedb0e0b40d9a5ce25eeaa8e4b4b7",
+  "git_dirty": true,
+  "device": "mps",
+  "driver": "run_cv_kazroberta.py",
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "train_seed": 2024,
+  "config": "gold_only",
+  "model_name": "kz-transformers/kaz-roberta-conversational",
+  "revision": "43077c2fd0a163487ed468b5ec3b8750686a5888",
+  "max_epochs": 80,
+  "batch_size": 16,
+  "lr": 5e-05,
+  "corpus_sentences": 1078
+}

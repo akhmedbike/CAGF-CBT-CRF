@@ -1,0 +1,18 @@
+{
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "train_seed": 2024,
+  "folds": "0,3,7",
+  "configs": [
+    "silver_finetune"
+  ],
+  "model_name": "kz-transformers/kaz-roberta-conversational",
+  "revision": "43077c2fd0a163487ed468b5ec3b8750686a5888",
+  "corpus_sentences": 1078,
+  "silver_sentences": 16000,
+  "max_epochs": 80,
+  "batch_size": 16,
+  "lr": 5e-05,
+  "date": "2026-09-08 15:34:04"
+}

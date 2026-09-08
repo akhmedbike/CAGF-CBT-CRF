@@ -1,0 +1,14 @@
+{
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "train_seed": 13,
+  "configs": [
+    "ktb_only",
+    "silver_unfiltered_pretrain_ktb_finetune"
+  ],
+  "corpus_sentences": 1078,
+  "silver_filtered_sentences": 16000,
+  "silver_unfiltered_sentences": 16000,
+  "date": "2026-09-07 08:15:39"
+}
