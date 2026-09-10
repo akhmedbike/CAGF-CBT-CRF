@@ -1,0 +1,20 @@
+{
+  "started": "2026-09-09 00:48:06",
+  "python": "3.14.4",
+  "torch": "2.13.0",
+  "git_commit": "e7d95f3f5ed9cde10ffa4ef0ab1bf24919ec204b",
+  "git_dirty": true,
+  "device": "mps",
+  "driver": "run_cv_kazroberta.py",
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "train_seed": 42,
+  "config": "gold_only",
+  "model_name": "FacebookAI/xlm-roberta-base",
+  "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+  "max_epochs": 80,
+  "batch_size": 16,
+  "lr": 5e-05,
+  "corpus_sentences": 1078
+}

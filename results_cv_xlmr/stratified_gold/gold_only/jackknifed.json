@@ -1,0 +1,25 @@
+{
+  "config": "gold_only",
+  "n_folds": 10,
+  "n_sentences": 1078,
+  "official_jackknifed": {
+    "Lemmas": 0.7617691723614275,
+    "UPOS": 0.9339407744874715,
+    "UFeats": 0.7908124525436598,
+    "AllTags": 0.7649012908124525
+  },
+  "our_metrics_mean_over_folds": {
+    "lemma_accuracy_mean": 0.7093442700861432,
+    "lemma_accuracy_std": 0.00788483951919342,
+    "lemma_f1_mean": 0.35838403359778437,
+    "lemma_f1_std": 0.020530083528456793,
+    "upos_accuracy_mean": 0.9339711185984462,
+    "upos_accuracy_std": 0.011046108268889533,
+    "upos_f1_mean": 0.8295777774474481,
+    "upos_f1_std": 0.04895589998081732,
+    "grammeme_accuracy_mean": 0.7815654241832704,
+    "grammeme_accuracy_std": 0.03182392114627778,
+    "grammeme_f1_mean": 0.5687255255914799,
+    "grammeme_f1_std": 0.06848893730841221
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "train_seed": 42,
+  "folds": null,
+  "configs": [
+    "silver_finetune"
+  ],
+  "model_name": "FacebookAI/xlm-roberta-base",
+  "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+  "corpus_sentences": 1078,
+  "silver_sentences": 16000,
+  "max_epochs": 80,
+  "batch_size": 16,
+  "lr": 5e-05,
+  "date": "2026-09-09 21:57:56"
+}
