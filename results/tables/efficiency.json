@@ -1,99 +1,228 @@
 {
   "protocol": {
-    "hardware": "arm64 / macOS-15.7.7-arm64-arm-64bit-Mach-O",
+    "hardware": "arm64 / macOS-15.7.9-arm64-arm-64bit-Mach-O",
     "device": "mps",
+    "power_source_at_measurement": "battery",
     "framework": "torch 2.13.0",
     "precision": "fp32",
     "sequence_length": 32,
     "warmup_iterations": 20,
-    "measured_iterations": 100,
-    "param_count_method": "torch.numel (trainable only)"
+    "measured_iterations": {
+      "accelerator": 100,
+      "cpu": 20
+    },
+    "param_count_method": "torch.numel (trainable only)",
+    "checkpoint_size_method": "torch.save(state_dict) to temp file",
+    "memory_method": "MPS allocator size after forward / after backward of train steps at the CV protocol batch size 16 (sustained footprint, not strict peak)",
+    "constrained_hardware": "not available; stated honestly per R3.11"
   },
   "configs": {
     "full_model": {
       "trainable_params": 2506405,
+      "checkpoint_mb": 10.569265,
       "batch_1": {
         "n_tokens": 32,
         "iters": 100,
-        "latency_ms_per_token_median": 0.5506119687765931,
-        "latency_ms_per_token_iqr": 0.0728476562699143,
-        "latency_ms_per_batch_median": 17.61958300085098
+        "latency_ms_per_token_median": 0.5532623754334054,
+        "latency_ms_per_token_iqr": 0.20610546744137537,
+        "latency_ms_per_batch_median": 17.704396013868973
       },
       "batch_32": {
         "n_tokens": 1024,
         "iters": 100,
-        "latency_ms_per_token_median": 0.1774142861332706,
-        "latency_ms_per_token_iqr": 0.012625813475608538,
-        "latency_ms_per_batch_median": 181.6722290004691
+        "latency_ms_per_token_median": 0.14535752393385337,
+        "latency_ms_per_token_iqr": 0.010227091820524947,
+        "latency_ms_per_batch_median": 148.84610450826585
+      },
+      "train_step_memory": {
+        "allocator_gb_after_forward": 0.061475328,
+        "allocator_gb_after_backward": 0.024457216,
+        "batch_size": 16,
+        "steps": 3
+      },
+      "cpu_batch_1": {
+        "n_tokens": 32,
+        "iters": 20,
+        "latency_ms_per_token_median": 0.1801927046471974,
+        "latency_ms_per_token_iqr": 0.013660155673278496,
+        "latency_ms_per_batch_median": 5.766166548710316
       }
     },
     "wo_character_encoder": {
       "trainable_params": 2435045,
+      "checkpoint_mb": 10.28145,
       "batch_1": {
         "n_tokens": 32,
         "iters": 100,
-        "latency_ms_per_token_median": 0.5295455781038072,
-        "latency_ms_per_token_iqr": 0.07143100003759173,
-        "latency_ms_per_batch_median": 16.94545849932183
+        "latency_ms_per_token_median": 0.5060540315753315,
+        "latency_ms_per_token_iqr": 0.0361926868208684,
+        "latency_ms_per_batch_median": 16.193729010410607
       },
       "batch_32": {
         "n_tokens": 1024,
         "iters": 100,
-        "latency_ms_per_token_median": 0.17416446923768092,
-        "latency_ms_per_token_iqr": 0.016823974608115577,
-        "latency_ms_per_batch_median": 178.34441649938526
+        "latency_ms_per_token_median": 0.14429966259399407,
+        "latency_ms_per_token_iqr": 0.005116739259847236,
+        "latency_ms_per_batch_median": 147.76285449624993
       }
     },
     "wo_gated_fusion": {
       "trainable_params": 2375077,
+      "checkpoint_mb": 10.043247,
       "batch_1": {
         "n_tokens": 32,
         "iters": 100,
-        "latency_ms_per_token_median": 0.5339277344091897,
-        "latency_ms_per_token_iqr": 0.04939843756801565,
-        "latency_ms_per_batch_median": 17.08568750109407
+        "latency_ms_per_token_median": 0.5112662811370683,
+        "latency_ms_per_token_iqr": 0.07820181417628191,
+        "latency_ms_per_batch_median": 16.360520996386185
       },
       "batch_32": {
         "n_tokens": 1024,
         "iters": 100,
-        "latency_ms_per_token_median": 0.1790600180680002,
-        "latency_ms_per_token_iqr": 0.01680948828308715,
-        "latency_ms_per_batch_median": 183.3574585016322
+        "latency_ms_per_token_median": 0.14719352196834734,
+        "latency_ms_per_token_iqr": 0.018805216882356035,
+        "latency_ms_per_batch_median": 150.72616649558768
       }
     },
     "wo_crf": {
       "trainable_params": 2506006,
+      "checkpoint_mb": 10.56683,
       "batch_1": {
         "n_tokens": 32,
         "iters": 100,
-        "latency_ms_per_token_median": 0.3587434843552728,
-        "latency_ms_per_token_iqr": 0.0883567813616537,
-        "latency_ms_per_batch_median": 11.47979149936873
+        "latency_ms_per_token_median": 0.298435546028486,
+        "latency_ms_per_token_iqr": 0.06590493831026834,
+        "latency_ms_per_batch_median": 9.549937472911552
       },
       "batch_32": {
         "n_tokens": 1024,
         "iters": 100,
-        "latency_ms_per_token_median": 0.01639864062497054,
-        "latency_ms_per_token_iqr": 0.002079101559360197,
-        "latency_ms_per_batch_median": 16.792207999969833
+        "latency_ms_per_token_median": 0.014075236350663545,
+        "latency_ms_per_token_iqr": 0.0013335761650523636,
+        "latency_ms_per_batch_median": 14.41304202307947
       }
     },
     "transformer_only": {
       "trainable_params": 1908453,
+      "checkpoint_mb": 8.171872,
       "batch_1": {
         "n_tokens": 32,
         "iters": 100,
-        "latency_ms_per_token_median": 0.26145701565383206,
-        "latency_ms_per_token_iqr": 0.03142837499581219,
-        "latency_ms_per_batch_median": 8.366624500922626
+        "latency_ms_per_token_median": 0.2639199219629518,
+        "latency_ms_per_token_iqr": 0.01208853063872084,
+        "latency_ms_per_batch_median": 8.445437502814457
       },
       "batch_32": {
         "n_tokens": 1024,
         "iters": 100,
-        "latency_ms_per_token_median": 0.1586065058614139,
-        "latency_ms_per_token_iqr": 0.013960327152062746,
-        "latency_ms_per_batch_median": 162.41306200208783
+        "latency_ms_per_token_median": 0.1334794916942883,
+        "latency_ms_per_token_iqr": 0.006317586951354315,
+        "latency_ms_per_batch_median": 136.68299949495122
       }
+    }
+  },
+  "pretrained_encoders": {
+    "kazroberta": {
+      "model_name": "kz-transformers/kaz-roberta-conversational",
+      "revision": "43077c2fd0a163487ed468b5ec3b8750686a5888",
+      "trainable_params": 83999205,
+      "encoder_params": 83647744,
+      "task_heads_params": 351461,
+      "checkpoint_mb": 336.043899,
+      "batch_1": {
+        "n_tokens": 9,
+        "iters": 100,
+        "latency_ms_per_token_median": 1.1243820028741742,
+        "latency_ms_per_token_iqr": 0.14381022063187432,
+        "latency_ms_per_batch_median": 10.119438025867566
+      },
+      "batch_32": {
+        "n_tokens": 336,
+        "iters": 100,
+        "latency_ms_per_token_median": 0.7772966264816378,
+        "latency_ms_per_token_iqr": 0.057306422864452755,
+        "latency_ms_per_batch_median": 261.1716664978303
+      },
+      "cpu_batch_1": {
+        "n_tokens": 9,
+        "iters": 20,
+        "latency_ms_per_token_median": 1.7766782774641698,
+        "latency_ms_per_token_iqr": 0.3238890074296956,
+        "latency_ms_per_batch_median": 15.990104497177526
+      },
+      "train_step_memory": {
+        "allocator_gb_after_forward": 0.528201472,
+        "allocator_gb_after_backward": 0.691418624,
+        "batch_size": 16,
+        "steps": 3
+      }
+    },
+    "xlm_roberta": {
+      "model_name": "FacebookAI/xlm-roberta-base",
+      "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+      "trainable_params": 278591973,
+      "encoder_params": 278240512,
+      "task_heads_params": 351461,
+      "checkpoint_mb": 1114.455355,
+      "batch_1": {
+        "n_tokens": 9,
+        "iters": 100,
+        "latency_ms_per_token_median": 1.4767361119286053,
+        "latency_ms_per_token_iqr": 0.16161111286944796,
+        "latency_ms_per_batch_median": 13.290625007357448
+      },
+      "batch_32": {
+        "n_tokens": 336,
+        "iters": 100,
+        "latency_ms_per_token_median": 1.212858691966782,
+        "latency_ms_per_token_iqr": 0.06294345231643605,
+        "latency_ms_per_batch_median": 407.52052050083876
+      },
+      "cpu_batch_1": {
+        "n_tokens": 9,
+        "iters": 20,
+        "latency_ms_per_token_median": 3.043791725455473,
+        "latency_ms_per_token_iqr": 0.2162638896455369,
+        "latency_ms_per_batch_median": 27.394125529099256
+      },
+      "train_step_memory": {
+        "allocator_gb_after_forward": 1.577755904,
+        "allocator_gb_after_backward": 2.256310016,
+        "batch_size": 16,
+        "steps": 3
+      }
+    }
+  },
+  "crf_share": {
+    "param_delta": 399,
+    "param_delta_pct": 0.015921749588787896,
+    "batch1_ms_per_token_delta": 0.2548268294049194,
+    "batch1_ms_per_token_delta_pct": 85.38755949018082
+  },
+  "training_time_from_artifacts": {
+    "cagf_gold": {
+      "n_folds": 10,
+      "mean_sec_per_fold": 469.33000000000004
+    },
+    "cagf_silver": {
+      "n_folds": 10,
+      "mean_sec_per_fold": 3483.53
+    },
+    "kazroberta_gold": {
+      "n_folds": 10,
+      "mean_sec_per_fold": 1964.2
+    },
+    "kazroberta_silver": {
+      "n_folds": 10,
+      "mean_sec_per_fold": 1982.86
+    },
+    "xlmr_gold": {
+      "n_folds": 10,
+      "mean_sec_per_fold": 5950.5
+    },
+    "xlmr_silver": {
+      "n_folds": 10,
+      "mean_sec_per_fold": 4316.82
     }
   }
 }
