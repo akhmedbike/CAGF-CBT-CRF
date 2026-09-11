@@ -1,0 +1,293 @@
+{
+ "total_predicted_feats": 13750,
+ "removed_events": 136,
+ "removed_rate": 0.00989090909090909,
+ "unique_pairs": 57,
+ "pairs": [
+  {
+   "upos": "X",
+   "feat": "Case=Nom",
+   "count": 13
+  },
+  {
+   "upos": "DET",
+   "feat": "Case=Nom",
+   "count": 9
+  },
+  {
+   "upos": "NOUN",
+   "feat": "Tense=Past",
+   "count": 8
+  },
+  {
+   "upos": "NOUN",
+   "feat": "Number=Sing",
+   "count": 8
+  },
+  {
+   "upos": "NOUN",
+   "feat": "VerbForm=Fin",
+   "count": 8
+  },
+  {
+   "upos": "NOUN",
+   "feat": "Person=3",
+   "count": 6
+  },
+  {
+   "upos": "DET",
+   "feat": "NumType=Card",
+   "count": 6
+  },
+  {
+   "upos": "NOUN",
+   "feat": "Mood=Ind",
+   "count": 6
+  },
+  {
+   "upos": "ADP",
+   "feat": "Person[psor]=3",
+   "count": 4
+  },
+  {
+   "upos": "NOUN",
+   "feat": "VerbForm=Ger",
+   "count": 4
+  },
+  {
+   "upos": "X",
+   "feat": "Aspect=Perf",
+   "count": 3
+  },
+  {
+   "upos": "ADV",
+   "feat": "Case=Dat",
+   "count": 3
+  },
+  {
+   "upos": "ADP",
+   "feat": "Number[psor]=Plur,Sing",
+   "count": 3
+  },
+  {
+   "upos": "NOUN",
+   "feat": "PronType=Dem",
+   "count": 3
+  },
+  {
+   "upos": "CCONJ",
+   "feat": "Case=Nom",
+   "count": 2
+  },
+  {
+   "upos": "NOUN",
+   "feat": "Aspect=Perf",
+   "count": 2
+  },
+  {
+   "upos": "CCONJ",
+   "feat": "Person=1",
+   "count": 2
+  },
+  {
+   "upos": "DET",
+   "feat": "Person=3",
+   "count": 2
+  },
+  {
+   "upos": "VERB",
+   "feat": "PronType=Dem",
+   "count": 2
+  },
+  {
+   "upos": "NUM",
+   "feat": "PronType=Ind",
+   "count": 2
+  },
+  {
+   "upos": "NOUN",
+   "feat": "VerbForm=Part",
+   "count": 2
+  },
+  {
+   "upos": "NUM",
+   "feat": "VerbForm=Ger",
+   "count": 2
+  },
+  {
+   "upos": "PROPN",
+   "feat": "Tense=Past",
+   "count": 2
+  },
+  {
+   "upos": "ADV",
+   "feat": "Case=Abl",
+   "count": 1
+  },
+  {
+   "upos": "DET",
+   "feat": "Number=Sing",
+   "count": 1
+  },
+  {
+   "upos": "CCONJ",
+   "feat": "Number=Sing",
+   "count": 1
+  },
+  {
+   "upos": "PART",
+   "feat": "PronType=Int",
+   "count": 1
+  },
+  {
+   "upos": "ADV",
+   "feat": "Mood=Ind",
+   "count": 1
+  },
+  {
+   "upos": "ADV",
+   "feat": "Tense=Pres",
+   "count": 1
+  },
+  {
+   "upos": "ADV",
+   "feat": "VerbForm=Fin",
+   "count": 1
+  },
+  {
+   "upos": "AUX",
+   "feat": "PronType=Dem",
+   "count": 1
+  },
+  {
+   "upos": "INTJ",
+   "feat": "Case=Nom",
+   "count": 1
+  },
+  {
+   "upos": "ADV",
+   "feat": "Case=Loc",
+   "count": 1
+  },
+  {
+   "upos": "ADV",
+   "feat": "Number[psor]=Plur,Sing",
+   "count": 1
+  },
+  {
+   "upos": "ADV",
+   "feat": "Person[psor]=3",
+   "count": 1
+  },
+  {
+   "upos": "PROPN",
+   "feat": "Number=Sing",
+   "count": 1
+  },
+  {
+   "upos": "ADV",
+   "feat": "Case=Ins",
+   "count": 1
+  },
+  {
+   "upos": "NOUN",
+   "feat": "Tense=Pres",
+   "count": 1
+  },
+  {
+   "upos": "CCONJ",
+   "feat": "PronType=Prs",
+   "count": 1
+  },
+  {
+   "upos": "VERB",
+   "feat": "PronType=Prs",
+   "count": 1
+  },
+  {
+   "upos": "PART",
+   "feat": "Case=Nom",
+   "count": 1
+  },
+  {
+   "upos": "NOUN",
+   "feat": "Aspect=Imp",
+   "count": 1
+  },
+  {
+   "upos": "AUX",
+   "feat": "Voice=Pass",
+   "count": 1
+  },
+  {
+   "upos": "PROPN",
+   "feat": "VerbForm=Ger",
+   "count": 1
+  },
+  {
+   "upos": "CCONJ",
+   "feat": "PronType=Int",
+   "count": 1
+  },
+  {
+   "upos": "PRON",
+   "feat": "VerbForm=Fin",
+   "count": 1
+  },
+  {
+   "upos": "X",
+   "feat": "Number[psor]=Plur,Sing",
+   "count": 1
+  },
+  {
+   "upos": "X",
+   "feat": "Person[psor]=3",
+   "count": 1
+  },
+  {
+   "upos": "ADJ",
+   "feat": "Mood=Ind",
+   "count": 1
+  },
+  {
+   "upos": "ADJ",
+   "feat": "Person=3",
+   "count": 1
+  },
+  {
+   "upos": "ADJ",
+   "feat": "VerbForm=Fin",
+   "count": 1
+  },
+  {
+   "upos": "PART",
+   "feat": "Number=Plur",
+   "count": 1
+  },
+  {
+   "upos": "PART",
+   "feat": "VerbForm=Fin",
+   "count": 1
+  },
+  {
+   "upos": "DET",
+   "feat": "Case=Dat",
+   "count": 1
+  },
+  {
+   "upos": "ADV",
+   "feat": "Person=3",
+   "count": 1
+  },
+  {
+   "upos": "INTJ",
+   "feat": "Number[psor]=Plur,Sing",
+   "count": 1
+  },
+  {
+   "upos": "INTJ",
+   "feat": "Person[psor]=3",
+   "count": 1
+  }
+ ]
+}
