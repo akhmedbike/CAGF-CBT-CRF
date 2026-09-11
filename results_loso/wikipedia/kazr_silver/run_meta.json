@@ -1,0 +1,15 @@
+{
+  "started": "2026-09-10 17:34:40",
+  "python": "3.14.4",
+  "torch": "2.13.0",
+  "git_commit": "8d704b6d4e349c01fd4ec89c3a9c5d0c64a2a298",
+  "git_dirty": true,
+  "device": "mps",
+  "driver": "run_loso.py",
+  "held_out": "wikipedia.tagged.txt",
+  "condition": "kazr_silver",
+  "seed": 42,
+  "n_train": 885,
+  "n_dev": 119,
+  "n_test": 74
+}

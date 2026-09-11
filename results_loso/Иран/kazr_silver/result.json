@@ -1,0 +1,15 @@
+{
+  "held_out": "Иран.tagged.txt",
+  "condition": "kazr_silver",
+  "seed": 42,
+  "n_train": 818,
+  "n_dev": 119,
+  "n_test": 141,
+  "official": {
+    "Lemmas": 0.7312095569935291,
+    "UPOS": 0.9238427078148332,
+    "UFeats": 0.8143354902936785,
+    "AllTags": 0.7765057242409159
+  },
+  "elapsed_sec": 9571.2629570961
+}

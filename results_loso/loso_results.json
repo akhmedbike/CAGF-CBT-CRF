@@ -1,0 +1,135 @@
+{
+  "docs": [
+    "Иран.tagged.txt",
+    "wikipedia.tagged.txt"
+  ],
+  "fixed_dev_docs": [
+    "wikipedia-news.tagged.txt",
+    "Жиырма_Бесінші_Сөз.tagged.txt",
+    "story.tagged.txt",
+    "udhr.tagged.txt"
+  ],
+  "seed": 42,
+  "results": {
+    "Иран/cagf_gold": {
+      "held_out": "Иран.tagged.txt",
+      "condition": "cagf_gold",
+      "seed": 42,
+      "n_train": 818,
+      "n_dev": 119,
+      "n_test": 141,
+      "official": {
+        "Lemmas": 0.7098058735689398,
+        "UPOS": 0.7441513190642111,
+        "UFeats": 0.5216525634644101,
+        "AllTags": 0.45196615231458437
+      },
+      "elapsed_sec": 271.7538068294525
+    },
+    "Иран/cagf_silver": {
+      "held_out": "Иран.tagged.txt",
+      "condition": "cagf_silver",
+      "seed": 42,
+      "n_train": 818,
+      "n_dev": 119,
+      "n_test": 141,
+      "official": {
+        "Lemmas": 0.781483325037332,
+        "UPOS": 0.8581383773021404,
+        "UFeats": 0.6824290691886511,
+        "AllTags": 0.6226978596316576
+      },
+      "elapsed_sec": 2639.865504026413
+    },
+    "Иран/kazr_gold": {
+      "held_out": "Иран.tagged.txt",
+      "condition": "kazr_gold",
+      "seed": 42,
+      "n_train": 818,
+      "n_dev": 119,
+      "n_test": 141,
+      "official": {
+        "Lemmas": 0.7167745146839224,
+        "UPOS": 0.931806869089099,
+        "UFeats": 0.7854654056744649,
+        "AllTags": 0.7496266799402688
+      },
+      "elapsed_sec": 3073.7028918266296
+    },
+    "Иран/kazr_silver": {
+      "held_out": "Иран.tagged.txt",
+      "condition": "kazr_silver",
+      "seed": 42,
+      "n_train": 818,
+      "n_dev": 119,
+      "n_test": 141,
+      "official": {
+        "Lemmas": 0.7312095569935291,
+        "UPOS": 0.9238427078148332,
+        "UFeats": 0.8143354902936785,
+        "AllTags": 0.7765057242409159
+      },
+      "elapsed_sec": 9571.2629570961
+    },
+    "wikipedia/cagf_gold": {
+      "held_out": "wikipedia.tagged.txt",
+      "condition": "cagf_gold",
+      "seed": 42,
+      "n_train": 885,
+      "n_dev": 119,
+      "n_test": 74,
+      "official": {
+        "Lemmas": 0.6407599309153713,
+        "UPOS": 0.8082901554404145,
+        "UFeats": 0.6217616580310881,
+        "AllTags": 0.5354058721934369
+      },
+      "elapsed_sec": 422.3298523426056
+    },
+    "wikipedia/cagf_silver": {
+      "held_out": "wikipedia.tagged.txt",
+      "condition": "cagf_silver",
+      "seed": 42,
+      "n_train": 885,
+      "n_dev": 119,
+      "n_test": 74,
+      "official": {
+        "Lemmas": 0.7737478411053541,
+        "UPOS": 0.8549222797927462,
+        "UFeats": 0.7582037996545768,
+        "AllTags": 0.6839378238341969
+      },
+      "elapsed_sec": 2985.4442360401154
+    },
+    "wikipedia/kazr_gold": {
+      "held_out": "wikipedia.tagged.txt",
+      "condition": "kazr_gold",
+      "seed": 42,
+      "n_train": 885,
+      "n_dev": 119,
+      "n_test": 74,
+      "official": {
+        "Lemmas": 0.6269430051813472,
+        "UPOS": 0.9343696027633851,
+        "UFeats": 0.8635578583765112,
+        "AllTags": 0.8255613126079447
+      },
+      "elapsed_sec": 2993.640120744705
+    },
+    "wikipedia/kazr_silver": {
+      "held_out": "wikipedia.tagged.txt",
+      "condition": "kazr_silver",
+      "seed": 42,
+      "n_train": 885,
+      "n_dev": 119,
+      "n_test": 74,
+      "official": {
+        "Lemmas": 0.6649395509499136,
+        "UPOS": 0.9326424870466321,
+        "UFeats": 0.8566493955094991,
+        "AllTags": 0.8203799654576857
+      },
+      "elapsed_sec": 1622.7522628307343
+    }
+  }
+}

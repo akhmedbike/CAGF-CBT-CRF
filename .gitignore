@@ -232,7 +232,16 @@ data/silver/silver.conllu
 data/silver/silver_filtered.conllu
 data/auxiliary/books_skeleton.conllu
 results_cv_kazroberta/checkpoints/
+results_loso/checkpoints/
 models/*.pt
+
+# --- Stanza baseline: per-fold model copies and training scratch ---
+#     Committed per fold: result.json + train/dev/gold/pred.conllu; the
+#     trained .pt models are reproducible via scripts/run_stanza_cv.py.
+results_stanza/**/stanza_models/
+results_stanza/**/kk/
+results_stanza/**/stanza_data/
+results_stanza/**/resources.json
 
 # --- Third-party clone with incompatible license ---
 #     kaznlp (github.com/nlacslab/kaznlp) is CC-BY-SA 4.0, a viral copyleft that

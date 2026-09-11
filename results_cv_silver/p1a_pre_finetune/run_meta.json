@@ -1,0 +1,12 @@
+{
+  "started": "2026-09-10 10:47:47",
+  "python": "3.14.4",
+  "torch": "2.13.0",
+  "git_commit": "24dbae5bd380f3670685c02cd160044e9a153645",
+  "git_dirty": false,
+  "device": "mps",
+  "driver": "pre_finetune_probe.py",
+  "fold": 0,
+  "seed": 42,
+  "stage": "silver_pretrain_only"
+}

@@ -1,0 +1,875 @@
+# sent_id = wikipedia.tagged.txt:22:371
+# gold_source = UD_Kazakh-KTB
+# text = Кезінде Кеңес әскерімен де күрескен.
+1	Кезінде	кез	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+2	Кеңес	кеңес	NOUN	n	Case=Nom	3	nmod:poss	_	_
+3	әскерімен	әскерімен	NOUN	n	Case=Ins|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+4	де	да	ADV	postadv	_	3	advmod	_	_
+5	күрескен	күрескен	VERB	v	Mood=Ind|Person=3|Tense=Past|VerbForm=Fin|VerbForm=Part	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:50:817
+# gold_source = UD_Kazakh-KTB
+# text = Сергей Михайлович Бобров 1920-1994 жылдары Атырау облысында өмір сүрген.
+1	Сергей	Сергей	PROPN	np	Case=Nom|Gender=Masc	11	nsubj	_	_
+2	Михайлович	Михайлович	PROPN	np	Case=Nom|Gender=Masc	1	flat:name	_	_
+3	Бобров	Бобров	PROPN	np	Case=Nom	1	flat:name	_	_
+4	1920	1920	NUM	num	NumType=Card|NumType=Ord	7	amod	_	SpaceAfter=No
+5	-	-	PUNCT	guio	_	6	punct	_	SpaceAfter=No
+6	1994	1994	NUM	num	NumType=Ord	4	conj	_	_
+7	жылдары	жыл	NOUN	n	Case=Nom|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	11	obl	_	_
+8	Атырау	Атырау	PROPN	np	Case=Nom	9	nmod:poss	_	_
+9	облысында	облы	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	11	obl	_	_
+10	өмір	өмір	X	x	_	11	dep	_	_
+11	сүрген	сүр	VERB	v	Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|VerbForm=Part	0	root	_	SpaceAfter=No
+12	.	.	PUNCT	sent	_	11	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:55:895
+# gold_source = UD_Kazakh-KTB
+# text = Сөйтіп практикалық қажеттілік астрономия ғылымының тууына ең басты түрткі болды.
+1	Сөйтіп	сөйт	VERB	v	Aspect=Perf	9	advcl	_	_
+2	практикалық	практикалық	ADJ	adj	_	3	amod	_	_
+3	қажеттілік	қажеттілік	NOUN	n	Case=Nom	9	nsubj	_	_
+4	астрономия	астрономия	NOUN	n	Case=Nom	5	nmod:poss	_	_
+5	ғылымының	ғылым	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	6	nsubj	_	_
+6	тууына	тууына	VERB	v	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3|VerbForm=Ger	9	advcl	_	_
+7	ең	ең	ADV	x	_	8	dep	_	_
+8	басты	басты	ADJ	adv	_	9	advmod	_	_
+9	түрткі	түрткі	NOUN	n	Case=Nom	0	root	_	_
+10	болды	бол	AUX	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	9	cop	_	SpaceAfter=No
+11	.	.	PUNCT	sent	_	10	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:69:1131
+# gold_source = UD_Kazakh-KTB
+# text = Халықаралық қатынастар бөлімінің бастығы болып жұмыс істеді.
+1	Халықаралық	халықаралық	ADJ	adj	_	2	amod	_	_
+2	қатынастар	қатынас	NOUN	n	_	3	nmod:poss	_	_
+3	бөлімінің	бөлімінің	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	4	nmod:poss	_	_
+4	бастығы	бастығы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	7	advcl	_	_
+5	болып	бол	AUX	v	Aspect=Perf|VerbForm=Conv	4	cop	_	_
+6	жұмыс	жұмыс	NOUN	x	Case=Nom	7	dep	_	_
+7	істеді	істеді	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:12:191
+# gold_source = UD_Kazakh-KTB
+# text = Жас тобы ұзақ болып келеді.
+1	Жас	жас	ADJ	adj	_	2	amod	_	_
+2	тобы	тобы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	3	nsubj	_	_
+3	ұзақ	ұзақ	ADJ	adj	_	0	root	_	_
+4	болып	бол	AUX	v	Aspect=Perf|VerbForm=Conv	3	cop	_	_
+5	келеді	кел	AUX	vaux	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	3	aux	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	3	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:14:239
+# gold_source = UD_Kazakh-KTB
+# text = Жауыңнан бұрын қимылда-жеріңе жамандық келмейді.
+1	Жауыңнан	Жауыңнан	NOUN	n	Case=Loc|Case=Abl	3	obl	_	_
+2	бұрын	бұрын	ADV	post	_	1	case	_	_
+3	қимылда	қимылда	VERB	v	Case=Loc	7	parataxis	_	SpaceAfter=No
+4	-	-	PUNCT	guio	_	3	punct	_	SpaceAfter=No
+5	жеріңе	жеріңе	NOUN	n	Case=Dat|Person[psor]=1	6	nmod	_	_
+6	жамандық	жамандық	NOUN	n	Case=Nom	7	nsubj	_	_
+7	келмейді	кел	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:16:275
+# gold_source = UD_Kazakh-KTB
+# text = Жер бетінде мұндай ормандар қалмайды.
+1	Жер	жер	NOUN	n	Case=Nom	2	nmod:poss	_	_
+2	бетінде	бет	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+3	мұндай	бұл	PRON	det	PronType=Dem	4	det	_	_
+4	ормандар	ормандар	NOUN	n	Case=Nom|Number=Plur	5	nsubj	_	_
+5	қалмайды	қал	AUX	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:11:174
+# gold_source = UD_Kazakh-KTB
+# text = Жалғыз болсаң – топқа басың кіре алмас.
+1	Жалғыз	жалғыз	ADJ	adj	_	6	advcl	_	_
+2	болсаң	болсаң	VERB	v	Case=Nom|Number=Sing|Polarity=Neg|Tense=Past	1	cop	_	_
+3	–	–	PUNCT	guio	_	2	punct	_	_
+4	топқа	топқа	NOUN	n	Case=Dat	6	obl	_	_
+5	басың	басың	NOUN	n	Case=Nom|Number[psor]=Sing	6	nsubj	_	_
+6	кіре	кір	VERB	v	Aspect=Imp|VerbForm=Inf	0	root	_	_
+7	алмас	алмас	AUX	vaux	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Past|Tense=Pres|VerbForm=Fin	6	aux	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:25:413
+# gold_source = UD_Kazakh-KTB
+# text = КСРО Ғылым Академиясының әлем әдебиеті институтында әдебиет теориясы бойынша филология ғылымының кандидаты дәрежесіне диссертация қорғады.
+1	КСРО	КСРО	PROPN	np	Case=Nom	3	nmod:poss	_	_
+2	Ғылым	ғылым	NOUN	n	Case=Nom	3	compound	_	_
+3	Академиясының	Академиясының	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	6	nmod:poss	_	_
+4	әлем	әлем	NOUN	n	Case=Nom	5	nmod:poss	_	_
+5	әдебиеті	әдебиет	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	6	nmod:poss	_	_
+6	институтында	институтында	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	15	obl	_	_
+7	әдебиет	әдебиет	NOUN	n	Case=Nom	8	nmod:poss	_	_
+8	теориясы	теориясы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	15	obl	_	_
+9	бойынша	бойынша	ADP	post	_	8	case	_	_
+10	филология	филология	NOUN	n	Case=Nom	11	nmod:poss	_	_
+11	ғылымының	ғылым	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	12	nmod:poss	_	_
+12	кандидаты	кандидаты	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	13	nmod:poss	_	_
+13	дәрежесіне	дәрежесіне	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	15	obl	_	_
+14	диссертация	диссертация	NOUN	n	Case=Nom	15	obj	_	_
+15	қорғады	қорғады	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+16	.	.	PUNCT	sent	_	15	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:21:352
+# gold_source = UD_Kazakh-KTB
+# text = Кафедра «Менеджмент» мамандық бойынша бакалавр дайындайды.
+1	Кафедра	кафедра	NOUN	n	Case=Nom	8	nsubj	_	_
+2	«	«	PUNCT	lquot	_	3	punct	_	SpaceAfter=No
+3	Менеджмент	Менеджмент	NOUN	n	Case=Nom	1	appos	_	SpaceAfter=No
+4	»	»	PUNCT	rquot	_	3	punct	_	_
+5	мамандық	мамандық	NOUN	n	Case=Nom	8	obl	_	_
+6	бойынша	бойынша	ADP	post	_	5	case	_	_
+7	бакалавр	бакалавр	NOUN	n	Case=Nom	8	obj	_	_
+8	дайындайды	дайындайды	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+9	.	.	PUNCT	sent	_	8	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:40:661
+# gold_source = UD_Kazakh-KTB
+# text = Орыс және грузин тілдерін біледі.
+1	Орыс	Орыс	NOUN	n	Case=Nom	4	nmod:poss	_	_
+2	және	және	CCONJ	cnjcoo	_	3	cc	_	_
+3	грузин	грузин	NOUN	n	Case=Nom	1	conj	_	_
+4	тілдерін	тіл	NOUN	n	Case=Acc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+5	біледі	біл	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:9:147
+# gold_source = UD_Kazakh-KTB
+# text = Еуропаның өзге елдерінде де пайда болды.
+1	Еуропаның	Еуропаның	PROPN	np	Case=Gen	3	nmod:poss	_	_
+2	өзге	өзге	ADJ	adj	_	3	amod	_	_
+3	елдерінде	елдер	NOUN	n	Case=Loc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	6	obl	_	_
+4	де	да	ADV	postadv	_	3	advmod	_	_
+5	пайда	пайда	X	x	_	6	dep	_	_
+6	болды	бол	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:20:337
+# gold_source = UD_Kazakh-KTB
+# text = Ислам діні-адамға ауырлық жүктемейді.
+1	Ислам	ислам	NOUN	n	Case=Nom	2	nmod:poss	_	_
+2	діні	дін	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	6	nsubj	_	SpaceAfter=No
+3	-	-	PUNCT	guio	_	2	punct	_	SpaceAfter=No
+4	адамға	адам	NOUN	n	Case=Dat	6	obl	_	_
+5	ауырлық	ауырлық	NOUN	n	Case=Nom	6	obj	_	_
+6	жүктемейді	жүктемейді	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:32:543
+# gold_source = UD_Kazakh-KTB
+# text = Намыс қылып балаға мойын бұрды.
+1	Намыс	намыс	NOUN	n	Case=Nom	2	obj	_	_
+2	қылып	қыл	VERB	v	Aspect=Perf|VerbForm=Conv	5	advcl	_	_
+3	балаға	бала	NOUN	n	Case=Dat	5	obl	_	_
+4	мойын	мойын	VERB	n	_	5	obj	_	_
+5	бұрды	бұр	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:44:713
+# gold_source = UD_Kazakh-KTB
+# text = Орыс және украин тілдерін біледі.
+1	Орыс	Орыс	NOUN	n	Case=Nom	4	nmod:poss	_	_
+2	және	және	CCONJ	cnjcoo	_	3	cc	_	_
+3	украин	украин	NOUN	n	Case=Nom	1	conj	_	_
+4	тілдерін	тіл	NOUN	n	Case=Acc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+5	біледі	біл	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:47:756
+# gold_source = UD_Kazakh-KTB
+# text = Сабақтар қазақ және орыс тілдерінде жүреді.
+1	Сабақтар	Сабақтар	NOUN	n	Case=Nom|Number=Plur	6	nsubj	_	_
+2	қазақ	қазақ	NOUN	n	Case=Nom	5	nmod:poss	_	_
+3	және	және	CCONJ	cnjcoo	_	4	cc	_	_
+4	орыс	орыс	NOUN	n	Case=Nom	2	conj	_	_
+5	тілдерінде	тілдерінде	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	6	obl	_	_
+6	жүреді	жүр	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:5:75
+# gold_source = UD_Kazakh-KTB
+# text = Ауылда клуб директоры болып қызмет атқарды.
+1	Ауылда	ауыл	NOUN	n	Case=Loc	6	obl	_	_
+2	клуб	клуб	NOUN	n	Case=Nom	3	nmod:poss	_	_
+3	директоры	директоры	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	6	advcl	_	_
+4	болып	бол	AUX	v	Aspect=Perf|VerbForm=Conv	3	cop	_	_
+5	қызмет	қызмет	X	n	Case=Nom	6	obj	_	_
+6	атқарды	атқарды	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:6:90
+# gold_source = UD_Kazakh-KTB
+# text = Біз өз жұмысымыздың әдістері мен стильдерін жетілдіріп, инновацияларды енгізіп отырамыз.
+1	Біз	біз	PRON	prn	Case=Nom|Number=Plur|Person=1|PronType=Prs	10	nsubj	_	_
+2	өз	өз	DET	det	_	3	det	_	_
+3	жұмысымыздың	жұмысымыздың	NOUN	n	Case=Gen|Number[psor]=Sing|Person[psor]=1	6	nmod:poss	_	_
+4	әдістері	әдістері	NOUN	n	Case=Nom|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	7	obj	_	_
+5	мен	мен	CCONJ	cnjcoo	_	6	cc	_	_
+6	стильдерін	стильдерін	NOUN	n	Case=Acc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	4	conj	_	_
+7	жетілдіріп	жетілдіріп	VERB	v	Aspect=Perf|VerbForm=Conv|VerbForm=Inf	10	advcl	_	SpaceAfter=No
+8	,	,	PUNCT	cm	_	7	punct	_	_
+9	инновацияларды	инновацияларды	NOUN	n	Case=Acc|Number=Plur	10	obj	_	_
+10	енгізіп	енгіз	VERB	v	Aspect=Perf|VerbForm=Inf	0	root	_	_
+11	отырамыз	отырамыз	AUX	vaux	Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	10	aux	_	SpaceAfter=No
+12	.	.	PUNCT	sent	_	10	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:61:1022
+# gold_source = UD_Kazakh-KTB
+# text = Тек атқарушылық құжаттардың негізінде жүзеге асырылады.
+1	Тек	тек	ADV	adv	_	4	advmod	_	_
+2	атқарушылық	атқарушылық	ADJ	adj	Case=Nom	3	amod	_	_
+3	құжаттардың	құжаттардың	NOUN	n	Case=Gen|Number=Plur	4	nmod:poss	_	_
+4	негізінде	негіз	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	6	obl	_	_
+5	жүзеге	жүзеге	X	x	_	6	dep	_	_
+6	асырылады	асырылады	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:51:842
+# gold_source = UD_Kazakh-KTB
+# text = Соғыстан кейін Федор Федорович Қарағандыда тұрды.
+1	Соғыстан	соғыс	NOUN	n	_	6	obl	_	_
+2	кейін	кейін	ADP	post	_	1	case	_	_
+3	Федор	Федор	PROPN	np	Case=Nom|Gender=Masc	6	obl	_	_
+4	Федорович	Федорович	PROPN	np	Case=Nom|Gender=Masc	6	nsubj	_	_
+5	Қарағандыда	Қарағандыда	PROPN	np	Case=Loc	3	flat:name	_	_
+6	тұрды	тұр	AUX	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:46:739
+# gold_source = UD_Kazakh-KTB
+# text = Осы жылдары ауыл шаруашылығында маңызды өзгерістер болды.
+1	Осы	осы	DET	det	PronType=Dem	2	det	_	_
+2	жылдары	жыл	NOUN	n	Case=Nom|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	7	nmod:poss	_	_
+3	ауыл	ауыл	X	x	Case=Nom	4	dep	_	_
+4	шаруашылығында	шаруашылығында	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	7	obl	_	_
+5	маңызды	маңызды	ADJ	adj	_	6	amod	_	_
+6	өзгерістер	өзгеріс	NOUN	n	Case=Nom|Number=Plur	7	nsubj	_	_
+7	болды	бол	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:30:513
+# gold_source = UD_Kazakh-KTB
+# text = Ұлы Отан соғысында ерлікпен қаза тапқан.
+1	Ұлы	ұлы	ADJ	adj	_	3	amod	_	_
+2	Отан	Отан	PROPN	n	Case=Nom	3	nmod:poss	_	_
+3	соғысында	соғы	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	6	obl	_	_
+4	ерлікпен	ерлікпен	NOUN	n	_	6	obl	_	_
+5	қаза	қаза	X	x	_	6	dep	_	_
+6	тапқан	тап	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:31:528
+# gold_source = UD_Kazakh-KTB
+# text = Мұражайда үш экспозициялық зал жұмыс істейді.
+1	Мұражайда	Мұражайда	NOUN	n	_	6	obl	_	_
+2	үш	үш	NUM	num	NumType=Card	4	nummod	_	_
+3	экспозициялық	экспозициялық	NOUN	adj	Case=Nom	4	amod	_	_
+4	зал	зал	NOUN	n	Case=Nom	6	nsubj	_	_
+5	жұмыс	жұмыс	NOUN	x	Case=Nom	6	dep	_	_
+6	істейді	істе	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:15:256
+# gold_source = UD_Kazakh-KTB
+# text = Жер бедері маңында Юра тау жүйесінің болуымен анықталады.
+1	Жер	жер	NOUN	n	Case=Nom	2	nmod:poss	_	_
+2	бедері	бедер	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	3	nmod:poss	_	_
+3	маңында	маңында	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	8	obl	_	_
+4	Юра	Юра	NOUN	np	Case=Nom	8	nsubj	_	_
+5	тау	тау	NOUN	n	Case=Nom	6	nmod:poss	_	_
+6	жүйесінің	жүйесінің	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	7	nsubj	_	_
+7	болуымен	болуымен	NOUN	v	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3|VerbForm=Ger	8	advcl	_	_
+8	анықталады	анықта	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+9	.	.	PUNCT	sent	_	8	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:65:1077
+# gold_source = UD_Kazakh-KTB
+# text = Топырақ картасында топырақтың түрлері көрсетіледі.
+1	Топырақ	топырақ	NOUN	n	Case=Nom	2	nmod:poss	_	_
+2	картасында	картасында	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+3	топырақтың	топырақтың	NOUN	n	Case=Gen	4	nmod:poss	_	_
+4	түрлері	түр	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	5	nsubj	_	_
+5	көрсетіледі	көрсетіледі	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:49:796
+# gold_source = UD_Kazakh-KTB
+# text = Саяси мемлекеттік қызметкерлер өз халқы мен Президентке ант береді.
+1	Саяси	саяси	ADJ	adj	_	3	amod	_	_
+2	мемлекеттік	мемлекеттік	ADJ	adj	_	3	amod	_	_
+3	қызметкерлер	қызметкерлер	NOUN	n	Case=Nom|Number=Plur	9	nsubj	_	_
+4	өз	өз	DET	det	_	5	det	_	_
+5	халқы	халық	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	9	obl	_	_
+6	мен	мен	CCONJ	cnjcoo	_	7	cc	_	_
+7	Президентке	Президентке	NOUN	n	Case=Dat	5	conj	_	_
+8	ант	ант	NOUN	n	Case=Nom	9	obj	_	_
+9	береді	бер	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+10	.	.	PUNCT	sent	_	9	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:71:1163
+# gold_source = UD_Kazakh-KTB
+# text = Чемпионаттың жеңімпазы Швеция құрамасы атанды.
+1	Чемпионаттың	Чемпионаттың	NOUN	n	Case=Gen	2	nmod:poss	_	_
+2	жеңімпазы	жеңімпазы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	5	xcomp	_	_
+3	Швеция	Швеция	PROPN	np	Case=Nom	4	nmod:poss	_	_
+4	құрамасы	құрамасы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	5	nsubj	_	_
+5	атанды	атан	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:42:687
+# gold_source = UD_Kazakh-KTB
+# text = Орыс және неміс тілдерін біледі.
+1	Орыс	Орыс	NOUN	n	Case=Nom	4	nmod:poss	_	_
+2	және	және	CCONJ	cnjcoo	_	3	cc	_	_
+3	неміс	неміс	NOUN	n	Case=Nom	1	conj	_	_
+4	тілдерін	тіл	NOUN	n	Case=Acc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+5	біледі	біл	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:73:1193
+# gold_source = UD_Kazakh-KTB
+# text = Экватордан оңтүстікке қарай құрлық біршама аз болады.
+1	Экватордан	Экватордан	NOUN	n	Case=Abl	6	obl	_	_
+2	оңтүстікке	оңтүстікке	NOUN	n	Case=Dat	6	obl	_	_
+3	қарай	қарай	ADP	post	_	2	case	_	_
+4	құрлық	құрлық	NOUN	n	Case=Nom	6	nsubj	_	_
+5	біршама	біршама	ADV	adv	_	6	advmod	_	_
+6	аз	аз	ADJ	adj	_	0	root	_	_
+7	болады	бол	AUX	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	cop	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:74:1210
+# gold_source = UD_Kazakh-KTB
+# text = Экологиялық тәрбие экологиялық білім берумен толықтырылады.
+1	Экологиялық	Экологиялық	ADJ	adj	_	2	amod	_	_
+2	тәрбие	тәрбие	NOUN	n	Case=Nom	6	nsubj	_	_
+3	экологиялық	экологиялық	ADJ	adj	_	4	amod	_	_
+4	білім	білім	NOUN	n	Case=Nom	5	obj	_	_
+5	берумен	берумен	VERB	v	Case=Dat	6	ccomp	_	_
+6	толықтырылады	толықтырылады	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:18:301
+# gold_source = UD_Kazakh-KTB
+# text = Жылдам жетіп ұстауға атқа мінді.
+1	Жылдам	Жылдам	ADJ	adj	_	2	advmod	_	_
+2	жетіп	жет	VERB	v	Aspect=Perf|VerbForm=Conv	5	advcl	_	_
+3	ұстауға	ұстауға	VERB	n	Case=Dat|VerbForm=Ger	5	obl	_	_
+4	атқа	ат	NOUN	n	Case=Nom|Case=Dat	5	obj	_	_
+5	мінді	мін	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:59:995
+# gold_source = UD_Kazakh-KTB
+# text = Сүйсем де, сол сөзіне жарамаймын.
+1	Сүйсем	Сүйсем	VERB	v	Number=Sing|VerbForm=Fin	6	advcl	_	_
+2	де	да	CCONJ	postadv	_	1	advmod	_	SpaceAfter=No
+3	,	,	PUNCT	cm	_	1	punct	_	_
+4	сол	сол	DET	det	PronType=Dem	5	det	_	_
+5	сөзіне	сөзіне	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	6	obl	_	_
+6	жарамаймын	жарамаймын	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:23:383
+# gold_source = UD_Kazakh-KTB
+# text = Кей түрінен дәрі алуға болады.
+1	Кей	Кей	DET	det	_	2	det	_	_
+2	түрінен	түр	NOUN	n	Case=Abl|Number[psor]=Plur,Sing|Person[psor]=3	4	obl	_	_
+3	дәрі	дәрі	NOUN	n	Case=Nom	4	obj	_	_
+4	алуға	алуға	VERB	v	Case=Dat|VerbForm=Ger	5	ccomp	_	_
+5	болады	бол	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:24:396
+# gold_source = UD_Kazakh-KTB
+# text = Композитордың аты Санкт-Петербург консерваториясының кіші залына берілді.
+1	Композитордың	Композитордың	NOUN	n	Case=Gen	2	nmod:poss	_	_
+2	аты	аты	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	7	nsubj	_	_
+3	Санкт-Петербург	Санкт-Петербург	PROPN	np	Case=Nom	4	nmod:poss	_	_
+4	консерваториясының	консерваториясының	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	6	nmod:poss	_	_
+5	кіші	кіші	ADJ	adj	_	6	amod	_	_
+6	залына	залына	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	7	obl	_	_
+7	берілді	бер	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:1:0
+# gold_source = UD_Kazakh-KTB
+# text = Абонемент бөлімі кітаптар мен журналдарды үйге тегін береді.
+1	Абонемент	Абонемент	NOUN	n	_	2	nmod:poss	_	_
+2	бөлімі	бөлім	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	8	nsubj	_	_
+3	кітаптар	кітаптар	NOUN	n	Case=Nom|Number=Plur	8	obj	_	_
+4	мен	мен	CCONJ	cnjcoo	_	5	cc	_	_
+5	журналдарды	журналдарды	NOUN	n	Number=Plur	3	conj	_	_
+6	үйге	үй	NOUN	n	Case=Dat	8	obl	_	_
+7	тегін	тегін	ADJ	adj	_	8	advmod	_	_
+8	береді	бер	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+9	.	.	PUNCT	sent	_	8	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:48:771
+# gold_source = UD_Kazakh-KTB
+# text = Саратов экономикалық институтын «Халық шаруашылығын жоспарлау» мамандығы бойынша бітірген.
+1	Саратов	Саратов	PROPN	np	Case=Nom	3	nmod:poss	_	_
+2	экономикалық	экономикалық	ADJ	adj	_	3	amod	_	_
+3	институтын	институтын	NOUN	n	Case=Acc|Number[psor]=Plur,Sing|Person[psor]=3	11	obj	_	_
+4	«	«	PUNCT	lquot	_	7	punct	_	SpaceAfter=No
+5	Халық	халық	NOUN	np	Case=Nom	6	nmod:poss	_	_
+6	шаруашылығын	шаруашылығын	NOUN	n	Case=Acc|Number[psor]=Plur,Sing|Person[psor]=3	7	obj	_	_
+7	жоспарлау	жоспарлау	VERB	v	Case=Nom|VerbForm=Ger	9	acl	_	SpaceAfter=No
+8	»	»	PUNCT	rquot	_	7	punct	_	_
+9	мамандығы	мамандығы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	11	obl	_	_
+10	бойынша	бойынша	ADP	post	_	9	case	_	_
+11	бітірген	бітір	VERB	v	Tense=Past	0	root	_	SpaceAfter=No
+12	.	.	PUNCT	sent	_	11	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:39:644
+# gold_source = UD_Kazakh-KTB
+# text = Он екі елі ішек төрт бөлікке бөлінген.
+1	Он	он	NUM	x	_	2	dep	_	_
+2	екі	екі	NUM	num	NumType=Card	3	compound	_	_
+3	елі	ел	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	4	compound	_	_
+4	ішек	ішек	NOUN	n	Case=Nom	7	nsubj	_	_
+5	төрт	төрт	NUM	num	NumType=Card	6	nummod	_	_
+6	бөлікке	бөлікке	NOUN	n	Case=Dat	7	obl	_	_
+7	бөлінген	бөлінген	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:54:878
+# gold_source = UD_Kazakh-KTB
+# text = Сөйтіп, Алашордасының бастығына Ғ. Бөкейхан сайланды.
+1	Сөйтіп	сөйт	VERB	v	Aspect=Perf	7	advcl	_	SpaceAfter=No
+2	,	,	PUNCT	cm	_	1	punct	_	_
+3	Алашордасының	Алашордасының	PROPN	np	Case=Gen	4	nmod:poss	_	_
+4	бастығына	бастығына	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	7	obl	_	_
+5	Ғ.	Ғ.	NOUN	abbr	_	7	nsubj	_	_
+6	Бөкейхан	Бөкейхан	PROPN	np	Case=Nom|Gender=Masc	5	flat:name	_	_
+7	сайланды	сайла	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:7:115
+# gold_source = UD_Kazakh-KTB
+# text = Ендеше, осындай жағдаяттарда жол табуға болады.
+1	Ендеше	ендеше	ADV	adv	_	7	advmod	_	SpaceAfter=No
+2	,	,	PUNCT	cm	_	1	punct	_	_
+3	осындай	осындай	ADJ	det	_	4	det	_	_
+4	жағдаяттарда	жағдаяттарда	NOUN	n	Case=Loc|Number=Plur	6	obl	_	_
+5	жол	жол	NOUN	n	Case=Nom	6	obj	_	_
+6	табуға	таб	VERB	v	Case=Dat|VerbForm=Ger	7	ccomp	_	_
+7	болады	бол	AUX	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:72:1176
+# gold_source = UD_Kazakh-KTB
+# text = Чуваш, қазақ және орыс тілдерін біледі.
+1	Чуваш	Чуваш	PROPN	n	Case=Nom	6	nmod:poss	_	SpaceAfter=No
+2	,	,	PUNCT	cm	_	3	punct	_	_
+3	қазақ	қазақ	NOUN	n	Case=Nom	1	conj	_	_
+4	және	және	CCONJ	cnjcoo	_	5	cc	_	_
+5	орыс	орыс	NOUN	n	Case=Nom	1	conj	_	_
+6	тілдерін	тіл	NOUN	n	Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	7	obj	_	_
+7	біледі	біл	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:60:1009
+# gold_source = UD_Kazakh-KTB
+# text = Съезде Алашорда үкіметінің мүшелігіне сайланады.
+1	Съезде	Съезде	NOUN	n	Case=Loc	5	obl	_	_
+2	Алашорда	Алашорда	PROPN	np	Case=Nom	3	nmod:poss	_	_
+3	үкіметінің	үкімет	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	4	nmod:poss	_	_
+4	мүшелігіне	мүшелігіне	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+5	сайланады	сайла	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:8:132
+# gold_source = UD_Kazakh-KTB
+# text = Ендеше тілегімді берді, - деді.
+1	Ендеше	ендеше	ADV	adv	_	6	advmod	_	_
+2	тілегімді	тілегімді	NOUN	n	Case=Acc|Person[psor]=1	3	obj	_	_
+3	берді	бер	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	6	ccomp	_	SpaceAfter=No
+4	,	,	PUNCT	cm	_	3	punct	_	_
+5	-	-	PUNCT	guio	_	3	punct	_	_
+6	деді	де	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:28:483
+# gold_source = UD_Kazakh-KTB
+# text = Маусым – шілде айларында гүлдеп, тамызда жеміс береді.
+1	Маусым	Маусым	NOUN	n	Case=Nom	4	nmod:poss	_	_
+2	–	–	PUNCT	guio	_	3	punct	_	_
+3	шілде	шілде	NOUN	n	Case=Nom	1	conj	_	_
+4	айларында	айларында	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+5	гүлдеп	гүлдеп	VERB	v	Aspect=Perf|VerbForm=Conv	9	advcl	_	SpaceAfter=No
+6	,	,	PUNCT	cm	_	5	punct	_	_
+7	тамызда	тамыз	NOUN	n	Case=Loc	9	obl	_	_
+8	жеміс	жеміс	NOUN	n	Case=Nom	9	obj	_	_
+9	береді	бер	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+10	.	.	PUNCT	sent	_	9	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:67:1105
+# gold_source = UD_Kazakh-KTB
+# text = Украина статистикасы мәліметтері бойынша алынды.
+1	Украина	Украина	PROPN	np	Case=Nom	2	nmod:poss	_	_
+2	статистикасы	статистикасы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	5	nsubj	_	_
+3	мәліметтері	мәліметтері	NOUN	n	Case=Nom|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+4	бойынша	бойынша	ADP	post	_	3	case	_	_
+5	алынды	ал	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:27:465
+# gold_source = UD_Kazakh-KTB
+# text = Мамандарды дайындау факультетте тек күндізгі бөлімде ғана жүргізіледі.
+1	Мамандарды	Мамандарды	NOUN	n	Case=Acc|Number=Plur	2	obj	_	_
+2	дайындау	дайындау	VERB	v	Case=Nom|VerbForm=Ger	8	csubj	_	_
+3	факультетте	факультетте	NOUN	n	Case=Loc	8	obl	_	_
+4	тек	тек	ADV	adv	_	6	advmod	_	_
+5	күндізгі	күндізгі	ADJ	adv	_	6	amod	_	_
+6	бөлімде	бөлімде	NOUN	n	Case=Loc	8	obl	_	_
+7	ғана	ғана	ADV	postadv	_	6	advmod	_	_
+8	жүргізіледі	жүргізіледі	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+9	.	.	PUNCT	sent	_	8	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:29:504
+# gold_source = UD_Kazakh-KTB
+# text = Мәскеуде дүниеге келген.
+1	Мәскеуде	Мәскеуде	PROPN	np	Case=Loc	3	obl	_	_
+2	дүниеге	дүниеге	NOUN	n	Case=Dat	3	obl	_	_
+3	келген	кел	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+4	.	.	PUNCT	sent	_	3	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:66:1090
+# gold_source = UD_Kazakh-KTB
+# text = Түбін бөлу және тұқымы арқылы көбейтеді.
+1	Түбін	Түбін	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	2	obj	_	_
+2	бөлу	бөлу	VERB	v	Case=Nom|VerbForm=Ger	6	obl	_	_
+3	және	және	CCONJ	cnjcoo	_	4	cc	_	_
+4	тұқымы	тұқымы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	2	conj	_	_
+5	арқылы	арқылы	ADP	post	_	4	case	_	_
+6	көбейтеді	көбейтеді	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:70:1148
+# gold_source = UD_Kazakh-KTB
+# text = Циклдық жұмыссыздық-өндірістің құлдырауынан туындайды.
+1	Циклдық	Циклдық	NOUN	adj	_	2	amod	_	_
+2	жұмыссыздық	жұмыссыздық	NOUN	n	Case=Nom	6	nsubj	_	SpaceAfter=No
+3	-	-	PUNCT	guio	_	2	punct	_	SpaceAfter=No
+4	өндірістің	өндірістің	NOUN	n	Case=Gen	5	nmod:poss	_	_
+5	құлдырауынан	құлдырауынан	NOUN	n	Number[psor]=Plur,Sing|Person[psor]=3	6	obl	_	_
+6	туындайды	туындайды	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:53:866
+# gold_source = UD_Kazakh-KTB
+# text = Сөздерін екеуі де қабыл алды.
+1	Сөздерін	Сөздерін	NOUN	n	Case=Acc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+2	екеуі	екеу	NUM	num	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	5	nsubj	_	_
+3	де	да	ADV	postadv	_	2	advmod	_	_
+4	қабыл	қабыл	NOUN	x	Case=Nom	5	dep	_	_
+5	алды	ал	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:62:1037
+# gold_source = UD_Kazakh-KTB
+# text = Темір тапшылығының кезеңдері кестеде көрсетілген.
+1	Темір	Темір	PROPN	n	Case=Nom	2	nmod:poss	_	_
+2	тапшылығының	тапшылығының	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	3	nmod:poss	_	_
+3	кезеңдері	кезең	NOUN	n	Case=Nom|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	nsubj	_	_
+4	кестеде	кестеде	NOUN	n	Case=Loc	5	obl	_	_
+5	көрсетілген	көрсетілген	VERB	v	Person=3|Tense=Past|VerbForm=Fin|VerbForm=Part|Voice=Pass	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:10:161
+# gold_source = UD_Kazakh-KTB
+# text = Еуропаның тұщы су қоймаларында таралған.
+1	Еуропаның	Еуропа	PROPN	np	Case=Gen	4	nmod:poss	_	_
+2	тұщы	тұщы	ADJ	adj	_	3	amod	_	_
+3	су	су	NOUN	n	Case=Nom	4	nmod:poss	_	_
+4	қоймаларында	қоймаларында	NOUN	n	Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+5	таралған	таралған	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:56:918
+# gold_source = UD_Kazakh-KTB
+# text = Сөйтіп сүйек бұзылып, аяқ формасы өзгереді.
+1	Сөйтіп	сөйт	VERB	v	Aspect=Perf	7	advcl	_	_
+2	сүйек	сүйек	NOUN	n	Case=Nom	3	nsubj	_	_
+3	бұзылып	бұзылып	VERB	v	Aspect=Perf|VerbForm=Conv|VerbForm=Inf	7	advcl	_	SpaceAfter=No
+4	,	,	PUNCT	cm	_	3	punct	_	_
+5	аяқ	аяқ	NOUN	n	Case=Nom	6	nmod:poss	_	_
+6	формасы	формасы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	7	nsubj	_	_
+7	өзгереді	өзгереді	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:36:603
+# gold_source = UD_Kazakh-KTB
+# text = Непал мен Тибетке бет алды.
+1	Непал	Непал	PROPN	np	Case=Nom	5	obl	_	_
+2	мен	мен	CCONJ	cnjcoo	_	3	cc	_	_
+3	Тибетке	Тибетке	NOUN	np	Case=Dat	1	conj	_	_
+4	бет	бет	NOUN	n	Case=Nom	5	obj	_	_
+5	алды	ал	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:19:314
+# gold_source = UD_Kazakh-KTB
+# text = Инфляция қарқыны статистикалық көрсеткіш — тұтыну бағаларының индексі көмегімен анықталады.
+1	Инфляция	Инфляция	NOUN	n	Case=Nom	2	nmod:poss	_	_
+2	қарқыны	қарқыны	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	10	nsubj	_	_
+3	статистикалық	статистикалық	ADJ	adj	_	4	amod	_	_
+4	көрсеткіш	көрсеткіш	NOUN	n	Case=Nom	9	nmod	_	_
+5	—	—	PUNCT	guio	_	8	punct	_	_
+6	тұтыну	тұтыну	NOUN	n	Case=Nom	7	nmod:poss	_	_
+7	бағаларының	бағаларының	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	8	nmod:poss	_	_
+8	индексі	индексі	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	4	appos	_	_
+9	көмегімен	көмек	NOUN	n	Number[psor]=Plur,Sing|Person[psor]=3	10	obl	_	_
+10	анықталады	анықта	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Pass	0	root	_	SpaceAfter=No
+11	.	.	PUNCT	sent	_	10	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:68:1118
+# gold_source = UD_Kazakh-KTB
+# text = Украин және татар тілдерін біледі.
+1	Украин	Украин	PROPN	n	Case=Nom	4	nmod:poss	_	_
+2	және	және	CCONJ	cnjcoo	_	3	cc	_	_
+3	татар	татар	NOUN	n	Case=Nom	1	conj	_	_
+4	тілдерін	тіл	NOUN	n	Case=Acc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+5	біледі	біл	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:52:857
+# gold_source = UD_Kazakh-KTB
+# text = Михайлов зиратына жерленген.
+1	Михайлов	Михайлов	PROPN	np	Case=Nom|Gender=Masc	2	nmod:poss	_	_
+2	зиратына	зиратына	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	3	obl	_	_
+3	жерленген	жерленген	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+4	.	.	PUNCT	sent	_	3	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:64:1063
+# gold_source = UD_Kazakh-KTB
+# text = Тік көріп алды да жерге ұрды.
+1	Тік	тік	ADJ	adj	_	2	advmod	_	_
+2	көріп	көр	VERB	v	Aspect=Perf	0	root	_	_
+3	алды	ал	AUX	vaux	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	aux	_	_
+4	да	да	CCONJ	cnjcoo	_	6	cc	_	_
+5	жерге	жер	NOUN	n	Case=Dat	6	obl	_	_
+6	ұрды	ұрды	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	2	conj	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:13:204
+# gold_source = UD_Kazakh-KTB
+# text = Жауапты хатшы өзінің қызметін жүзеге асырған кезде Қазақстан Республикасының Президентіне, Премьер-Министрге, Министрге есеп береді.
+1	Жауапты	жауапты	ADJ	adj	_	2	amod	_	_
+2	хатшы	хатшы	NOUN	n	Case=Nom	6	nsubj	_	_
+3	өзінің	өз	PRON	prn	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3|PronType=Prs	4	nmod:poss	_	_
+4	қызметін	қызметін	NOUN	n	Case=Acc|Number[psor]=Plur,Sing|Person[psor]=3	6	obj	_	_
+5	жүзеге	жүзеге	X	x	_	6	dep	_	_
+6	асырған	асырған	VERB	v	Tense=Past|VerbForm=Part	7	acl	_	_
+7	кезде	кез	NOUN	n	Case=Loc	16	obl	_	_
+8	Қазақстан	Қазақстан	PROPN	np	Case=Nom	9	nmod:poss	_	_
+9	Республикасының	республика	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	10	nmod:poss	_	_
+10	Президентіне	Президентіне	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	16	obl	_	SpaceAfter=No
+11	,	,	PUNCT	cm	_	12	punct	_	_
+12	Премьер-Министрге	Премьер-Министрге	PROPN	n	Case=Dat	10	conj	_	SpaceAfter=No
+13	,	,	PUNCT	cm	_	14	punct	_	_
+14	Министрге	Министрге	NOUN	n	Case=Dat	10	conj	_	_
+15	есеп	есеп	NOUN	n	Case=Nom	16	obj	_	_
+16	береді	бер	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+17	.	.	PUNCT	sent	_	16	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:2:18
+# gold_source = UD_Kazakh-KTB
+# text = Азамат соғысында рота командирі болған.
+1	Азамат	Азамат	NOUN	np	Case=Nom	4	nsubj	_	_
+2	соғысында	соғы	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	4	obl	_	_
+3	рота	рота	NOUN	n	Case=Nom	4	nmod:poss	_	_
+4	командирі	командирі	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	0	root	_	_
+5	болған	бол	AUX	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	4	cop	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	4	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:41:674
+# gold_source = UD_Kazakh-KTB
+# text = Орыс және қазақ тілдерін біледі.
+1	Орыс	Орыс	NOUN	n	Case=Nom	4	nmod:poss	_	_
+2	және	және	CCONJ	cnjcoo	_	3	cc	_	_
+3	қазақ	қазақ	NOUN	n	Case=Nom	1	conj	_	_
+4	тілдерін	тіл	NOUN	n	Case=Acc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+5	біледі	біл	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:58:972
+# gold_source = UD_Kazakh-KTB
+# text = Сот билігі сот ісін жүргізудің заңмен белгіленген түрінде жүзеге асырылады.
+1	Сот	сот	NOUN	n	Case=Nom	2	nmod:poss	_	_
+2	билігі	билік	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	10	nsubj	_	_
+3	сот	сот	NOUN	n	Case=Nom	4	nmod:poss	_	_
+4	ісін	ісін	NOUN	n	Case=Acc|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+5	жүргізудің	жүргізудің	NOUN	v	Case=Gen	8	acl	_	_
+6	заңмен	заңмен	NOUN	n	_	7	obl	_	_
+7	белгіленген	белгіленген	VERB	v	Tense=Past|VerbForm=Part|Voice=Pass	8	acl	_	_
+8	түрінде	түр	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	10	obl	_	_
+9	жүзеге	жүзеге	X	x	_	10	dep	_	_
+10	асырылады	асырылады	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+11	.	.	PUNCT	sent	_	10	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:4:52
+# gold_source = UD_Kazakh-KTB
+# text = Алматы қаласына елбасының келуі көптеген мәселелерге жаңаша қарауға септігін тигізді.
+1	Алматы	Алматы	PROPN	np	Case=Nom	2	nmod:poss	_	_
+2	қаласына	қала	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	4	obl	_	_
+3	елбасының	елбасының	NOUN	n	Case=Gen|Person[psor]=3	4	nsubj	_	_
+4	келуі	келуі	VERB	v	Case=Nom|VerbForm=Ger	10	csubj	_	_
+5	көптеген	көптеген	DET	det	_	6	det	_	_
+6	мәселелерге	мәселелерге	NOUN	n	Case=Dat|Number=Plur	8	obj	_	_
+7	жаңаша	жаңаша	ADV	adv	_	8	advmod	_	_
+8	қарауға	қарауға	VERB	v	Case=Dat|VerbForm=Ger	10	advcl	_	_
+9	септігін	септігін	VERB	n	_	10	obj	_	_
+10	тигізді	тигізді	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+11	.	.	PUNCT	sent	_	10	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:37:616
+# gold_source = UD_Kazakh-KTB
+# text = Несиенің шамасымен, сипатымен және мерзімімен айқындалады.
+1	Несиенің	Несиенің	NOUN	n	Case=Gen	6	nmod:poss	_	_
+2	шамасымен	шамасымен	NOUN	n	Case=Ins|Number[psor]=Plur,Sing|Person[psor]=3	7	obl	_	SpaceAfter=No
+3	,	,	PUNCT	cm	_	4	punct	_	_
+4	сипатымен	сипат	NOUN	n	Case=Ins|Number[psor]=Plur,Sing|Person[psor]=3	2	conj	_	_
+5	және	және	CCONJ	cnjcoo	_	6	cc	_	_
+6	мерзімімен	мерзімімен	NOUN	n	Case=Ins|Number[psor]=Plur,Sing|Person[psor]=3	2	conj	_	_
+7	айқындалады	айқындалады	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:43:700
+# gold_source = UD_Kazakh-KTB
+# text = Орыс және түрік тілдерін біледі.
+1	Орыс	Орыс	NOUN	n	Case=Nom	4	nmod:poss	_	_
+2	және	және	CCONJ	cnjcoo	_	3	cc	_	_
+3	түрік	түрік	NOUN	n	Case=Nom	1	conj	_	_
+4	тілдерін	тіл	NOUN	n	Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+5	біледі	біл	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:35:588
+# gold_source = UD_Kazakh-KTB
+# text = Немере етін жеп, сүйегін қалдырады.
+1	Немере	Немере	NOUN	n	Case=Nom	6	nsubj	_	_
+2	етін	етін	NOUN	n	Case=Acc|Number[psor]=Plur,Sing|Person[psor]=3	3	obj	_	_
+3	жеп	жеп	VERB	v	Aspect=Perf|VerbForm=Conv	6	advcl	_	SpaceAfter=No
+4	,	,	PUNCT	cm	_	3	punct	_	_
+5	сүйегін	сүйегін	NOUN	n	Case=Acc|Number[psor]=Plur,Sing|Person[psor]=3	6	obj	_	_
+6	қалдырады	қалдырады	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:34:571
+# gold_source = UD_Kazakh-KTB
+# text = Некенің тоқтатылуы жаңадан некеге тұру құқығын туғызады.
+1	Некенің	Некенің	NOUN	n	Case=Gen	2	nsubj	_	_
+2	тоқтатылуы	тоқтатылуы	VERB	v	Case=Nom|VerbForm=Ger	7	csubj	_	_
+3	жаңадан	жаңадан	ADV	adj	_	7	obl	_	_
+4	некеге	некеге	NOUN	n	Case=Dat	5	obj	_	_
+5	тұру	тұр	VERB	v	Case=Nom|VerbForm=Ger	6	acl	_	_
+6	құқығын	құқығын	NOUN	n	Case=Acc|Number[psor]=Plur,Sing|Person[psor]=3	7	obj	_	_
+7	туғызады	туғызады	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	sent	_	7	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:3:31
+# gold_source = UD_Kazakh-KTB
+# text = Алап ауқымында қысым мен температураның қалыптан тыс мөлшерлері ұшырасқан жоқ.
+1	Алап	Алап	DET	n	_	2	nmod:poss	_	_
+2	ауқымында	ауқым	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	9	obl	_	_
+3	қысым	қысым	NOUN	n	Case=Nom	8	nmod:poss	_	_
+4	мен	мен	CCONJ	cnjcoo	_	5	cc	_	_
+5	температураның	температураның	NOUN	n	Case=Gen	3	conj	_	_
+6	қалыптан	қалыптан	NOUN	n	Case=Loc	8	nmod	_	_
+7	тыс	тыс	DET	post	_	6	case	_	_
+8	мөлшерлері	мөлшерлері	NOUN	n	Case=Nom|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	9	nsubj	_	_
+9	ұшырасқан жоқ	ұшырасқан жоқ	VERB	v	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+10	.	.	PUNCT	sent	_	9	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:63:1050
+# gold_source = UD_Kazakh-KTB
+# text = Тәсілмен деректер базасының құрылымы көрсетілген.
+1	Тәсілмен	Тәсілмен	NOUN	n	_	5	obl	_	_
+2	деректер	дерек	NOUN	n	Case=Nom|Number=Plur	3	nmod:poss	_	_
+3	базасының	базас	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	4	nmod:poss	_	_
+4	құрылымы	құрылымы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	5	nsubj	_	_
+5	көрсетілген	көрсетілген	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|VerbForm=Part|Voice=Pass	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:33:556
+# gold_source = UD_Kazakh-KTB
+# text = Нарықтық экономика жағдайында мемлекеттің рөлі өзгереді.
+1	Нарықтық	Нарықтық	ADJ	adj	_	2	amod	_	_
+2	экономика	экономика	NOUN	n	Case=Nom	3	nmod:poss	_	_
+3	жағдайында	жағдайында	NOUN	n	Case=Loc|Number[psor]=Plur,Sing|Person[psor]=3	6	obl	_	_
+4	мемлекеттің	мемлекет	NOUN	n	Case=Gen	5	nmod:poss	_	_
+5	рөлі	рөлі	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	6	nsubj	_	_
+6	өзгереді	өзгереді	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	6	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:45:726
+# gold_source = UD_Kazakh-KTB
+# text = Орыс және француз тілдерін біледі.
+1	Орыс	Орыс	NOUN	n	Case=Nom	4	nmod:poss	_	_
+2	және	және	CCONJ	cnjcoo	_	3	cc	_	_
+3	француз	француз	NOUN	n	Case=Nom	1	conj	_	_
+4	тілдерін	тіл	NOUN	n	Case=Acc|Number=Plur|Number[psor]=Plur,Sing|Person[psor]=3	5	obj	_	_
+5	біледі	біл	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:57:935
+# gold_source = UD_Kazakh-KTB
+# text = Сонымен қатар монғол шапқыншылығы Қазақстанның және көрші аймақтардың этностық құрамына едәуір өзгерістер енгізді, этностық шекараларды өзгертті.
+1	Сонымен	Сонымен	PRON	x	_	2	dep	_	_
+2	қатар	қатар	ADP	adv	_	17	advmod	_	_
+3	монғол	монғол	NOUN	n	Case=Nom	4	nmod:poss	_	_
+4	шапқыншылығы	шапқыншылығы	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	17	nsubj	_	_
+5	Қазақстанның	Қазақстан	PROPN	np	Case=Gen	10	nmod:poss	_	_
+6	және	және	CCONJ	cnjcoo	_	8	cc	_	_
+7	көрші	көрші	NOUN	n	_	8	compound	_	_
+8	аймақтардың	аймақтардың	NOUN	n	Case=Gen|Number=Plur	5	conj	_	_
+9	этностық	этностық	ADJ	adj	_	10	amod	_	_
+10	құрамына	құрам	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	13	obl	_	_
+11	едәуір	едәуір	ADV	adj	_	12	amod	_	_
+12	өзгерістер	өзгеріс	NOUN	n	Case=Nom|Number=Plur	13	obj	_	_
+13	енгізді	енгізді	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+14	,	,	PUNCT	cm	_	17	punct	_	_
+15	этностық	этностық	ADJ	adj	_	16	amod	_	_
+16	шекараларды	шекараларды	NOUN	n	Case=Acc|Number=Plur	17	obj	_	_
+17	өзгертті	өзгертті	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	13	conj	_	SpaceAfter=No
+18	.	.	PUNCT	sent	_	17	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:26:446
+# gold_source = UD_Kazakh-KTB
+# text = КСРО Мемлекеттік сыйлығына (1952) ие болды.
+1	КСРО	КСРО	PROPN	np	Case=Nom	3	nmod:poss	_	_
+2	Мемлекеттік	мемлекеттік	ADJ	adj	_	3	amod	_	_
+3	сыйлығына	сыйлығына	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	8	obj	_	_
+4	(	(	PUNCT	lpar	_	5	punct	_	SpaceAfter=No
+5	1952	1952	NUM	num	NumType=Ord	3	parataxis	_	SpaceAfter=No
+6	)	)	PUNCT	rpar	_	5	punct	_	_
+7	ие	ие	X	x	_	8	dep	_	_
+8	болды	бол	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	0	root	_	SpaceAfter=No
+9	.	.	PUNCT	sent	_	8	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:38:633
+# gold_source = UD_Kazakh-KTB
+# text = Практика жетекшісінің есебі жасалған.
+1	Практика	практика	NOUN	n	_	2	nmod:poss	_	_
+2	жетекшісінің	жетекшісінің	NOUN	n	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	3	nmod:poss	_	_
+3	есебі	есебі	NOUN	n	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	4	nsubj	_	_
+4	жасалған	жаса	VERB	v	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|VerbForm=Part|Voice=Pass	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	sent	_	4	punct	_	_
+
+# sent_id = wikipedia.tagged.txt:17:288
+# gold_source = UD_Kazakh-KTB
+# text = Жүрек тұсына массаж былай жасалады.
+1	Жүрек	жүрек	NOUN	n	Case=Nom	2	nmod:poss	_	_
+2	тұсына	тұс	NOUN	n	Case=Dat|Number[psor]=Plur,Sing|Person[psor]=3	5	obl	_	_
+3	массаж	массаж	NOUN	n	Case=Nom	5	nsubj	_	_
+4	былай	былай	ADV	prn	_	5	obl	_	_
+5	жасалады	жаса	VERB	v	Aspect=Hab|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	sent	_	5	punct	_	_
+

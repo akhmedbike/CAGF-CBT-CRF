@@ -1,0 +1,15 @@
+{
+  "held_out": "wikipedia.tagged.txt",
+  "condition": "cagf_gold",
+  "seed": 42,
+  "n_train": 885,
+  "n_dev": 119,
+  "n_test": 74,
+  "official": {
+    "Lemmas": 0.6407599309153713,
+    "UPOS": 0.8082901554404145,
+    "UFeats": 0.6217616580310881,
+    "AllTags": 0.5354058721934369
+  },
+  "elapsed_sec": 422.3298523426056
+}

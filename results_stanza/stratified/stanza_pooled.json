@@ -1,0 +1,43 @@
+{
+  "protocol": "pooled out-of-fold jack-knife (one sentence scored once)",
+  "n_folds": 10,
+  "n_sentences": 1078,
+  "pooled": {
+    "Lemmas": 92.07479119210326,
+    "UPOS": 89.17995444191345,
+    "UFeats": 85.89597570235384,
+    "AllTags": 82.84927866362946
+  },
+  "per_fold_mean": {
+    "Lemmas": {
+      "mean": 92.07656499510317,
+      "n_folds": 10
+    },
+    "UPOS": {
+      "mean": 89.18048956028161,
+      "n_folds": 10
+    },
+    "UFeats": {
+      "mean": 85.89406207469248,
+      "n_folds": 10
+    },
+    "AllTags": {
+      "mean": 82.84013651754252,
+      "n_folds": 10
+    }
+  },
+  "computed": "2026-09-11T09:09:58",
+  "driver": "scripts/pool_stanza_cv.py",
+  "sources": [
+    "fold_0/gold.conllu + fold_0/pred.conllu",
+    "fold_1/gold.conllu + fold_1/pred.conllu",
+    "fold_2/gold.conllu + fold_2/pred.conllu",
+    "fold_3/gold.conllu + fold_3/pred.conllu",
+    "fold_4/gold.conllu + fold_4/pred.conllu",
+    "fold_5/gold.conllu + fold_5/pred.conllu",
+    "fold_6/gold.conllu + fold_6/pred.conllu",
+    "fold_7/gold.conllu + fold_7/pred.conllu",
+    "fold_8/gold.conllu + fold_8/pred.conllu",
+    "fold_9/gold.conllu + fold_9/pred.conllu"
+  ]
+}

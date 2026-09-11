@@ -1,0 +1,15 @@
+{
+  "held_out": "Иран.tagged.txt",
+  "condition": "cagf_gold",
+  "seed": 42,
+  "n_train": 818,
+  "n_dev": 119,
+  "n_test": 141,
+  "official": {
+    "Lemmas": 0.7098058735689398,
+    "UPOS": 0.7441513190642111,
+    "UFeats": 0.5216525634644101,
+    "AllTags": 0.45196615231458437
+  },
+  "elapsed_sec": 271.7538068294525
+}

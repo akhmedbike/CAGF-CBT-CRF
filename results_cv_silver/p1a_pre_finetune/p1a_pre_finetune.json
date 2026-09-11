@@ -1,0 +1,55 @@
+{
+  "stage": "silver pretraining only (no gold fine-tuning)",
+  "fold": 0,
+  "seed": 42,
+  "silver_sentences": 16000,
+  "best_epoch_on_gold_dev": 15,
+  "official_on_gold_test": {
+    "Lemmas": 0.7628571428571429,
+    "UPOS": 0.6704761904761904,
+    "UFeats": 0.32857142857142857,
+    "AllTags": 0.2733333333333333
+  },
+  "predicted_upos": {
+    "total": 1050,
+    "x_share": 0.17523809523809525,
+    "distribution": {
+      "PUNCT": 228,
+      "NOUN": 227,
+      "X": 184,
+      "VERB": 142,
+      "PRON": 71,
+      "ADJ": 52,
+      "NUM": 31,
+      "AUX": 25,
+      "ADP": 19,
+      "ADV": 19,
+      "CCONJ": 19,
+      "PROPN": 18,
+      "PART": 10,
+      "INTJ": 5
+    }
+  },
+  "gold_upos": {
+    "total": 1050,
+    "x_share": 0.014285714285714285,
+    "distribution": {
+      "NOUN": 310,
+      "PUNCT": 229,
+      "VERB": 158,
+      "ADJ": 71,
+      "PROPN": 56,
+      "PRON": 41,
+      "NUM": 39,
+      "AUX": 32,
+      "ADV": 29,
+      "DET": 24,
+      "CCONJ": 19,
+      "X": 15,
+      "ADP": 13,
+      "PART": 9,
+      "INTJ": 4,
+      "SCONJ": 1
+    }
+  }
+}

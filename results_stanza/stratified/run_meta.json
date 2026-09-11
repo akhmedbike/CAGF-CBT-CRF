@@ -1,0 +1,15 @@
+{
+  "started": "2026-09-10 18:03:20",
+  "python": "3.14.4",
+  "torch": "2.13.0",
+  "git_commit": "8d704b6d4e349c01fd4ec89c3a9c5d0c64a2a298",
+  "git_dirty": true,
+  "device": "mps",
+  "driver": "run_stanza_cv.py",
+  "k": 10,
+  "strategy": "stratified",
+  "seed": 42,
+  "folds": null,
+  "max_steps_pos": 4000,
+  "num_epoch_lemma": 60
+}
