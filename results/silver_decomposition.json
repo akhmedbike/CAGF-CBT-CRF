@@ -1,0 +1,167 @@
+{
+  "provenance": {
+    "computed": "2026-09-11T12:29:10",
+    "driver": "scripts/silver_decomposition.py",
+    "git": {
+      "commit": "b9d4769baf72",
+      "dirty": true
+    },
+    "python": "3.14.4",
+    "silver_path": "data/silver/silver.conllu",
+    "silver_bytes": 341628461
+  },
+  "totals": {
+    "tokens": 2886405,
+    "sentences_reported": 220098
+  },
+  "x_decomposition": {
+    "x_tokens": 519324,
+    "x_share_pct": 17.992,
+    "mapping_table_miss": 296,
+    "analyzer_path": 519028,
+    "analyzer_path_share_pct": 17.982,
+    "x_tokens_with_feats": 9,
+    "verification": {
+      "n_unique_forms": 137351,
+      "single_R_X_candidate": 137351,
+      "any_R_BOS": 0,
+      "other_analyses": 0,
+      "no_analysis": 0,
+      "seconds": 11.4
+    }
+  },
+  "heuristic_defaults": {
+    "value_token_counts": {
+      "Case=Nom": 610692,
+      "Number=Sing": 922151,
+      "VerbForm=Fin": 73817,
+      "Mood=Ind": 66965
+    },
+    "number_sing_nominal_default": 896279,
+    "number_sing_verbal_agreement": 25597,
+    "tokens_with_any_default_value": 1001461,
+    "tokens_with_any_default_value_pct": 34.7,
+    "explicit_ns_only_no_default": 704,
+    "machine_checks": {
+      "pure_defaults_have_no_map_source": {
+        "Case=Nom": true,
+        "VerbForm=Fin": true,
+        "Mood=Ind": true
+      },
+      "number_sing_map_sources": [
+        "P1",
+        "P2",
+        "P4"
+      ],
+      "pos_map_keys_to_X": [
+        "R_BOS",
+        "R_X"
+      ]
+    }
+  },
+  "unmapped": {
+    "events": 8413,
+    "tokens": 8413,
+    "max_events_per_token": 1,
+    "events_pct_of_corpus": 0.291,
+    "dropped_non_gold": 0
+  },
+  "gold_comparison": {
+    "gold_tokens": 10536,
+    "gold_x": 114,
+    "gold_x_share_pct": 1.08
+  },
+  "report_consistency": {
+    "tokens": true,
+    "upos_X": true,
+    "unknown_pos": true,
+    "unmapped_morpheme": true,
+    "dropped_non_gold": true
+  },
+  "x_form_profile": {
+    "mixed_script_form_types": 10846,
+    "mixed_script_token_occurrences": 54753,
+    "top20_by_tokens": [
+      {
+        "form": "қ",
+        "tokens": 6874
+      },
+      {
+        "form": "...",
+        "tokens": 6651
+      },
+      {
+        "form": "ғ",
+        "tokens": 4439
+      },
+      {
+        "form": "ң",
+        "tokens": 3849
+      },
+      {
+        "form": "ө",
+        "tokens": 2604
+      },
+      {
+        "form": "ү",
+        "tokens": 2507
+      },
+      {
+        "form": "бiр",
+        "tokens": 2278
+      },
+      {
+        "form": "ұ",
+        "tokens": 1917
+      },
+      {
+        "form": "едi",
+        "tokens": 1592
+      },
+      {
+        "form": "к",
+        "tokens": 1521
+      },
+      {
+        "form": "Ораз",
+        "tokens": 1427
+      },
+      {
+        "form": "т",
+        "tokens": 1389
+      },
+      {
+        "form": "ан",
+        "tokens": 1263
+      },
+      {
+        "form": "б",
+        "tokens": 895
+      },
+      {
+        "form": "с",
+        "tokens": 842
+      },
+      {
+        "form": "Құнанбай",
+        "tokens": 827
+      },
+      {
+        "form": "тым",
+        "tokens": 774
+      },
+      {
+        "form": "!..",
+        "tokens": 725
+      },
+      {
+        "form": "Бiрақ",
+        "tokens": 705
+      },
+      {
+        "form": "өзi",
+        "tokens": 679
+      }
+    ]
+  }
+}
