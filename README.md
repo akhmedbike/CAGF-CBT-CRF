@@ -186,8 +186,19 @@ paths to reproduce the silver-corpus experiments and the trained-model demos:
 | `data/silver/silver.conllu` | 326 MB | Full silver corpus (KazNLP-annotated). |
 | `data/silver/silver_filtered.conllu` | 326 MB | Filtered silver corpus. |
 | `data/auxiliary/books_skeleton.conllu` | 127 MB | Connected book skeleton. Per-source redistribution rights must be verified (see `data/auxiliary/corpus_manifest.json`); released for research use. |
-| `results_cv_kazroberta/checkpoints/silver_encoder_kazroberta.pt` | 319 MB | KazRoBERTa encoder checkpoint. |
 | `models/interface_model.pt` | 10 MB | CAGF-CBT+CRF checkpoint for the `webapp/` demo. |
+| `results_cv_kazroberta/checkpoints/silver_encoder_kazroberta.pt` | 319 MB | KazRoBERTa silver encoder (stratified protocol). |
+| `results_cv_kazroberta/grouped5/checkpoints/silver_encoder_kazroberta.pt` | 319 MB | KazRoBERTa silver encoder, source-grouped protocol. |
+| `results_cv_kazroberta/seed{13,2024}_silver/checkpoints/silver_encoder_kazroberta.pt` | 2×319 MB | KazRoBERTa silver encoders re-pretrained per training seed. |
+| `results_cv_xlmr/stratified_silver/checkpoints/silver_encoder_kazroberta.pt` | 1.0 GB | XLM-R base silver encoder (filename kept for driver compatibility). |
+| `results_loso/checkpoints/silver_encoder_kazroberta.pt` | 319 MB | KazRoBERTa silver encoder re-pretrained with the clean LOSO development set. |
+| `results_stanza/stratified/fold_*/stanza_models/*.pt` | 210 MB | Per-fold Stanza POS + lemmatizer models. |
+
+The versioned archive additionally holds archival copies of all revision
+result sets (grouped 5-fold, leave-one-source-out, three-seed replications,
+XLM-R and Stanza baseline predictions and metrics,
+`results/silver_decomposition.json`) and a `SHA256SUMS` manifest; paths
+inside the archive mirror the repository layout exactly.
 
 The 210K-token subsets (`data/silver/silver_subset_210k.conllu`,
 `data/silver/silver_unfiltered_subset_210k.conllu`) and all gold/merged UD
