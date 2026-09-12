@@ -22,6 +22,9 @@ data/              gold UD + silver corpus. Gold is committed; the full silver
                    corpus and book skeleton are gitignored (see "Large files" below).
 results/           ablation + baseline runs + generated tables (committed)
 results_cv/        10-fold CV runs + official CoNLL-2018 metrics (committed JSON)
+results_cv_silver/ silver-transfer CV: grouped/seed replicates + the four-budget
+                   scaling campaign (nested 100K/210K/500K/1M prefixes, per-fold
+                   predictions and jack-knifed metrics, committed JSON/CoNLL-U)
 third_party/       vendored conll18_ud_eval.py (official UFAL scorer, MPL-2.0)
 kaznlp/            [not in repo] clone nlacslab/kaznlp separately for silver
                    annotation — its CC-BY-SA 4.0 license is incompatible with MIT

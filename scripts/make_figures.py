@@ -63,15 +63,19 @@ def _save(fig, name):
 
 # ---------------------------------------------------------------------------
 # Figure 3 — Silver-corpus scaling curve.
-# Data: Table 6 of paper_revised.md (jack-knifed F1, mean ± sd, n=10 folds).
+# Data: results_cv_silver/scaling_curve.json (per-fold mean ± population sd of
+# the official scorer) for UPOS/UFeats/AllTags, and
+# results_cv_silver/scaling_lemmas_case_restored.json for Lemmas — the campaign
+# predated the Section 2.2 case-restoration step, which is applied to the stored
+# predictions before scoring (deterministic; uses only form + predicted UPOS).
 # ---------------------------------------------------------------------------
 def figure3_scaling():
     budgets = [100, 210, 500, 1000]
     x = np.array(budgets, dtype=float)
 
     metrics = {
-        "Lemmas":   {"mean": [80.80, 82.54, 84.37, 84.96], "sd": [1.17, 1.33, 1.03, 0.57], "c": C_LEM, "m": "o"},
-        "UPOS":     {"mean": [86.48, 87.64, 89.13, 89.45], "sd": [1.12, 3.79, 0.87, 1.02], "c": C_UPOS, "m": "s"},
+        "Lemmas":   {"mean": [80.80, 82.54, 84.37, 84.96], "sd": [1.11, 1.26, 0.98, 0.54], "c": C_LEM, "m": "o"},
+        "UPOS":     {"mean": [86.48, 87.64, 89.13, 89.45], "sd": [1.25, 1.12, 0.87, 1.02], "c": C_UPOS, "m": "s"},
         "UFeats":   {"mean": [66.52, 68.64, 72.83, 73.60], "sd": [3.09, 3.79, 1.58, 2.93], "c": C_UFEATS, "m": "^"},
         "AllTags":  {"mean": [61.35, 63.94, 68.74, 69.48], "sd": [3.12, 3.64, 1.61, 2.87], "c": C_ALL, "m": "D"},
     }

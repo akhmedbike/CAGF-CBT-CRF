@@ -1,0 +1,96 @@
+{
+  "silver_source": "data/silver/silver_filtered.conllu",
+  "seed": 42,
+  "full_sentences": 220090,
+  "full_tokens": 2884467,
+  "subsets": [
+    {
+      "budget_tokens": 100000,
+      "sentences": 10541,
+      "tokens": 100000,
+      "path": "data\\silver\\silver_subset_100k.conllu",
+      "upos_distribution": {
+        "PUNCT": 19243,
+        "NOUN": 15549,
+        "VERB": 15288,
+        "X": 14222,
+        "PRON": 6870,
+        "ADJ": 5636,
+        "AUX": 4464,
+        "ADV": 4397,
+        "CCONJ": 3994,
+        "NUM": 3179,
+        "ADP": 2524,
+        "PROPN": 2163,
+        "PART": 1544,
+        "INTJ": 927
+      }
+    },
+    {
+      "budget_tokens": 210000,
+      "sentences": 21051,
+      "tokens": 210020,
+      "path": "data\\silver\\silver_subset_210k.conllu",
+      "upos_distribution": {
+        "PUNCT": 40505,
+        "NOUN": 33521,
+        "VERB": 33346,
+        "X": 31070,
+        "PRON": 15101,
+        "ADJ": 12637,
+        "ADV": 9692,
+        "CCONJ": 8988,
+        "AUX": 7587,
+        "NUM": 5337,
+        "ADP": 4525,
+        "PROPN": 3398,
+        "PART": 2840,
+        "INTJ": 1473
+      }
+    },
+    {
+      "budget_tokens": 500000,
+      "sentences": 45628,
+      "tokens": 500005,
+      "path": "data\\silver\\silver_subset_500k.conllu",
+      "upos_distribution": {
+        "PUNCT": 97792,
+        "VERB": 83491,
+        "NOUN": 83473,
+        "X": 78589,
+        "PRON": 37902,
+        "ADJ": 29002,
+        "ADV": 21575,
+        "CCONJ": 17954,
+        "AUX": 16155,
+        "ADP": 9930,
+        "NUM": 8959,
+        "PROPN": 6279,
+        "PART": 5843,
+        "INTJ": 3061
+      }
+    },
+    {
+      "budget_tokens": 1000000,
+      "sentences": 85048,
+      "tokens": 1000017,
+      "path": "data\\silver\\silver_subset_1000k.conllu",
+      "upos_distribution": {
+        "PUNCT": 197998,
+        "VERB": 172525,
+        "NOUN": 172242,
+        "X": 164294,
+        "PRON": 78602,
+        "ADJ": 51015,
+        "ADV": 37141,
+        "CCONJ": 32473,
+        "AUX": 30953,
+        "ADP": 18977,
+        "NUM": 15449,
+        "PROPN": 11328,
+        "PART": 10841,
+        "INTJ": 6179
+      }
+    }
+  ]
+}
